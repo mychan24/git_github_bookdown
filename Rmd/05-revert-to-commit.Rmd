@@ -1,4 +1,9 @@
 # Revert to a previous commit (`git checkout`)
+
+**Key terms/commands:**
+
+* **git checkout**: A git command to revert a file to a previous state. You can also checkout your entire folder, but that is potentially a dangerous move (read the end of this chapter).
+
 ## Going back to a specific version of a file (`git checkout`)
 
 Before going back to a previous state of a file, COMMIT what you have now

@@ -1,0 +1,22 @@
+# Putting codes on Github
+
+**Key terms/commands:**
+
+**git push**: a commmand to upload your code to a remote repository (like Github!)
+
+## Push an existing repository from your local computer
+Go back to the loacl directory, workdir that we made in previous sections. 
+
+> cd ~/Desktop/workdir
+
+Add the github repo you just made as a remote repository that you want to push your data to
+
+> git remote add origin https://github.com/your_username/workdir.git
+
+Push your local repository to your Github
+
+> git push –u origin master
+
+## BONUS - SSH keys {-}
+Here is a link to help you setup using SSH keys for authentication with Github
+https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account
