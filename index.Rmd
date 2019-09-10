@@ -1,5 +1,5 @@
 ---
-title: "Brief Git/GitHub Workshop"
+title: "Git/GitHub Tutorial for Scientists:   \nits not only for programmers"
 author: "Micaela Chan"
 site: bookdown::bookdown_site
 documentclass: book
@@ -18,8 +18,9 @@ output:
 # Preface {-} 
 ## What is this Git/GitHub Tutorial about? {-} 
 
-The goal of this tutorial is to help scientists with no formal programming background to (1) start using [git](https://git-scm.com/) locally for [version-control](https://en.wikipedia.org/wiki/Version_control) of your code, and (2) begin using [GitHub](https://github.com) to share your code and collaborate with others.
+The goal of this tutorial is to help scientists with no formal programming background to **(1) start using [git](https://git-scm.com/) locally for [version-control](https://en.wikipedia.org/wiki/Version_control) of your code**, and **(2) begin using [GitHub](https://github.com) to share your code and collaborate with others.**
 
+Note: If we try to wait until we have perfect codes to share, more likely than not, we will end up never sharing them.
 
 ## Why is git important for scientists? {-} 
 
@@ -29,16 +30,22 @@ Git faciliates (1) **documentation**, and (2) **faciliates sharing/collaborating
 
 In scientific experiments, we are trained to record every parameter that we modified and tested, as it is crucial for both consistency  within the experiment and facilitating reproducible results. While we often record the experimental part of our experiments meticulously, the preprocessing and analyzing of data are often ‘assumed’ to be recorded in our scripts. 
 
-However, the frequency to which our scripts changes are not taken into account. 
+Here are a few scenarios where we wish a detailed history of how codes were developed is available: 
 
 #### Scenario A: Things were working, now they are not!{-} 
 You have 5 people collaborating on a single script. That script now results in an error after someone changed a few lines over the weekend. They have no recollection what was changed. 
+¯\\\_(ツ)\_/¯
 
 #### Scenario B: Why were changes made? {-} 
 You joined a new lab, and were given a pipeline/script to modify that dated years back. The script is named cool_script_version25000.sh, with few comments. Whoever made it has quit academia and is traveling the world, soul searching, and won’t answer emails. 
+¯\\\_(ツ)\_/¯
 
 #### Scenario C: We made changes a long time ago… {-} 
-Collaborator BigName wants to know what pre-processing parameters was used in your manuscript from 5 years ago.  You have since changed multiple parameters in your default processing pipeline.
+Collaborator BigName wants to know what preprocessing parameters were used in your manuscript from 5 years ago.  You have since changed multiple parameters in your default processing pipeline.
+¯\\\_(ツ)\_/¯
+
+![Saving something as Final.doc is bad...but Final_script.R is just as bad](http://phdcomics.com/comics/archive/phd101212s.gif "Final.doc")
+
 
 ### II. Git and Remote Hosts (e.g., GitHub) makes sharing/collaborating easier {-} 
 
@@ -50,10 +57,17 @@ Remote Hosts such as GitHub (or other alternatives) makes sharing your codes ver
 #### Facilitates new collaboration {-} 
 If you found a way to speed up some toolbox, Git/GitHub helps you to suggest this change to the author of the toolbox, even if you don’t know each other.
 
-#### Encourages open source {-} 
+#### Encourages open source and open science {-} 
+
+[Open source](https://en.wikipedia.org/wiki/Open-source_software) is typically a term used in software development, where it means the source code are open to the public. People can freely look at how a program was written, make improvements with them, etc. 
+
+In science, the idea of open source is closely linked with [open science](https://en.wikipedia.org/wiki/Open_science), a movement to make data, samples, software and all things related to a scientific finding as transparent and easy to access as possible. There are pros and cons to an open and closed system, and the balance between convenience, security, quality control is not a topic that can be adequately covered here. 
+
+However, given a common goal of of wanting more people to understand, reproduce, and build on top of previous work, an **'open’** approach to your code is certainly a good place to start. Git/Github will help facilitate your code being shared publicly, allowing you to easily contribute to other projects (and others to contribute to your projects).
+
 
 ## Acknowledgment {-} 
-The content in this workshop is heavily borrowed from https://www.atlassian.com/git/tutorials/git-bash.
+The content in this workshop is heavily borrowed from [Software Carpentry's git novice course](https://swcarpentry.github.io/git-novice/). Check them out! 
 
 
 ## Other helpful links {-}
