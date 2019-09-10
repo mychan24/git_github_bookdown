@@ -1,5 +1,5 @@
 ---
-title: "Brief git/github workshop"
+title: "Brief Git/GitHub Workshop"
 author: "Micaela Chan"
 site: bookdown::bookdown_site
 documentclass: book
@@ -16,9 +16,9 @@ output:
 ---
 
 # Preface {-} 
-## What is this Git/Github Tutorial about? {-} 
+## What is this Git/GitHub Tutorial about? {-} 
 
-The goal of this tutorial is to help scientists with no formal programming background to start using (1) [git](https://git-scm.com/) locally for [version-control](https://en.wikipedia.org/wiki/Version_control) of your code, and begin using [Github](https://github.com) to share your code and collaborate with others.
+The goal of this tutorial is to help scientists with no formal programming background to (1) start using [git](https://git-scm.com/) locally for [version-control](https://en.wikipedia.org/wiki/Version_control) of your code, and (2) begin using [GitHub](https://github.com) to share your code and collaborate with others.
 
 
 ## Why is git important for scientists? {-} 
@@ -32,28 +32,25 @@ In scientific experiments, we are trained to record every parameter that we modi
 However, the frequency to which our scripts changes are not taken into account. 
 
 #### Scenario A: Things were working, now they are not!{-} 
-You have 5 people collaborating on a single script. That script now throws and error after someone changed a few lines over the weekend. They have no recollection what was changed. 
+You have 5 people collaborating on a single script. That script now results in an error after someone changed a few lines over the weekend. They have no recollection what was changed. 
 
 #### Scenario B: Why were changes made? {-} 
-You joined a new lab, and was given a pipeline/script to modify that dated years back. The script is named cool_script_version25000.sh, with few comments. Whoever made it has quit academia and is traveling the world, soul searching, and won’t answer emails. 
+You joined a new lab, and were given a pipeline/script to modify that dated years back. The script is named cool_script_version25000.sh, with few comments. Whoever made it has quit academia and is traveling the world, soul searching, and won’t answer emails. 
 
 #### Scenario C: We made changes a long time ago… {-} 
-Collaborator BigName wants to know what preprocessing parameters was used in your manuscript from 5 years ago.  You have since changed multiple parameters in your default processing pipeline. 
+Collaborator BigName wants to know what pre-processing parameters was used in your manuscript from 5 years ago.  You have since changed multiple parameters in your default processing pipeline.
 
-### II. Git and Remote Hosts (e.g., Github) makes sharing/collaborating easier {-} 
+### II. Git and Remote Hosts (e.g., GitHub) makes sharing/collaborating easier {-} 
 
 #### Share codes {-} 
 The traditional method of sharing scientific results, manuscripts, is a difficult form to share scripts. For example, while you can share the general processes of how things are done, but the actual 1000+ lines scripts are usually not printed. 
 
-Remote Hosts such as Github (or other alternatives) makes sharing your codes very easy. It’s a link. People can choose to follow your code, and if you update it, they get a notification. 
+Remote Hosts such as GitHub (or other alternatives) makes sharing your codes very easy. It’s a link. People can choose to follow your code, and if you update it, they get a notification. 
 
 #### Facilitates new collaboration {-} 
-If you found a way to speed up some toolbox, Git/Github helps you to suggest this change to the author of the toolbox, even if you don’t know each other.
+If you found a way to speed up some toolbox, Git/GitHub helps you to suggest this change to the author of the toolbox, even if you don’t know each other.
 
 #### Encourages open source {-} 
-
-
-
 
 ## Acknowledgment {-} 
 The content in this workshop is heavily borrowed from https://www.atlassian.com/git/tutorials/git-bash.
