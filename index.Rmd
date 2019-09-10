@@ -34,15 +34,15 @@ Here are a few scenarios where we wish a detailed history of how codes were deve
 
 #### Scenario A: Things were working, now they are not!{-} 
 You have 5 people collaborating on a single script. That script now results in an error after someone changed a few lines over the weekend. They have no recollection what was changed. 
-¯\\\_(ツ)\_/¯
+¯\\\_(._.)\_/¯
 
 #### Scenario B: Why were changes made? {-} 
 You joined a new lab, and were given a pipeline/script to modify that dated years back. The script is named cool_script_version25000.sh, with few comments. Whoever made it has quit academia and is traveling the world, soul searching, and won’t answer emails. 
-¯\\\_(ツ)\_/¯
+¯\\\_(._.)\_/¯
 
 #### Scenario C: We made changes a long time ago… {-} 
 Collaborator BigName wants to know what preprocessing parameters were used in your manuscript from 5 years ago.  You have since changed multiple parameters in your default processing pipeline.
-¯\\\_(ツ)\_/¯
+¯\\\_(._.)\_/¯
 
 ![Saving something as Final.doc is bad...but Final_script.R is just as bad](http://phdcomics.com/comics/archive/phd101212s.gif "Final.doc")
 
