@@ -39,6 +39,7 @@ But what about the original `workdir` folder?
 `foofoo.txt` should be missing. Now lets say you want to check what changes your collaborator made. 
 
 ## Implement the changes your fake collaborator made
+
 **fetch** the changes your fake collaborator pushed to Github onto your local computer. 
 
 > git fetch

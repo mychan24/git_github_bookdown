@@ -1,6 +1,8 @@
 # Conflicts
 
-**Conflict** is when the same portion of a file is edited, it will have to be manually resolved before it can be pulled/pushed.
+**Key terms/commands:**
+
+* **Conflict**: when the same portion of a file is edited, it will have to be manually resolved before it can be pulled/pushed.
 
 ## Create a conflict
 
