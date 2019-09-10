@@ -4,11 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Tracking Changes (git add &amp; commit) | Brief git/github workshop</title>
-  <meta name="description" content="3 Tracking Changes (git add &amp; commit) | Brief git/github workshop" />
+  <title>3 Tracking Changes (git add &amp; commit) | Git/GitHub Tutorial for Scientists: its not only for programmers</title>
+  <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
+its not only for programmers" />
   <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Tracking Changes (git add &amp; commit) | Brief git/github workshop" />
+  <meta property="og:title" content="3 Tracking Changes (git add &amp; commit) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Tracking Changes (git add &amp; commit) | Brief git/github workshop" />
+  <meta name="twitter:title" content="3 Tracking Changes (git add &amp; commit) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
   
   
   
@@ -126,14 +127,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-this-gitgithub-tutorial-about"><i class="fa fa-check"></i>What is this Git/Github Tutorial about?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-this-gitgithub-tutorial-about"><i class="fa fa-check"></i>What is this Git/GitHub Tutorial about?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-is-git-important-for-scientists"><i class="fa fa-check"></i>Why is git important for scientists?</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#i.-version-control-of-scripts-is-the-lab-notebook-of-experiments-but-for-codes"><i class="fa fa-check"></i>I. Version-control of scripts is the lab notebook of experiments, but for codes</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ii.-git-and-remote-hosts-e.g.-github-makes-sharingcollaborating-easier"><i class="fa fa-check"></i>II. Git and Remote Hosts (e.g., Github) makes sharing/collaborating easier</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ii.-git-and-remote-hosts-e.g.-github-makes-sharingcollaborating-easier"><i class="fa fa-check"></i>II. Git and Remote Hosts (e.g., GitHub) makes sharing/collaborating easier</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
 </ul></li>
+<li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
 <li class="chapter" data-level="1.1" data-path="setting-up-git.html"><a href="setting-up-git.html#download-git"><i class="fa fa-check"></i><b>1.1</b> Download git</a></li>
 <li class="chapter" data-level="1.2" data-path="setting-up-git.html"><a href="setting-up-git.html#configuring-git"><i class="fa fa-check"></i><b>1.2</b> Configuring git</a><ul>
@@ -162,22 +164,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>5.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tell-git-to-ignore-files.html"><a href="tell-git-to-ignore-files.html"><i class="fa fa-check"></i><b>6</b> Tell git to ignore files</a></li>
-<li class="chapter" data-level="" data-path="github-and-other-remote-hosts.html"><a href="github-and-other-remote-hosts.html"><i class="fa fa-check"></i>Github and other remote hosts</a></li>
-<li class="chapter" data-level="7" data-path="storing-codes-on-github.html"><a href="storing-codes-on-github.html"><i class="fa fa-check"></i><b>7</b> Storing codes on Github</a><ul>
-<li class="chapter" data-level="7.1" data-path="storing-codes-on-github.html"><a href="storing-codes-on-github.html#create-a-remote-repository"><i class="fa fa-check"></i><b>7.1</b> Create a remote repository</a></li>
-<li class="chapter" data-level="7.2" data-path="storing-codes-on-github.html"><a href="storing-codes-on-github.html#push-an-existing-repository-from-your-local-computer"><i class="fa fa-check"></i><b>7.2</b> Push an existing repository from your local computer</a></li>
-<li class="chapter" data-level="" data-path="storing-codes-on-github.html"><a href="storing-codes-on-github.html#bonus---ssh-keys"><i class="fa fa-check"></i>BONUS - SSH keys</a></li>
+<li class="part"><span><b>II GitHub and Other Remote Hosts</b></span></li>
+<li class="chapter" data-level="7" data-path="git-is-not-github.html"><a href="git-is-not-github.html"><i class="fa fa-check"></i><b>7</b> Git is not Github</a><ul>
+<li class="chapter" data-level="7.1" data-path="git-is-not-github.html"><a href="git-is-not-github.html#git-is-a-remote-server-that-hosts-a-repository-remote-host"><i class="fa fa-check"></i><b>7.1</b> Git is a remote server that hosts a repository (remote host)</a></li>
+<li class="chapter" data-level="7.2" data-path="git-is-not-github.html"><a href="git-is-not-github.html#create-aa-repository-in-on-github-a-remote-repo"><i class="fa fa-check"></i><b>7.2</b> Create aa repository in on github (a remote repo)</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html"><i class="fa fa-check"></i><b>8</b> Getting a repository from Github (fork &amp; <code>git clone</code>)</a><ul>
-<li class="chapter" data-level="8.1" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#fork-a-repository-remote---remote"><i class="fa fa-check"></i><b>8.1</b> Fork a repository (remote -&gt; remote)</a></li>
-<li class="chapter" data-level="8.2" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#cloning-a-repository-remote---local"><i class="fa fa-check"></i><b>8.2</b> Cloning a repository (remote -&gt; local)</a></li>
+<li class="chapter" data-level="8" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html"><i class="fa fa-check"></i><b>8</b> Putting codes on Github</a><ul>
+<li class="chapter" data-level="8.1" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html#push-an-existing-repository-from-your-local-computer"><i class="fa fa-check"></i><b>8.1</b> Push an existing repository from your local computer</a></li>
+<li class="chapter" data-level="" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html#bonus---ssh-keys"><i class="fa fa-check"></i>BONUS - SSH keys</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html"><i class="fa fa-check"></i><b>9</b> Collaborating (<code>git fetch &amp; pull</code>)</a><ul>
-<li class="chapter" data-level="9.1" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#setup-a-fake-collaborator-yourself-in-another-directory"><i class="fa fa-check"></i><b>9.1</b> Setup a fake collaborator, yourself in another directory :)</a></li>
-<li class="chapter" data-level="9.2" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#implement-the-changes-your-fake-collaborator-made"><i class="fa fa-check"></i><b>9.2</b> Implement the changes your fake collaborator made</a></li>
+<li class="chapter" data-level="9" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html"><i class="fa fa-check"></i><b>9</b> Getting a repository from Github (fork &amp; <code>git clone</code>)</a><ul>
+<li class="chapter" data-level="9.1" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#fork-a-repository-remote---remote"><i class="fa fa-check"></i><b>9.1</b> Fork a repository (remote -&gt; remote)</a></li>
+<li class="chapter" data-level="9.2" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#cloning-a-repository-remote---local"><i class="fa fa-check"></i><b>9.2</b> Cloning a repository (remote -&gt; local)</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html"><i class="fa fa-check"></i><b>10</b> Collaborating (<code>git fetch &amp; pull</code>)</a><ul>
+<li class="chapter" data-level="10.1" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#setup-a-fake-collaborator-yourself-in-another-directory"><i class="fa fa-check"></i><b>10.1</b> Setup a fake collaborator, yourself in another directory :)</a></li>
+<li class="chapter" data-level="10.2" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#implement-the-changes-your-fake-collaborator-made"><i class="fa fa-check"></i><b>10.2</b> Implement the changes your fake collaborator made</a></li>
 <li class="chapter" data-level="" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#notes-1"><i class="fa fa-check"></i>Notes</a></li>
 <li class="chapter" data-level="" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#bonus---what-is-my-remote"><i class="fa fa-check"></i>BONUS - What is my remote?</a></li>
-<li class="chapter" data-level="9.3" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#really-collaborating-on-github"><i class="fa fa-check"></i><b>9.3</b> Really collaborating on Github</a></li>
+<li class="chapter" data-level="10.3" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#really-collaborating-on-github"><i class="fa fa-check"></i><b>10.3</b> Really collaborating on Github</a></li>
+</ul></li>
+<li class="part"><span><b>III Advanced Git</b></span></li>
+<li class="chapter" data-level="11" data-path="conflicts.html"><a href="conflicts.html"><i class="fa fa-check"></i><b>11</b> Conflicts</a><ul>
+<li class="chapter" data-level="11.1" data-path="conflicts.html"><a href="conflicts.html#create-a-conflict"><i class="fa fa-check"></i><b>11.1</b> Create a conflict</a></li>
+<li class="chapter" data-level="11.2" data-path="conflicts.html"><a href="conflicts.html#resolving-a-conflict"><i class="fa fa-check"></i><b>11.2</b> Resolving a conflict</a></li>
+<li class="chapter" data-level="11.3" data-path="conflicts.html"><a href="conflicts.html#tips-to-prevent-conflicts"><i class="fa fa-check"></i><b>11.3</b> Tips to prevent conflicts</a></li>
 </ul></li>
 </ul>
 
@@ -188,7 +199,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Brief git/github workshop</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git/GitHub Tutorial for Scientists:<br />
+its not only for programmers</a>
           </h1>
         </div>
 
@@ -317,7 +329,17 @@ index e69de29..ce01362 100644
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": null,
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
 "fontsettings": {
 "theme": "white",
 "family": "sans",
@@ -333,8 +355,13 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section"
-}
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "static"
+},
+"search": true
 });
 });
 </script>
