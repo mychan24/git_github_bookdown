@@ -1,4 +1,4 @@
-# Github and other remote hosts {-}
+# (PART) GitHub and Other Remote Hosts {-}
 Thus far everything is within your local computer and done using `git`. That is the **version control** portion of git. Which is important and powerful. But what makes git a very strong tool for collaboration is sharing through remote hosts like Github (or other remote hosts).
 
 * Github is not the only option, there are other companies that offer free remote hosting, here are a few alterantives [Bitbucket](https://bitbucket.org/), [Gitlab](https://gitlab.com/)
