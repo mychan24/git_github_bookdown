@@ -1,4 +1,4 @@
 book_filename: "git_github_workshop.Rmd"
 rmd_subdir: Rmd
 edit: https://github.com/mychan24/git_github_bookdown/edit/master/%s
-output_dir: "book"
+output_dir: "docs"
