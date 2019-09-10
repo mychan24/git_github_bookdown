@@ -1,0 +1,57 @@
+# Exploring History (`git diff & show`)
+## Difference between current file and N commit ago (`git diff HEAD`)
+
+Lets add another line to `foo.txt`
+
+> echo world >> foo.txt
+
+Check what is different from your current version of foo.txt compare to the last commit
+
+> git diff HEAD foo.txt
+
+```
+diff --git a/foo.txt b/foo.txt
+index ce01362..94954ab 100644
+--- a/foo.txt
++++ b/foo.txt
+@@ -1 +1,2 @@
+ hello
++world
+```
+
+Check difference compare to two commits ago
+
+> git diff HEAD~1 foo.txt
+
+```
+diff --git a/foo.txt b/foo.txt
+index e69de29..94954ab 100644
+--- a/foo.txt
++++ b/foo.txt
+@@ -0,0 +1,2 @@
++hello
++world
+```
+
+Check difference against a specific commit based on identifer (the unique identifier is different for you, use `git log` to check!)
+
+> git diff 7be71q foo.txt 
+
+## What was done in ____ commit? (`git show`)
+
+Sometimes we want to check what was done during a certain commit (instead of comparing differences)
+
+> git show HEAD~1 foo.txt
+
+```
+commit d5cfbb80dd0d48a2fdcbfda8e8196d0a4d1193da
+Author: Your Name <yourname@email.com>
+Date:   Tue Sep 10 19:36:24 2019 -0500
+
+    Add foo.txt to repo
+
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..e69de29
+```
+

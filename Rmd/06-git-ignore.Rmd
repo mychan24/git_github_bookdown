@@ -1,0 +1,17 @@
+# Tell git to ignore files
+Make a file named `.gitignore` (you can also use nano/any-text-editor to do it)
+
+> touch ignore_this.txt
+
+> echo ignore_this.txt >> .gitignore
+
+Try `git add ignore_this.txt`, and you will see git will not add it. 
+```
+The following paths are ignored by one of your .gitignore files:
+ignore_this.txt
+Use -f if you really want to add them.
+```
+
+If you want to `add` a suppsoedly ignored file, use `-f`
+
+> git add -f ignore_this.txt

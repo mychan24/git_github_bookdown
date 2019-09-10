@@ -1,0 +1,35 @@
+# Creating a Repository (`git init`)
+## Create a directory call `workdir` in your Desktop for this tutorial
+
+> mkdir ~/Desktop/workdir
+
+> cd ~/Desktop/workdir	
+
+
+## Create a repository, where git store versions of your file
+A repository (repo) is a `.git/` folder that lives inside the diretory that you want to track all the changes you made to it. 
+
+Create a repository within a folder
+
+> git init
+
+This is what you will see: 
+```
+Initialized empty Git repository in ~Desktop/workdir/.git/
+```
+
+Check that a hidden folder `.git` has been created
+
+> ls -a 
+
+Check the status of git
+
+> git status
+
+```
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+```

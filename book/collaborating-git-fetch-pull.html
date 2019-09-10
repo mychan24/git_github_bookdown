@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Collaborating (git fetch &amp; pull) | Brief git/github workshop</title>
+  <meta name="description" content="9 Collaborating (git fetch &amp; pull) | Brief git/github workshop" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Collaborating (git fetch &amp; pull) | Brief git/github workshop" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Collaborating (git fetch &amp; pull) | Brief git/github workshop" />
+  
+  
+  
+
+<meta name="author" content="Micaela Chan" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="getting-a-repository-from-github-fork-git-clone.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-this-gitgithub-tutorial-about"><i class="fa fa-check"></i>What is this Git/Github Tutorial about?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-is-git-important-for-scientists"><i class="fa fa-check"></i>Why is git important for scientists?</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#i.-version-control-of-scripts-is-the-lab-notebook-of-experiments-but-for-codes"><i class="fa fa-check"></i>I. Version-control of scripts is the lab notebook of experiments, but for codes</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ii.-git-and-remote-hosts-e.g.-github-makes-sharingcollaborating-easier"><i class="fa fa-check"></i>II. Git and Remote Hosts (e.g., Github) makes sharing/collaborating easier</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
+<li class="chapter" data-level="1.1" data-path="setting-up-git.html"><a href="setting-up-git.html#download-git"><i class="fa fa-check"></i><b>1.1</b> Download git</a></li>
+<li class="chapter" data-level="1.2" data-path="setting-up-git.html"><a href="setting-up-git.html#configuring-git"><i class="fa fa-check"></i><b>1.2</b> Configuring git</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setting-up-git.html"><a href="setting-up-git.html#setup-username-and-email"><i class="fa fa-check"></i><b>1.2.1</b> Setup username and email</a></li>
+<li class="chapter" data-level="1.2.2" data-path="setting-up-git.html"><a href="setting-up-git.html#setup-the-correct-linebreaks-encoding"><i class="fa fa-check"></i><b>1.2.2</b> Setup the correct linebreaks encoding</a></li>
+<li class="chapter" data-level="1.2.3" data-path="setting-up-git.html"><a href="setting-up-git.html#setup-nano-as-the-text-editor-to-interface-with-git"><i class="fa fa-check"></i><b>1.2.3</b> Setup “nano” as the text editor to interface with git</a></li>
+<li class="chapter" data-level="1.2.4" data-path="setting-up-git.html"><a href="setting-up-git.html#check-to-ensure-settings-are-correct"><i class="fa fa-check"></i><b>1.2.4</b> Check to ensure settings are correct</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html"><i class="fa fa-check"></i><b>2</b> Creating a Repository (<code>git init</code>)</a><ul>
+<li class="chapter" data-level="2.1" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html#create-a-directory-call-workdir-in-your-desktop-for-this-tutorial"><i class="fa fa-check"></i><b>2.1</b> Create a directory call <code>workdir</code> in your Desktop for this tutorial</a></li>
+<li class="chapter" data-level="2.2" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html#create-a-repository-where-git-store-versions-of-your-file"><i class="fa fa-check"></i><b>2.2</b> Create a repository, where git store versions of your file</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html"><i class="fa fa-check"></i><b>3</b> Tracking Changes (<code>git add &amp; commit</code>)</a><ul>
+<li class="chapter" data-level="3.1" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#adding-new-filesmodification-git-add"><i class="fa fa-check"></i><b>3.1</b> Adding new files/modification (<code>git add</code>)</a></li>
+<li class="chapter" data-level="3.2" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#saving-these-changes-to-the-repository-git-commit"><i class="fa fa-check"></i><b>3.2</b> Saving these changes to the repository (<code>git commit</code>)</a></li>
+<li><a href="tracking-changes-git-add-commit.html#bonus---checking-what-has-changed-before-addcommit-git-diff">BONUS - Checking what has changed before add/commit (<code>git diff</code>)</a></li>
+<li class="chapter" data-level="" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#notes"><i class="fa fa-check"></i>Notes</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html"><i class="fa fa-check"></i><b>4</b> Exploring History (<code>git diff &amp; show</code>)</a><ul>
+<li class="chapter" data-level="4.1" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html#difference-between-current-file-and-n-commit-ago-git-diff-head"><i class="fa fa-check"></i><b>4.1</b> Difference between current file and N commit ago (<code>git diff HEAD</code>)</a></li>
+<li class="chapter" data-level="4.2" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html#what-was-done-in-____-commit-git-show"><i class="fa fa-check"></i><b>4.2</b> What was done in ____ commit? (<code>git show</code>)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html"><i class="fa fa-check"></i><b>5</b> Revert to a previous commit (<code>git checkout</code>)</a><ul>
+<li class="chapter" data-level="5.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>5.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
+<li class="chapter" data-level="5.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>5.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tell-git-to-ignore-files.html"><a href="tell-git-to-ignore-files.html"><i class="fa fa-check"></i><b>6</b> Tell git to ignore files</a></li>
+<li class="chapter" data-level="" data-path="github-and-other-remote-hosts.html"><a href="github-and-other-remote-hosts.html"><i class="fa fa-check"></i>Github and other remote hosts</a></li>
+<li class="chapter" data-level="7" data-path="storing-codes-on-github.html"><a href="storing-codes-on-github.html"><i class="fa fa-check"></i><b>7</b> Storing codes on Github</a><ul>
+<li class="chapter" data-level="7.1" data-path="storing-codes-on-github.html"><a href="storing-codes-on-github.html#create-a-remote-repository"><i class="fa fa-check"></i><b>7.1</b> Create a remote repository</a></li>
+<li class="chapter" data-level="7.2" data-path="storing-codes-on-github.html"><a href="storing-codes-on-github.html#push-an-existing-repository-from-your-local-computer"><i class="fa fa-check"></i><b>7.2</b> Push an existing repository from your local computer</a></li>
+<li class="chapter" data-level="" data-path="storing-codes-on-github.html"><a href="storing-codes-on-github.html#bonus---ssh-keys"><i class="fa fa-check"></i>BONUS - SSH keys</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html"><i class="fa fa-check"></i><b>8</b> Getting a repository from Github (fork &amp; <code>git clone</code>)</a><ul>
+<li class="chapter" data-level="8.1" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#fork-a-repository-remote---remote"><i class="fa fa-check"></i><b>8.1</b> Fork a repository (remote -&gt; remote)</a></li>
+<li class="chapter" data-level="8.2" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#cloning-a-repository-remote---local"><i class="fa fa-check"></i><b>8.2</b> Cloning a repository (remote -&gt; local)</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html"><i class="fa fa-check"></i><b>9</b> Collaborating (<code>git fetch &amp; pull</code>)</a><ul>
+<li class="chapter" data-level="9.1" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#setup-a-fake-collaborator-yourself-in-another-directory"><i class="fa fa-check"></i><b>9.1</b> Setup a fake collaborator, yourself in another directory :)</a></li>
+<li class="chapter" data-level="9.2" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#implement-the-changes-your-fake-collaborator-made"><i class="fa fa-check"></i><b>9.2</b> Implement the changes your fake collaborator made</a></li>
+<li class="chapter" data-level="" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#notes-1"><i class="fa fa-check"></i>Notes</a></li>
+<li class="chapter" data-level="" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#bonus---what-is-my-remote"><i class="fa fa-check"></i>BONUS - What is my remote?</a></li>
+<li class="chapter" data-level="9.3" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#really-collaborating-on-github"><i class="fa fa-check"></i><b>9.3</b> Really collaborating on Github</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Brief git/github workshop</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="collaborating-git-fetch-pull" class="section level1">
+<h1><span class="header-section-number">9</span> Collaborating (<code>git fetch &amp; pull</code>)</h1>
+<p><strong>Key terms/commands:</strong></p>
+<ul>
+<li><p><strong>git fetch</strong>: look at the changes that is in your remote repository Github. This commands download the changes into the <code>.git/</code> folder so you can compare changes to your local files, but it does not actually modify your files (i.e., files outside of the <code>.git/</code> folder).</p></li>
+<li><p><strong>git pull</strong>: implement the changes you have <em>fetched</em> into your local files.</p></li>
+</ul>
+<div id="setup-a-fake-collaborator-yourself-in-another-directory" class="section level2">
+<h2><span class="header-section-number">9.1</span> Setup a fake collaborator, yourself in another directory :)</h2>
+<p>Clone the <strong>workdir</strong> repo into your local computer but a different folder as if you have a collaborator</p>
+<blockquote>
+<p>git clone <a href="https://github.com/your_username/workdir.git" class="uri">https://github.com/your_username/workdir.git</a> ~/Desktop/workdir_fake_collab</p>
+</blockquote>
+<p>Lets pretend you are the collaborator, and you will make some changes and push it to Github</p>
+<blockquote>
+<p>cd ~/Desktop/workdir_fake_collab</p>
+</blockquote>
+<blockquote>
+<p>touch foofoo.txt</p>
+</blockquote>
+<blockquote>
+<p>git add foofoo.txt</p>
+</blockquote>
+<blockquote>
+<p>git commit -m “Add foofoo.txt”</p>
+</blockquote>
+<blockquote>
+<p>git push origin master</p>
+</blockquote>
+<p>Lets check what is in the current folder</p>
+<blockquote>
+<p>ls</p>
+</blockquote>
+<p>Check what is on the workdir repository on Github. It should contain <code>foofoo.txt</code></p>
+<p>But what about the original <code>workdir</code> folder?</p>
+<blockquote>
+<p>ls ~/Desktop/workdir</p>
+</blockquote>
+<p><code>foofoo.txt</code> should be missing. Now lets say you want to check what changes your collaborator made.</p>
+</div>
+<div id="implement-the-changes-your-fake-collaborator-made" class="section level2">
+<h2><span class="header-section-number">9.2</span> Implement the changes your fake collaborator made</h2>
+<p><strong>fetch</strong> the changes your fake collaborator pushed to Github onto your local computer.</p>
+<blockquote>
+<p>git fetch</p>
+</blockquote>
+<p>NOTE that this does not change the files in your directory. But now you can use <code>git diff</code> to see what your collaborator has changed</p>
+<blockquote>
+<p>git diff master origin/master</p>
+</blockquote>
+<p>If you decided these are changes you want in your local directory (the origainl <code>workdir</code>)</p>
+<blockquote>
+<p>git pull</p>
+</blockquote>
+</div>
+<div id="notes-1" class="section level2 unnumbered">
+<h2>Notes</h2>
+<ul>
+<li><code>git pull</code> returns message “Already up to date.”
+<ul>
+<li><code>git pull</code> impelment the changes that were fetched by <code>git fetch</code>, so fetch first.</li>
+</ul></li>
+<li>Will <code>git fetch</code> change my stuff?
+<ul>
+<li>Fetching does not change your local file until your pull.</li>
+</ul></li>
+</ul>
+</div>
+<div id="bonus---what-is-my-remote" class="section level2 unnumbered">
+<h2>BONUS - What is my remote?</h2>
+<p>What is your remote?</p>
+<blockquote>
+<p>git remote -v</p>
+</blockquote>
+<p>Adding a different remote</p>
+<blockquote>
+<p>git add remote [name] [url]</p>
+</blockquote>
+<p>Changing the URL of the remote (e.g., you change the remote repository)</p>
+<blockquote>
+<p>git remote set-url [name] [newurl]</p>
+</blockquote>
+</div>
+<div id="really-collaborating-on-github" class="section level2">
+<h2><span class="header-section-number">9.3</span> Really collaborating on Github</h2>
+<ul>
+<li>Adding collaborators in your Github repository
+<ul>
+<li>Click <strong>Settings</strong></li>
+<li>Click <strong>Collaborators</strong> and add them (they need to be on Github)</li>
+</ul></li>
+<li>More Advance way to collaborate (won’t cover in detail)
+<ul>
+<li><strong>fork</strong> a repository you want to make changes</li>
+<li><strong>git clone</strong> it to your local computer</li>
+<li>Make changes, <strong>git add</strong>, <strong>git commit</strong> and <strong>git push</strong> it to your forked remote repo</li>
+<li>Make a <a href="https://help.github.com/en/articles/creating-a-pull-request">Pull Request</a> in the original repository</li>
+</ul></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getting-a-repository-from-github-fork-git-clone.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/09-collaboration.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

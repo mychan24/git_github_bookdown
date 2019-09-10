@@ -1,7 +1,4 @@
-book_filename: "git_github_bookdown"
-chapter_name: "Chapter "
-repo: https://github.com/mychan24/git_github_bookdown
-output_dir: docs
-rmd_files: ["index.Rmd", "01-setting_up_git.Rmd","02-create_repo.Rmd"]
-clean: [packages.bib, bookdown.bbl]
-new_session: yes
+book_filename: "git_github_workshop.Rmd"
+rmd_subdir: Rmd
+edit: https://github.com/mychan24/git_github_bookdown/edit/master/%s
+output_dir: "book"

@@ -1,0 +1,53 @@
+# Revert to a previous commit (`git checkout`)
+## Going back to a specific version of a file (`git checkout`)
+
+Before going back to a previous state of a file, COMMIT what you have now
+
+> git add foo.txt
+
+> git commit -m "Add world"
+
+
+Recover the `foo.txt` that doesn't have "world" in it (use HEAD~1 or unique identifier)
+
+> git checkout HEAD~1 foo.txt
+
+Check what is in `foo.txt`
+
+> cat foo.txt
+
+```
+hello
+```
+
+Go back to the state where "world" was in the file
+
+> git checkout HEAD foo.txt
+
+> cat foo.txt
+
+```
+hello
+world
+```
+
+## Going back to an entire commit - Detached HEAD (CAUTION)
+
+If you `git checkout` a previous commit without also specifying a file, you will revert the entire directory to a previous condition
+
+> git checkout HEAD~1 
+
+You should get a message like this
+```
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+ git checkout -b <new-branch-name>
+```
+
+Use `git checkout HEAD` to return to most recent state. IF you checkout a previous commit without first committing your current state, then anything not committed would be lost!!!
+

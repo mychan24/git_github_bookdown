@@ -1,0 +1,19 @@
+# Getting a repository from Github (fork & `git clone`)
+
+**fork**: copy someone's Github repository and putting it in your Github 
+
+**clone**: copy (download) a remote repo onto your local computer 
+
+## Fork a repository (remote -> remote)
+
+this repository that you are reading this README file into your github.
+
+* Click the **Fork** icon near the top right corner 
+* ...It will take a little while to load...
+* You should be redirected to a copy of the same repository in YOUR Github account
+
+## Cloning a repository (remote -> local)
+
+Clone YOUR git_github_workshop repository onto your local computer: 
+
+> git clone https://github.com/your_username/git_github_workshop.git ~/Desktop/git_github_workshop
