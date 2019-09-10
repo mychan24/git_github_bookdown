@@ -1,0 +1,71 @@
+# Conflicts
+
+**Conflict** is when the same portion of a file is edited, it will have to be manually resolved before it can be pulled/pushed.
+
+## Create a conflict
+
+Go into your fake collaborator's folder and add a line to `foo.txt`
+
+> cd ~/Desktop/workdir_fake_collab
+
+> echo fake_colab >> foo.txt
+
+Add, commit and push the changes to the remote repository 
+
+> git add foo.txt
+
+> git commit -m "Add fake collab line to foo.txt"
+
+> git push
+
+Now go into the original `workdir` and add a different line to `foo.txt`
+
+> cd ~/Desktop/workdir
+
+> echo real_me >> foo.txt
+
+Add and commit the change
+
+> git add foo.txt
+
+> git commit -m "Add real me line to foo.txt"
+
+Try to push it, and you should get an error
+
+> git push
+
+## Resolving a conflict
+
+Pull the changes from the remote server, which your fake collab has made a change
+
+> git pull
+
+This should result in a conflict message. Two versions of the conflicting line is shown: 
+
+* Your local version is between <<<<<<< HEAD` and `=======`
+* The remote version is between `=======` and `>>>>>>> (unique identifier of the commit)`
+
+Edit the file with conflicting lines
+
+> nano foo.txt
+
+Then add and commit the edited file
+
+> git add foo.txt
+
+> git commit -m "Merge changes from Github"
+
+Push your changes to the remote repo
+
+> git push
+
+Now we pull from the remote repo again
+
+
+## Tips to prevent conflicts
+
+* Always fetch/merge (or pull) before making changes locally
+* Use **branches** 
+* Commit often (so people can pull your changes frequently as well)
+* Have smaller files, so it is less likely for multiple people to edit the same file. 
+* Communicate often with your collaborators :) 
