@@ -6,7 +6,7 @@ r_packages:
   - bookdown
 
 script:
-  - Rscript -e 'bookdown::render_book("index.Rmd", "all")'
+  - Rscript -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
 
 deploy:
   provider: pages                  # Specify the gh-pages deployment method
