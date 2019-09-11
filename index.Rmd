@@ -24,7 +24,7 @@ Note: If we try to wait until we have perfect codes to share, more likely than n
 
 ## Why is git important for scientists? {-} 
 
-Git faciliates (1) **documentation**, and (2) **faciliates sharing/collaborating**. Both of these are important parts in the scientific process. 
+Git facilitates (1) **documentation**, and (2) **sharing/collaborating**. Both of these are important parts in the scientific process. 
 
 ### I. Version-control of scripts is the lab notebook of experiments, but for codes{-} 
 
