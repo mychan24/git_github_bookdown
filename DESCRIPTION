@@ -1,5 +1,5 @@
 Package: 
-Title: Brief git/github intro
+Title: Git/Github tutorial for scientists
 Version: 0.0.1
 Imports: bookdown
 Remotes: rstudio/bookdown

@@ -26,9 +26,9 @@ Note: If we try to wait until we have perfect codes to share, more likely than n
 
 Git facilitates (1) **documentation**, and (2) **sharing/collaborating**. Both of these are important parts in the scientific process. 
 
-### I. Version-control of scripts is the lab notebook of experiments, but for codes{-} 
+### I. Version-control for code = the lab notebook of experiments{-} 
 
-In scientific experiments, we are trained to record every parameter that we modified and tested, as it is crucial for both consistency  within the experiment and facilitating reproducible results. While we often record the experimental part of our experiments meticulously, the preprocessing and analyzing of data are often ‘assumed’ to be recorded in our scripts. 
+In scientific experiments, we are trained to record every parameter that we modified and tested, as it ensures consistency  within an experiment and facilitates reproducible results. While we often record the experimental part of our experiments meticulously, the preprocessing and analyzing of data are often ‘assumed’ to be recorded in our scripts. 
 
 Here are a few scenarios where we wish a detailed history of how codes were developed is available: 
 
