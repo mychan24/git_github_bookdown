@@ -1,0 +1,56 @@
+# Branching (`git branch`)
+
+Want to create or edit a new script or function but not ready to make it live (available to everyone) just yet? 
+
+Create a new branch! 
+
+## Check what branch you're on
+
+If you've never changed a branch. You're likely using the `master` or main branch.
+
+It's always a good idea to check what branch you're using:
+`git branch`
+
+The one marked with the `*` is the name of branch that you're currently on.
+
+## Create new branch
+
+To create a new branch, we can enter:
+`git branch <branch_name>`
+
+Example:
+`git branch cool_new_function`
+
+## Switch between branches 
+
+To switch to the new branch:
+`git checkout <branch_name>`
+
+Example:
+`git checkout cool_new_function`
+
+## Create and switch
+
+You can also create and switch to a branch in one command using:
+`git checkout -b <branch_name>`
+
+Example:
+`git checkout -b cool_new_function`
+
+Now that you're in your new branch, you can make, edit, and commit script(s) as you want without affecting anything on the master branch.
+
+## Merge branch
+
+Ready to make the modification available to everyone? Let's merge the change back to the master branch.
+
+```
+git checkout master
+git merge <commit_name>
+```
+
+## Delete a branch
+
+Done using a branch or created one by accident?
+
+Delete the branch by entering:
+`git branch -d <branch_name>`
