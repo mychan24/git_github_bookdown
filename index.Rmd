@@ -1,6 +1,6 @@
 ---
 title: "Git/GitHub Tutorial for Scientists:   \nits not only for programmers"
-author: "Micaela Chan"
+author: "Micaela Chan & Ekarin Pongpipat"
 site: bookdown::bookdown_site
 documentclass: book
 output:
