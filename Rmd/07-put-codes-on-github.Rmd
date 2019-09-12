@@ -7,15 +7,39 @@
 ## Push an existing repository from your local computer
 Go back to the loacl directory, workdir that we made in previous sections. 
 
-> cd ~/Desktop/workdir
+```{r echo=F}
+# Change directory into workdir so the rest of the bash commands will be run in it
+knitr::opts_knit$set(root.dir="~/workdir")
+```
 
-Add the github repo you just made as a remote repository that you want to push your data to
+```{bash}
+cd ~/workdir
+```
 
-> git remote add origin https://github.com/your_username/workdir.git
+Add the github repo you just made as a remote repository that you want to push your data to.
+
+* **Replace** your_username with your github username
+
+```{bash}
+git remote add origin https://github.com/your_username/workdir.git
+```
+
+Check what is listed as your remote repository now. 
+```{bash}
+git remote -v
+```
 
 Push your local repository to your Github
 
-> git push –u origin master
+`git push –u origin master`
+
+```
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 277 bytes | 277.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:your_username/tmp.git
+   e06fb6f..d4a8d31  master -> master
+```
 
 ## BONUS - SSH keys {-}
 Here is a link to help you setup using SSH keys for authentication with Github

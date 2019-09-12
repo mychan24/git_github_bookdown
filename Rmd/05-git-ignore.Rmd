@@ -1,20 +1,32 @@
 # Tell git to ignore files
 Make a file named `.gitignore` (you can also use nano/any-text-editor to do it)
 
-> touch ignore_this.txt
-
-> echo ignore_this.txt >> .gitignore
-
-Try `git add ignore_this.txt`, and you will see git will not add it. 
-```
-The following paths are ignored by one of your .gitignore files:
-ignore_this.txt
-Use -f if you really want to add them.
+```{r echo=F}
+# Change directory into workdir so the rest of the bash commands will be run in it
+knitr::opts_knit$set(root.dir="~/workdir")
 ```
 
-If you want to `add` a suppsoedly ignored file, use `-f`
+Make a file that we would want `git` to ignore
+```{bash}
+touch ignore_this.txt
+```
 
-> git add -f ignore_this.txt
+Add this file to `.gitignore`
+```{bash}
+echo ignore_this.txt >> .gitignore
+```
+
+Try adding a file we told `.gitignore` to not track
+
+```{bash}
+git add ignore_this.txt
+```
+
+If you want to `add` a suppsoedly ignored file, use the `-f` flag
+
+```{bash}
+git add -f ignore_this.txt
+```
 
 ## BONUS - Use wildcard
 You can use wildcard expressions in this file as well. Some common things in a `.gitignore` file are `.*`, `*~`, `~*`, which are often temporary or backup files.

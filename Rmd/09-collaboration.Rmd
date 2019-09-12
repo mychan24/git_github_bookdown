@@ -1,40 +1,64 @@
-# Collaborating (`git fetch & pull`)
+# Collaborating (`git fetch & merge (or pull)`)
 
 **Key terms/commands:**
 
 * **git fetch**: look at the changes that is in your remote repository Github. This commands download the changes into the `.git/` folder so you can compare changes to your local files, but it does not actually modify your files (i.e., files outside of the `.git/` folder). 
 
-* **git pull**: implement the changes you have *fetched* into your local files. 
+* **git merge**: implement the changes you have *fetched* into your local files. 
+
+* **git pull**: `git fetch` + `git merge`. it is recommended that you fetch first, and check that you want to implement the changes, and then merge.
 
 
 ## Setup a fake collaborator, yourself in another directory :) 
 
 Clone the **workdir** repo into your local computer but a different folder as if you have a collaborator
 
-> git clone https://github.com/your_username/workdir.git ~/Desktop/workdir_fake_collab
-	
+`git clone https://github.com/your_username/workdir.git ~/workdir_fake_collab`
+
+```{r echo=F}
+# copy workdir into fakedir using R code that is hidden
+file.copy("~/workdir","~/workdir_fake_collab",recursive=TRUE)
+
+# Change directory into workdir_fake_collab
+knitr::opts_knit$set(root.dir="~/workdir_fake_collab")
+```
+
 Lets pretend you are the collaborator, and you will make some changes and push it to Github
 
-> cd ~/Desktop/workdir_fake_collab
+```{bash}
+cd ~/workdir_fake_collab
 
-> touch foofoo.txt
+touch foofoo.txt
 
-> git add foofoo.txt
+git add foofoo.txt
 
-> git commit -m "Add foofoo.txt"
+git commit -m "Add foofoo.txt"
+```
 
-> git push origin master
+Push this change to Github
+```
+git push origin master
+```
 
 
 Lets check what is in the current folder 
 
-> ls
+```{bash}
+ls
+```
 
 Check what is on the workdir repository on Github. It should contain `foofoo.txt`
 
 But what about the original `workdir` folder? 
 
-> ls ~/Desktop/workdir
+```{bash}
+cd  ~/workdir
+ls
+```
+
+```{r, echo=F}
+knitr::opts_knit$set(root.dir="~/workdir")
+```
 
 `foofoo.txt` should be missing. Now lets say you want to check what changes your collaborator made. 
 
@@ -42,34 +66,45 @@ But what about the original `workdir` folder?
 
 **fetch** the changes your fake collaborator pushed to Github onto your local computer. 
 
-> git fetch
+`git fetch`
+
+Here is an example output from running `git fetch`, exact details will vary.
+```
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:your_username/tmp
+   d4a8d31..09aba9d  master     -> origin/master
+```
 
 NOTE that this does not change the files in your directory. But now you can use `git diff` to see what your collaborator has changed
 
-> git diff master origin/master
+`git diff master origin/master`
 
 If you decided these are changes you want in your local directory (the origainl `workdir`)
 
-> git pull
+`git merge`
 
 ## Notes {-}
-* `git pull` returns message "Already up to date."
-	+ `git pull` impelment the changes that were fetched by `git fetch`, so fetch first. 
+* `git merge` returns message "Already up to date."
+	+ `git merge` impelment the changes that were fetched by `git fetch`, so fetch first. 
 * Will `git fetch` change my stuff? 
 	+ Fetching does not change your local file until your pull. 
 
 ## BONUS - What is my remote? {-}
 What is your remote? 
 
-> git remote -v
+`git remote -v`
 
 Adding a different remote
 
-> git add remote [name] [url]
+`git add remote [name] [url]`
 
 Changing the URL of the remote (e.g., you change the remote repository)
 
-> git remote set-url [name] [newurl]
+`git remote set-url [name] [newurl]`
 
 
 ## Really collaborating on Github

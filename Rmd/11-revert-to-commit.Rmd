@@ -6,53 +6,67 @@
 
 ## Going back to a specific version of a file (`git checkout`)
 
+Make sure you are in your original `workdir`
+```{bash}
+cd ~/workdir
+ls
+```
+
+```{r echo=F}
+# Change directory into workdir so the rest of the bash commands will be run in it
+knitr::opts_knit$set(root.dir="~/workdir")
+```
+
+Make some changes to `foo.txt`
+
+```{bash}
+echo "A whole new world" >> foo.txt
+```
+
+
+Let assume we want to go back to a previous version of foo.txt.
+
 Before going back to a previous state of a file, COMMIT what you have now
 
-> git add foo.txt
+```{bash}
+git add foo.txt
 
-> git commit -m "Add world"
+git commit -m "Add 'A whole new world' to foo.txt"
+```
 
+Recover the `foo.txt` that doesn't have "A whole new world" in it (use HEAD~1 or unique identifier)
 
-Recover the `foo.txt` that doesn't have "world" in it (use HEAD~1 or unique identifier)
-
-> git checkout HEAD~1 foo.txt
+```{bash}
+git checkout HEAD~1 foo.txt
+```
 
 Check what is in `foo.txt`
 
-> cat foo.txt
-
-```
-hello
+```{bash}
+cat foo.txt
 ```
 
-Go back to the state where "world" was in the file
+Go back to the state where "A whole new world" is in the file
 
-> git checkout HEAD foo.txt
+```{bash}
+git checkout HEAD foo.txt
 
-> cat foo.txt
-
-```
-hello
-world
+cat foo.txt
 ```
 
 ## Going back to an entire commit - Detached HEAD (CAUTION)
 
 If you `git checkout` a previous commit without also specifying a file, you will revert the entire directory to a previous condition
 
-> git checkout HEAD~1 
-
-You should get a message like this
+```{bash}
+git checkout HEAD~1 
 ```
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
 
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
- git checkout -b <new-branch-name>
-```
+You should see a warning message about being in a **'detached HEAD'**.
 
 Use `git checkout HEAD` to return to most recent state. IF you checkout a previous commit without first committing your current state, then anything not committed would be lost!!!
+
+
+## Notes {-}
+A [detached HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit) means you are not in a branch, and any changes you make will disappear when you switch back to a real branch (e.g., `git checkout master`). More about branching and how to prevent your works from disappearing in the next chapter!
 

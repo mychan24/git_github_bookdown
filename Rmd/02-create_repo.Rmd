@@ -6,7 +6,7 @@
 * **git init**: A git command that creates a repository (the `.git/` folder).
 
 
-## Create a directory call `workdir` in your Desktop for this tutorial
+## Create a directory call `workdir` in your home directory for this tutorial
 
 ```{bash}
 mkdir ~/workdir

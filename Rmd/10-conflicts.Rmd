@@ -8,41 +8,59 @@
 
 ## Create a conflict
 
-Go into your fake collaborator's folder and add a line to `foo.txt`
+Go into your fake collaborator's folder and add a line to `foo.txt`.
 
-> cd ~/Desktop/workdir_fake_collab
+```{r echo=F}
+# Change directory into workdir so the rest of the bash commands will be run in it
+knitr::opts_knit$set(root.dir="~/workdir_fake_collab")
+```
 
-> echo fake_colab >> foo.txt
+```{bash}
+cd ~/workdir_fake_collab
+echo fake_colab >> foo.txt
+```
 
-Add, commit and push the changes to the remote repository 
+Add & commit your change.
 
-> git add foo.txt
+```{bash}
+git add foo.txt
 
-> git commit -m "Add fake collab line to foo.txt"
+git commit -m "Add fake collab line to foo.txt"
+```
 
-> git push
+Push the change to the remote repository
+`git push`
 
 Now go into the original `workdir` and add a different line to `foo.txt`
+```{r echo=F}
+# Change directory into workdir so the rest of the bash commands will be run in it
+knitr::opts_knit$set(root.dir="~/workdir")
+```
 
-> cd ~/Desktop/workdir
+```{bash}
+cd ~/Desktop/workdir
 
-> echo real_me >> foo.txt
+echo real_me >> foo.txt
+```
 
 Add and commit the change
 
-> git add foo.txt
+```{bash}
+git add foo.txt
 
-> git commit -m "Add real me line to foo.txt"
+git commit -m "Add real me line to foo.txt"
+
+```
 
 Try to push it, and you should get an error
 
-> git push
+`git push`
 
 ## Resolving a conflict
 
 Pull the changes from the remote server, which your fake collab has made a change
 
-> git pull
+`git pull`
 
 This should result in a conflict message. Two versions of the conflicting line is shown: 
 
@@ -51,17 +69,19 @@ This should result in a conflict message. Two versions of the conflicting line i
 
 Edit the file with conflicting lines
 
-> nano foo.txt
+`nano foo.txt`
 
 Then add and commit the edited file
 
-> git add foo.txt
+```
+git add foo.txt
 
-> git commit -m "Merge changes from Github"
+git commit -m "Merge changes from Github"
+```
 
 Push your changes to the remote repo
 
-> git push
+`git push`
 
 Now we pull from the remote repo again
 
