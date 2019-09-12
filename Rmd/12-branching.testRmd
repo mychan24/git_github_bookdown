@@ -30,6 +30,11 @@ If you've never changed a branch. You're likely using the `master` or main branc
 
 It's always a good idea to check what branch you're using:
 
+```{r echo=F}
+# Change directory into workdir so the rest of the bash commands will be run in it
+knitr::opts_knit$set(root.dir="~/workdir")
+```
+
 ```{bash}
 git branch
 ```
