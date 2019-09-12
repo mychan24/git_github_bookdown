@@ -20,3 +20,6 @@ Push your local repository to your Github
 ## BONUS - SSH keys {-}
 Here is a link to help you setup using SSH keys for authentication with Github
 https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account
+
+--- 
+**Your code is now available on Github!**

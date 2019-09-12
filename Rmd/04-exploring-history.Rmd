@@ -56,4 +56,4 @@ index 0000000..e69de29
 ```
 
 ---
-You have now compared different versions of a file using `git diff` and check its changes during a specific commit using `git show`.
+**You have now compared different versions of a file using `git diff` and check its changes during a specific commit using `git show`.**

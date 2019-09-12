@@ -20,4 +20,5 @@ GitHub also comes with tons of tools to help you visualize and manage your repos
 	+ Click **New**
 	+ Enter workdir as the Repository name, click **Create repository**
 
+---
 **You now have an empty remote repository and some instructions to populate it!**
