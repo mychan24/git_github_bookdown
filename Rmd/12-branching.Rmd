@@ -9,43 +9,70 @@ Create a new branch!
 If you've never changed a branch. You're likely using the `master` or main branch.
 
 It's always a good idea to check what branch you're using:
-`git branch`
 
-The one marked with the `*` is the name of branch that you're currently on.
+```{bash}
+git branch
+```
+
+The one marked with the `*` is the name of branch that you're currently on, also known as the active branch.
 
 ## Create new branch
 
 To create a new branch, we can enter:
 `git branch <branch_name>`
 
+For example, if we want to make a test a new function on a new branch, we can create the new branch by entering:
+```{bash}
+git branch cool_new_function
+```
+
+To make sure the branch exists, we can enter:
+```{bash}
+git branch
+```
+
+## Switch between branches (`git commit`)
+
+To switch to the new branch, `git checkout <branch_name>`
+
 Example:
-`git branch cool_new_function`
+```{bash}
+git checkout cool_new_function
+````
 
-## Switch between branches 
+Let's check that we actually switched.
+```{bash}
+git branch
+```
 
-To switch to the new branch:
-`git checkout <branch_name>`
+Notice that the * is now on cool_new_function.
 
-Example:
-`git checkout cool_new_function`
-
-## Create and switch
-
-You can also create and switch to a branch in one command using:
+Note: You can also create and switch to a branch in one command using:
 `git checkout -b <branch_name>`
 
-Example:
-`git checkout -b cool_new_function`
-
 Now that you're in your new branch, you can make, edit, and commit script(s) as you want without affecting anything on the master branch.
+
+```{bash}
+touch cool_new_function.sh
+git add cool_new_function.sh
+git commit -m "added cool new function"
+ls
+```
 
 ## Merge branch
 
 Ready to make the modification available to everyone? Let's merge the change back to the master branch.
 
-```
+First, we have to switch back to the master branch `git checkout master` and then merge the commit `git merge <branch_name>`
+
+```{bash}
 git checkout master
-git merge <commit_name>
+ls
+```
+
+```{bash}
+git merge cool_new_function
+ls
 ```
 
 ## Delete a branch
@@ -54,3 +81,18 @@ Done using a branch or created one by accident?
 
 Delete the branch by entering:
 `git branch -d <branch_name>`
+
+```{bash}
+git branch -d cool_new_function
+```
+
+```{bash}
+git branch
+```
+
+```{bash, include = F}
+# ensure that cool_new_function.sh does not exist
+if [ -f cool_new_function.sh ]; then
+  rm cool_new_function.sh
+fi
+```
