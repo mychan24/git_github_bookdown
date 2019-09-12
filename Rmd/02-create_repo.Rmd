@@ -8,36 +8,35 @@
 
 ## Create a directory call `workdir` in your Desktop for this tutorial
 
-> mkdir ~/Desktop/workdir
+```{bash}
+mkdir ~/Desktop/workdir
+cd ~/Desktop/workdir	
+```
 
-> cd ~/Desktop/workdir	
+```{r echo=F}
+# Change directory into workdir so the rest of the bash commands will be run in it
+knitr::opts_knit$set(root.dir="~/Desktop/workdir")
+```
 
 
 ## Create a repository, where git store versions of your file
 
 Create a repository within a folder
 
-> git init
-
-This is what you will see: 
-```
-Initialized empty Git repository in ~Desktop/workdir/.git/
+```{bash}
+git init
 ```
 
 Check that a hidden folder `.git` has been created
 
-> ls -a 
+```{bash}
+ls -a
+```
 
 Check the status of git
 
-> git status
-
-```
-On branch master
-
-No commits yet
-
-nothing to commit (create/copy files and use "git add" to track)
+```{bash}
+git status
 ```
 
 ***
