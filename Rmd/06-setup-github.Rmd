@@ -18,7 +18,10 @@ GitHub also comes with tons of tools to help you visualize and manage your repos
 * Navigate to https://github.com/your_username
 	+ Click **Repositories** tab
 	+ Click **New**
-	+ Enter workdir as the Repository name, click **Create repository**
+	+ Enter `workdir` as the **Repository name**
+	+ Leave it as **Public**
+	+ Skip the step about making README, we will be importing a repo onto GitHub
+	+ Click **Create repository**
 
 ***
 **You now have an empty remote repository and some instructions to populate it!**
