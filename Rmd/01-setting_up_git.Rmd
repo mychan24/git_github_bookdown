@@ -13,29 +13,35 @@ Notes for Windows users. The above download will install `Git` and `Git Bash`. [
 This user name and email is your identity when using git. Sometimes you don't want to use a personal email, a no-reply email associated with Github is available for that. For now, just use your personal email.
 
 ### Setup username and email
-> git config --global user.name "Your Name"
+```{bash}
+git config --global user.name "Shady Whale"
 
-> git config --global user.email "Your Email"
-
+git config --global user.email "shadywhale@allthewhales.com"
+```
 
 ### Setup the correct linebreaks encoding
 Differnt operating systems (OS) uses different characters to encode new lines (linebreaks). Setting git to make sure it reads the correct type of characters as linebreaks.
 
 **Mac/Linux**
 
-> git config --global core.autocrlf input
+`git config --global core.autocrlf input`
+
 
 **Windows**
 
-> git config --global core.autocrlf true
+`git config --global core.autocrlf true`
 
 ### Setup "nano" as the text editor to interface with git
 The default text editor for git is [Vim](https://eastmanreference.com/a-quick-start-guide-for-beginners-to-the-vim-text-editor), which is difficult to use. [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) is a good alternative that can still handle text editing within the terminal. (You could setup other text editors as your default).
 
-> git config --global core.editor "nano -w"
+```{bash}
+git config --global core.editor "nano -w"
+```
 
 ### Check to ensure settings are correct
-> git config --list
+```{bash}
+git config --list
+```
 
 #### Helpful links to setting up git 
 https://help.github.com/en/articles/configuring-git-to-handle-line-endings#platform-all

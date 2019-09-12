@@ -14,95 +14,74 @@ While the process of adding and then committing seems redundant, overtime it wil
 
 Make sure you are in the correct directory
 
-> cd ~/Desktop/workdir
+```{bash}
+cd ~/workdir
+```
+
+```{r echo=F}
+# Change directory into workdir so the rest of the bash commands will be run in it
+knitr::opts_knit$set(root.dir="~/workdir")
+```
 
 Make a new file `foo.txt`
 
-> touch foo.txt
+```{bash}
+touch foo.txt
+```
 
 Check the status
-
-> git status
-
-```{.html}
-On branch master
-
-No commits yet
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	foo.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
+```{bash}
+git status
 ```
+
 
 If there are **untracked files**, we would like to add those files so git will track their changes:
 
-> git add foo.txt
+```{bash}
+git add foo.txt
+```
 
 Check the status again, `foo.txt` should now be ready to get committed (a commit is a revision to your files).
 
-> git status
-
-```
-On branch master
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-
-	new file:   foo.txt
+```{bash}
+git status
 ```
 
 ## Saving these changes to the repository (`git commit`)
 
 Commit the file and note the identifier for this commit (e.g., `f22b25e`):
 
-> git commit -m "Add foo.txt to repo"
+```{bash}
+git commit -m "Add foo.txt to repo"
+```
 
-```
-[master (root-commit) 4fb0bed] Add foo.txt to repo
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 foo.txt
-```
 
 What have we done so far? Lets check the log, which list all the commits made so far. 
 
-> git log
-
+```{bash}
+git log
 ```
-commit 4fb0bed52e6ab134d72715159857f36ec799863d (HEAD -> master)
-Author: Your Name <something@email.com>
-Date:   Tue Sep 10 19:19:00 2019 -0500
 
-    Add foo.txt to repo
-```
 
 ## BONUS - Checking what has changed before add/commit (`git diff`) {-}
 Add some text to the file `foo.txt`
 
-> echo hello >> foo.txt
+```{bash}
+echo hello >> foo.txt
+```
 
 Check what has changed between your last commit and now:
 
-> git diff
-
-```
-diff --git a/foo.txt b/foo.txt
-index e69de29..ce01362 100644
---- a/foo.txt
-+++ b/foo.txt
-@@ -0,0 +1 @@
-+hello
+```{bash}
+git diff
 ```
 
 Add & commit your changes to `foo.txt`
 
-> git add foo.txt
-
-> git commit -m "Add hello in foo.txt"
+```{bash}
+git add foo.txt
+git commit -m "Add hello in foo.txt"
+```
 
 Check the status and log again using `git status` and `git log`
 
