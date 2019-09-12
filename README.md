@@ -7,6 +7,7 @@ This tutorial can be accessed at: https://mychan24.github.io/git_github_bookdown
 Authors: [@mychan24](https://github.com/mychan24) & [@epongpipat](https://github.com/epongpipat)
 
 ## Acknowledgement
-This tutorial includes a huge amount of 'borrowing' from [Software Carpentry's tutorial](https://swcarpentry.github.io/git-novice/). Software Carpentry makes provides a lot of resources for other courses and teaching in general. Check them out!
 
+* This tutorial includes a huge amount of 'borrowing' from [Software Carpentry's tutorial](https://swcarpentry.github.io/git-novice/). Software Carpentry makes provides a lot of resources for other courses and teaching in general. Check them out!
 
+* Thanks to [@jennywxyz](https://github.com/jennywxyz) for providing feedback and proofreading.
