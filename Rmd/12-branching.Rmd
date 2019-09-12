@@ -1,8 +1,28 @@
 # Branching (`git branch`)
 
+<br>
+
+```{bash, include = F}
+# ensure master is the active branch
+git checkout master
+```
+
+```{bash, include = F}
+# ensure that cool_new_function.sh does not exist
+if [ -f cool_new_function.sh ]; then
+  rm cool_new_function.sh
+fi
+```
+
 Want to create or edit a new script or function but not ready to make it live (available to everyone) just yet? 
 
 Create a new branch! 
+
+<br>
+
+![](git_branch_merge.png)
+
+<br>
 
 ## Check what branch you're on
 
@@ -21,6 +41,8 @@ git branch
 
 The one marked with the `*` is the name of branch that you're currently on, also known as the active branch.
 
+<br>
+
 ## Create new branch
 
 To create a new branch, we can enter:
@@ -35,6 +57,8 @@ To make sure the branch exists, we can enter:
 ```{bash}
 git branch
 ```
+
+<br>
 
 ## Switch between branches (`git commit`)
 
@@ -64,6 +88,8 @@ git commit -m "added cool new function"
 ls
 ```
 
+<br>
+
 ## Merge branch
 
 Ready to make the modification available to everyone? Let's merge the change back to the master branch.
@@ -75,10 +101,16 @@ git checkout master
 ls
 ```
 
+Notice that there is no cool_new_function.sh file in the master branch.
+
 ```{bash}
 git merge cool_new_function
 ls
 ```
+
+The cool_new_function.sh file is now available on the master branch after merging.
+
+<br>
 
 ## Delete a branch
 
@@ -93,11 +125,4 @@ git branch -d cool_new_function
 
 ```{bash}
 git branch
-```
-
-```{bash, include = F}
-# ensure that cool_new_function.sh does not exist
-if [ -f cool_new_function.sh ]; then
-  rm cool_new_function.sh
-fi
 ```
