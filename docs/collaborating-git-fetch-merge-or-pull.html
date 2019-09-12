@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Getting a repository from Github (fork &amp; git clone) | Git/GitHub Tutorial for Scientists: its not only for programmers</title>
+  <title>9 Collaborating (git fetch &amp; merge (or pull)) | Git/GitHub Tutorial for Scientists: its not only for programmers</title>
   <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
 its not only for programmers" />
   <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Getting a repository from Github (fork &amp; git clone) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta property="og:title" content="9 Collaborating (git fetch &amp; merge (or pull)) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@ its not only for programmers" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Getting a repository from Github (fork &amp; git clone) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta name="twitter:title" content="9 Collaborating (git fetch &amp; merge (or pull)) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
   
   
   
@@ -31,8 +31,8 @@ its not only for programmers" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="putting-codes-on-github.html"/>
-<link rel="next" href="collaborating-git-fetch-merge-or-pull.html"/>
+<link rel="prev" href="getting-a-repository-from-github-fork-git-clone.html"/>
+<link rel="next" href="conflicts.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -218,38 +218,113 @@ its not only for programmers</a>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="getting-a-repository-from-github-fork-git-clone" class="section level1">
-<h1><span class="header-section-number">8</span> Getting a repository from Github (fork &amp; <code>git clone</code>)</h1>
+<div id="collaborating-git-fetch-merge-or-pull" class="section level1">
+<h1><span class="header-section-number">9</span> Collaborating (<code>git fetch &amp; merge (or pull)</code>)</h1>
 <p><strong>Key terms/commands:</strong></p>
 <ul>
-<li><strong>fork</strong>: copy someone’s Github repository and putting it in your Github</li>
-<li><strong>clone</strong>: copy (download) a remote repo onto your local computer</li>
+<li><p><strong>git fetch</strong>: look at the changes that is in your remote repository Github. This commands download the changes into the <code>.git/</code> folder so you can compare changes to your local files, but it does not actually modify your files (i.e., files outside of the <code>.git/</code> folder).</p></li>
+<li><p><strong>git merge</strong>: implement the changes you have <em>fetched</em> into your local files.</p></li>
+<li><p><strong>git pull</strong>: <code>git fetch</code> + <code>git merge</code>. it is recommended that you fetch first, and check that you want to implement the changes, and then merge.</p></li>
 </ul>
-<div id="fork-a-repository-remote---remote" class="section level2">
-<h2><span class="header-section-number">8.1</span> Fork a repository (remote -&gt; remote)</h2>
-<p><strong>Fork</strong> this repository that you are reading this README file into your github.</p>
+<div id="setup-a-fake-collaborator-yourself-in-another-directory" class="section level2">
+<h2><span class="header-section-number">9.1</span> Setup a fake collaborator, yourself in another directory :)</h2>
+<p>Clone the <strong>workdir</strong> repo into your local computer but a different folder as if you have a collaborator</p>
+<p><code>git clone https://github.com/your_username/workdir.git ~/workdir_fake_collab</code></p>
+<p>Lets pretend you are the collaborator, and you will make some changes and push it to Github</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-1"></a><span class="bu">cd</span> ~/workdir_fake_collab</span>
+<span id="cb44-2"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-2"></a></span>
+<span id="cb44-3"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-3"></a><span class="fu">touch</span> foofoo.txt</span>
+<span id="cb44-4"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-4"></a></span>
+<span id="cb44-5"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-5"></a><span class="fu">git</span> add foofoo.txt</span>
+<span id="cb44-6"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-6"></a></span>
+<span id="cb44-7"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-7"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add foofoo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master ef937fb] Add foofoo.txt
+##  2 files changed, 0 insertions(+), 0 deletions(-)
+##  create mode 100644 foofoo.txt
+##  create mode 100644 ignore_this.txt</code></pre>
+<p>Push this change to Github</p>
+<pre><code>git push origin master</code></pre>
+<p>Lets check what is in the current folder</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="collaborating-git-fetch-merge-or-pull.html#cb47-1"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## foo.txt
+## foofoo.txt
+## ignore_this.txt</code></pre>
+<p>Check what is on the workdir repository on Github. It should contain <code>foofoo.txt</code></p>
+<p>But what about the original <code>workdir</code> folder?</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="collaborating-git-fetch-merge-or-pull.html#cb49-1"></a><span class="bu">cd</span>  ~/workdir</span>
+<span id="cb49-2"><a href="collaborating-git-fetch-merge-or-pull.html#cb49-2"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## foo.txt
+## ignore_this.txt</code></pre>
+<p><code>foofoo.txt</code> should be missing. Now lets say you want to check what changes your collaborator made.</p>
+</div>
+<div id="implement-the-changes-your-fake-collaborator-made" class="section level2">
+<h2><span class="header-section-number">9.2</span> Implement the changes your fake collaborator made</h2>
+<p><strong>fetch</strong> the changes your fake collaborator pushed to Github onto your local computer.</p>
+<p><code>git fetch</code></p>
+<p>Here is an example output from running <code>git fetch</code>, exact details will vary.</p>
+<pre><code>remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:your_username/tmp
+   d4a8d31..09aba9d  master     -&gt; origin/master</code></pre>
+<p>NOTE that this does not change the files in your directory. But now you can use <code>git diff</code> to see what your collaborator has changed</p>
+<p><code>git diff master origin/master</code></p>
+<p>If you decided these are changes you want in your local directory (the origainl <code>workdir</code>)</p>
+<p><code>git merge</code></p>
+</div>
+<div id="notes-1" class="section level2 unnumbered">
+<h2>Notes</h2>
 <ul>
-<li>Click the <strong>Fork</strong> icon near the top right corner</li>
-<li>…It will take a little while to load…</li>
-<li>You should be redirected to a copy of the same repository in YOUR Github account</li>
+<li><code>git merge</code> returns message “Already up to date.”
+<ul>
+<li><code>git merge</code> impelment the changes that were fetched by <code>git fetch</code>, so fetch first.</li>
+</ul></li>
+<li>Will <code>git fetch</code> change my stuff?
+<ul>
+<li>Fetching does not change your local file until your pull.</li>
+</ul></li>
 </ul>
 </div>
-<div id="cloning-a-repository-remote---local" class="section level2">
-<h2><span class="header-section-number">8.2</span> Cloning a repository (remote -&gt; local)</h2>
-<p><strong>Clone</strong> YOUR git_github_workshop repository onto your local computer:</p>
-<p><code>git clone https://github.com/your_username/git_github_workshop.git ~/git_github_workshop</code></p>
-<hr />
-<p><strong>You have cloned someone else’s repository! This is often how collaboration starts through Github.</strong></p>
+<div id="bonus---what-is-my-remote" class="section level2 unnumbered">
+<h2>BONUS - What is my remote?</h2>
+<p>What is your remote?</p>
+<p><code>git remote -v</code></p>
+<p>Adding a different remote</p>
+<p><code>git add remote [name] [url]</code></p>
+<p>Changing the URL of the remote (e.g., you change the remote repository)</p>
+<p><code>git remote set-url [name] [newurl]</code></p>
+</div>
+<div id="really-collaborating-on-github" class="section level2">
+<h2><span class="header-section-number">9.3</span> Really collaborating on Github</h2>
+<ul>
+<li>Adding collaborators in your Github repository
+<ul>
+<li>Click <strong>Settings</strong></li>
+<li>Click <strong>Collaborators</strong> and add them (they need to be on Github)</li>
+</ul></li>
+<li>More Advance way to collaborate (won’t cover in detail)
+<ul>
+<li><strong>fork</strong> a repository you want to make changes</li>
+<li><strong>git clone</strong> it to your local computer</li>
+<li>Make changes, <strong>git add</strong>, <strong>git commit</strong> and <strong>git push</strong> it to your forked remote repo</li>
+<li>Make a <a href="https://help.github.com/en/articles/creating-a-pull-request">Pull Request</a> in the original repository</li>
+</ul></li>
+</ul>
 
 </div>
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="putting-codes-on-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="collaborating-git-fetch-merge-or-pull.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="getting-a-repository-from-github-fork-git-clone.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conflicts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -279,7 +354,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/08-get-a-repo.Rmd",
+"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/09-collaboration.Rmd",
 "text": "Edit"
 },
 "history": {
