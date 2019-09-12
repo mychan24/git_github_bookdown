@@ -20,7 +20,7 @@ Create a new branch!
 
 <br>
 
-![](git_branch_merge.png)
+![](https://raw.githubusercontent.com/mychan24/git_github_bookdown/master/Rmd/git_branch_merge.png)
 
 <br>
 
