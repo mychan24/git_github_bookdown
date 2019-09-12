@@ -13,7 +13,7 @@ Remember `git init` makes a `.git/` folder in your project. That is a local repo
 GitHub is essentially a remote server that hosts a `.git/` folder. 
 GitHub also comes with tons of tools to help you visualize and manage your repository.
 
-## Create aa repository in on github (a remote repo)
+## Create a repository on github (a remote repo)
 
 * Navigate to https://github.com/your_username
 	+ Click **Repositories** tab

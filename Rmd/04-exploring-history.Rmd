@@ -6,19 +6,19 @@ knitr::opts_knit$set(root.dir="~/workdir")
 ```
 ## Difference between current file and N commit ago (`git diff HEAD`)
 
-Lets add another line to `foo.txt`
+Let's add another line to `foo.txt`
 
 ```{bash}
 echo world >> foo.txt
 ```
 
-Check what is different from your current version of foo.txt compare to the last commit
+Check what is different from your current version of foo.txt compared to the last commit
 
 ```{bash}
 git diff HEAD foo.txt
 ```
 
-Check difference compare to two commits ago
+Check difference compared to two commits ago
 
 ```{bash}
 git diff HEAD~1 foo.txt

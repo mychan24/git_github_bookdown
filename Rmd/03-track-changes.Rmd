@@ -4,7 +4,7 @@ The key commands for documenting changes are `git add` and `git commit`.
 
 **Key terms/commands:** 
 
-* **git add**: Tells git which files' changes you want to document. Formally, this is call adding a file to the "index/staging area".
+* **git add**: Tells git which file's changes you want to document. Formally, this is called adding a file to the "index/staging area".
 
 * **git commit**: Tell git to document the changes you specified using `git add` (i.e., the files in the staging area), with an accompanying **commit message** that you **have to provide** to explain what changes were made. 
 

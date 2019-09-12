@@ -1,6 +1,6 @@
 # Creating a Repository (`git init`)
 
-**Key tersm/command**
+**Key terms/commands**
 
 * **Repository (repo)**: A repo is a `.git/` folder that lives inside the directory that you want to track all the changes you made to it. 
 * **git init**: A git command that creates a repository (the `.git/` folder).

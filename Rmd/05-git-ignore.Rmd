@@ -26,7 +26,7 @@ ignore_this.txt
 Use -f if you really want to add them.
 ```
 
-If you want to `add` a suppsoedly ignored file, use the `-f` flag
+If you want to `add` a supposedly ignored file, use the `-f` flag
 
 ```{bash}
 git add -f ignore_this.txt
