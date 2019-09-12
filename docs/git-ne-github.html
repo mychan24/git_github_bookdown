@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Getting a repository from Github (fork &amp; git clone) | Git/GitHub Tutorial for Scientists: its not only for programmers</title>
+  <title>6 Git \(\ne\) GitHub | Git/GitHub Tutorial for Scientists: its not only for programmers</title>
   <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
 its not only for programmers" />
   <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Getting a repository from Github (fork &amp; git clone) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta property="og:title" content="6 Git \(\ne\) GitHub | Git/GitHub Tutorial for Scientists: its not only for programmers" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@ its not only for programmers" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Getting a repository from Github (fork &amp; git clone) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta name="twitter:title" content="6 Git \(\ne\) GitHub | Git/GitHub Tutorial for Scientists: its not only for programmers" />
   
   
   
@@ -31,8 +31,8 @@ its not only for programmers" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="putting-codes-on-github.html"/>
-<link rel="next" href="collaborating-git-fetch-pull.html"/>
+<link rel="prev" href="tell-git-to-ignore-files.html"/>
+<link rel="next" href="putting-codes-on-github.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -217,30 +217,30 @@ its not only for programmers</a>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="getting-a-repository-from-github-fork-git-clone" class="section level1">
-<h1><span class="header-section-number">8</span> Getting a repository from Github (fork &amp; <code>git clone</code>)</h1>
-<p><strong>Key terms/commands:</strong></p>
+<div id="git-ne-github" class="section level1">
+<h1><span class="header-section-number">6</span> Git <span class="math inline">\(\ne\)</span> GitHub</h1>
+<p>Thus far, everything is within your local computer and done using <code>git</code>. That is the <strong>version control</strong> portion of git, which is important and powerful. However, what makes git a efficient tool for collaboration is its power to share through remote hosts like <strong>GitHub</strong>.</p>
 <ul>
-<li><strong>fork</strong>: copy someone’s Github repository and putting it in your Github</li>
-<li><strong>clone</strong>: copy (download) a remote repo onto your local computer</li>
+<li>GitHub is not the only option, there are other companies that offer free remote hosting, here are a few alterantives <a href="https://bitbucket.org/">Bitbucket</a>, <a href="https://gitlab.com/">Gitlab</a></li>
 </ul>
-<div id="fork-a-repository-remote---remote" class="section level2">
-<h2><span class="header-section-number">8.1</span> Fork a repository (remote -&gt; remote)</h2>
-<p><strong>Fork</strong> this repository that you are reading this README file into your github.</p>
-<ul>
-<li>Click the <strong>Fork</strong> icon near the top right corner</li>
-<li>…It will take a little while to load…</li>
-<li>You should be redirected to a copy of the same repository in YOUR Github account</li>
-</ul>
+<div id="git-is-a-remote-server-that-hosts-a-repository-remote-host" class="section level2">
+<h2><span class="header-section-number">6.1</span> Git is a remote server that hosts a repository (remote host)</h2>
+<p>Remember <code>git init</code> makes a <code>.git/</code> folder in your project. That is a local repository (local=lives on your computer).</p>
+<p>GitHub is essentially a remote server that hosts a <code>.git/</code> folder.
+GitHub also comes with tons of tools to help you visualize and manage your repository.</p>
 </div>
-<div id="cloning-a-repository-remote---local" class="section level2">
-<h2><span class="header-section-number">8.2</span> Cloning a repository (remote -&gt; local)</h2>
-<p><strong>Clone</strong> YOUR git_github_workshop repository onto your local computer:</p>
-<blockquote>
-<p>git clone <a href="https://github.com/your_username/git_github_workshop.git" class="uri">https://github.com/your_username/git_github_workshop.git</a> ~/Desktop/git_github_workshop</p>
-</blockquote>
+<div id="create-aa-repository-in-on-github-a-remote-repo" class="section level2">
+<h2><span class="header-section-number">6.2</span> Create aa repository in on github (a remote repo)</h2>
+<ul>
+<li>Navigate to <a href="https://github.com/your_username" class="uri">https://github.com/your_username</a>
+<ul>
+<li>Click <strong>Repositories</strong> tab</li>
+<li>Click <strong>New</strong></li>
+<li>Enter workdir as the Repository name, click <strong>Create repository</strong></li>
+</ul></li>
+</ul>
 <hr />
-<p><strong>You have cloned someone else’s repository! This is often how collaboration starts through Github.</strong></p>
+<p><strong>You now have an empty remote repository and some instructions to populate it!</strong></p>
 
 </div>
 </div>
@@ -249,8 +249,8 @@ its not only for programmers</a>
           </div>
         </div>
       </div>
-<a href="putting-codes-on-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="collaborating-git-fetch-pull.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tell-git-to-ignore-files.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="putting-codes-on-github.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -280,7 +280,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/08-get-a-repo.Rmd",
+"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/06-setup-github.Rmd",
 "text": "Edit"
 },
 "history": {

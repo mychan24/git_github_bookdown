@@ -19,5 +19,5 @@ If you want to `add` a suppsoedly ignored file, use `-f`
 ## BONUS - Use wildcard
 You can use wildcard expressions in this file as well. Some common things in a `.gitignore` file are `.*`, `*~`, `~*`, which are often temporary or backup files.
 
----
+***
 **There should now be a `.gitignore` file in your directory.**

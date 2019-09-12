@@ -40,5 +40,5 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
----
+***
 You now have a repository (i.e., a `.git/` folder) within a directory that you want to track!

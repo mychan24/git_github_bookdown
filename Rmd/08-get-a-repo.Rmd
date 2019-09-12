@@ -19,5 +19,5 @@
 
 > git clone https://github.com/your_username/git_github_workshop.git ~/Desktop/git_github_workshop
 
----
+***
 **You have cloned someone else's repository! This is often how collaboration starts through Github.**

@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Getting a repository from Github (fork &amp; git clone) | Git/GitHub Tutorial for Scientists: its not only for programmers</title>
+  <title>12 Branching (git branch) | Git/GitHub Tutorial for Scientists: its not only for programmers</title>
   <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
 its not only for programmers" />
   <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Getting a repository from Github (fork &amp; git clone) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta property="og:title" content="12 Branching (git branch) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@ its not only for programmers" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Getting a repository from Github (fork &amp; git clone) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta name="twitter:title" content="12 Branching (git branch) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
   
   
   
@@ -31,8 +31,8 @@ its not only for programmers" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="putting-codes-on-github.html"/>
-<link rel="next" href="collaborating-git-fetch-pull.html"/>
+<link rel="prev" href="revert-to-a-previous-commit-git-checkout.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -217,30 +217,165 @@ its not only for programmers</a>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="getting-a-repository-from-github-fork-git-clone" class="section level1">
-<h1><span class="header-section-number">8</span> Getting a repository from Github (fork &amp; <code>git clone</code>)</h1>
-<p><strong>Key terms/commands:</strong></p>
-<ul>
-<li><strong>fork</strong>: copy someone’s Github repository and putting it in your Github</li>
-<li><strong>clone</strong>: copy (download) a remote repo onto your local computer</li>
-</ul>
-<div id="fork-a-repository-remote---remote" class="section level2">
-<h2><span class="header-section-number">8.1</span> Fork a repository (remote -&gt; remote)</h2>
-<p><strong>Fork</strong> this repository that you are reading this README file into your github.</p>
-<ul>
-<li>Click the <strong>Fork</strong> icon near the top right corner</li>
-<li>…It will take a little while to load…</li>
-<li>You should be redirected to a copy of the same repository in YOUR Github account</li>
-</ul>
+<div id="branching-git-branch" class="section level1">
+<h1><span class="header-section-number">12</span> Branching (<code>git branch</code>)</h1>
+<p>Want to create or edit a new script or function but not ready to make it live (available to everyone) just yet?</p>
+<p>Create a new branch!</p>
+<div id="check-what-branch-youre-on" class="section level2">
+<h2><span class="header-section-number">12.1</span> Check what branch you’re on</h2>
+<p>If you’ve never changed a branch. You’re likely using the <code>master</code> or main branch.</p>
+<p>It’s always a good idea to check what branch you’re using:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="branching-git-branch.html#cb15-1"></a><span class="fu">git</span> branch</span></code></pre></div>
+<pre><code>## * master</code></pre>
+<p>The one marked with the <code>*</code> is the name of branch that you’re currently on, also known as the active branch.</p>
 </div>
-<div id="cloning-a-repository-remote---local" class="section level2">
-<h2><span class="header-section-number">8.2</span> Cloning a repository (remote -&gt; local)</h2>
-<p><strong>Clone</strong> YOUR git_github_workshop repository onto your local computer:</p>
-<blockquote>
-<p>git clone <a href="https://github.com/your_username/git_github_workshop.git" class="uri">https://github.com/your_username/git_github_workshop.git</a> ~/Desktop/git_github_workshop</p>
-</blockquote>
-<hr />
-<p><strong>You have cloned someone else’s repository! This is often how collaboration starts through Github.</strong></p>
+<div id="create-new-branch" class="section level2">
+<h2><span class="header-section-number">12.2</span> Create new branch</h2>
+<p>To create a new branch, we can enter:
+<code>git branch &lt;branch_name&gt;</code></p>
+<p>For example, if we want to make a test a new function on a new branch, we can create the new branch by entering:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="branching-git-branch.html#cb17-1"></a><span class="fu">git</span> branch cool_new_function</span></code></pre></div>
+<p>To make sure the branch exists, we can enter:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="branching-git-branch.html#cb18-1"></a><span class="fu">git</span> branch</span></code></pre></div>
+<pre><code>##   cool_new_function
+## * master</code></pre>
+</div>
+<div id="switch-between-branches-git-commit" class="section level2">
+<h2><span class="header-section-number">12.3</span> Switch between branches (<code>git commit</code>)</h2>
+<p>To switch to the new branch, <code>git checkout &lt;branch_name&gt;</code></p>
+<p>Example:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="branching-git-branch.html#cb20-1"></a><span class="fu">git</span> checkout cool_new_function</span></code></pre></div>
+<pre><code>## Switched to branch &#39;cool_new_function&#39;
+## D    .DS_Store
+## M    Rmd/01-setting_up_git.Rmd
+## M    Rmd/02-create_repo.Rmd
+## M    Rmd/03-track-changes.Rmd
+## M    Rmd/04-exploring-history.Rmd
+## M    Rmd/05-git-ignore.Rmd
+## M    Rmd/06-setup-github.Rmd
+## M    Rmd/07-put-codes-on-github.Rmd
+## M    Rmd/08-get-a-repo.Rmd
+## D    Rmd/cool_new_function.sh
+## D    cool_new_function.sh
+## M    docs/collaborating-git-fetch-pull.html
+## M    docs/conflicts.html
+## M    docs/index.html
+## M    docs/putting-codes-on-github.html
+## M    docs/revert-to-a-previous-commit-git-checkout.html
+## M    docs/search_index.json
+## M    docs/setting-up-git.html
+## M    docs/tell-git-to-ignore-files.html
+## M    docs/tracking-changes-git-add-commit.html</code></pre>
+<p>Let’s check that we actually switched.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="branching-git-branch.html#cb22-1"></a><span class="fu">git</span> branch</span></code></pre></div>
+<pre><code>## * cool_new_function
+##   master</code></pre>
+<p>Notice that the * is now on cool_new_function.</p>
+<p>Note: You can also create and switch to a branch in one command using:
+<code>git checkout -b &lt;branch_name&gt;</code></p>
+<p>Now that you’re in your new branch, you can make, edit, and commit script(s) as you want without affecting anything on the master branch.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="branching-git-branch.html#cb24-1"></a><span class="fu">touch</span> cool_new_function.sh</span>
+<span id="cb24-2"><a href="branching-git-branch.html#cb24-2"></a><span class="fu">git</span> add cool_new_function.sh</span>
+<span id="cb24-3"><a href="branching-git-branch.html#cb24-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;added cool new function&quot;</span></span>
+<span id="cb24-4"><a href="branching-git-branch.html#cb24-4"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## On branch cool_new_function
+## Changes not staged for commit:
+##  deleted:    .DS_Store
+##  modified:   Rmd/01-setting_up_git.Rmd
+##  modified:   Rmd/02-create_repo.Rmd
+##  modified:   Rmd/03-track-changes.Rmd
+##  modified:   Rmd/04-exploring-history.Rmd
+##  modified:   Rmd/05-git-ignore.Rmd
+##  modified:   Rmd/06-setup-github.Rmd
+##  modified:   Rmd/07-put-codes-on-github.Rmd
+##  modified:   Rmd/08-get-a-repo.Rmd
+##  deleted:    Rmd/cool_new_function.sh
+##  modified:   docs/collaborating-git-fetch-pull.html
+##  modified:   docs/conflicts.html
+##  modified:   docs/index.html
+##  modified:   docs/putting-codes-on-github.html
+##  modified:   docs/revert-to-a-previous-commit-git-checkout.html
+##  modified:   docs/search_index.json
+##  modified:   docs/setting-up-git.html
+##  modified:   docs/tell-git-to-ignore-files.html
+##  modified:   docs/tracking-changes-git-add-commit.html
+## 
+## Untracked files:
+##  Rmd/01-setting_up_git.html
+##  Rmd/12-branching.html
+##  docs/branching-git-branch.html
+##  git_github_workshop.Rmd
+## 
+## no changes added to commit
+## DESCRIPTION
+## README.md
+## Rmd
+## _bookdown.yml
+## cool_new_function.sh
+## docs
+## git_github_bookdown.Rproj
+## git_github_workshop.Rmd
+## index.Rmd</code></pre>
+</div>
+<div id="merge-branch" class="section level2">
+<h2><span class="header-section-number">12.4</span> Merge branch</h2>
+<p>Ready to make the modification available to everyone? Let’s merge the change back to the master branch.</p>
+<p>First, we have to switch back to the master branch <code>git checkout master</code> and then merge the commit <code>git merge &lt;branch_name&gt;</code></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="branching-git-branch.html#cb26-1"></a><span class="fu">git</span> checkout master</span>
+<span id="cb26-2"><a href="branching-git-branch.html#cb26-2"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## Switched to branch &#39;master&#39;
+## D    .DS_Store
+## M    Rmd/01-setting_up_git.Rmd
+## M    Rmd/02-create_repo.Rmd
+## M    Rmd/03-track-changes.Rmd
+## M    Rmd/04-exploring-history.Rmd
+## M    Rmd/05-git-ignore.Rmd
+## M    Rmd/06-setup-github.Rmd
+## M    Rmd/07-put-codes-on-github.Rmd
+## M    Rmd/08-get-a-repo.Rmd
+## D    Rmd/cool_new_function.sh
+## M    docs/collaborating-git-fetch-pull.html
+## M    docs/conflicts.html
+## M    docs/index.html
+## M    docs/putting-codes-on-github.html
+## M    docs/revert-to-a-previous-commit-git-checkout.html
+## M    docs/search_index.json
+## M    docs/setting-up-git.html
+## M    docs/tell-git-to-ignore-files.html
+## M    docs/tracking-changes-git-add-commit.html
+## Your branch is ahead of &#39;origin/master&#39; by 1 commit.
+##   (use &quot;git push&quot; to publish your local commits)
+## DESCRIPTION
+## README.md
+## Rmd
+## _bookdown.yml
+## cool_new_function.sh
+## docs
+## git_github_bookdown.Rproj
+## git_github_workshop.Rmd
+## index.Rmd</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="branching-git-branch.html#cb28-1"></a><span class="fu">git</span> merge cool_new_function</span>
+<span id="cb28-2"><a href="branching-git-branch.html#cb28-2"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## Already up to date.
+## DESCRIPTION
+## README.md
+## Rmd
+## _bookdown.yml
+## cool_new_function.sh
+## docs
+## git_github_bookdown.Rproj
+## git_github_workshop.Rmd
+## index.Rmd</code></pre>
+</div>
+<div id="delete-a-branch" class="section level2">
+<h2><span class="header-section-number">12.5</span> Delete a branch</h2>
+<p>Done using a branch or created one by accident?</p>
+<p>Delete the branch by entering:
+<code>git branch -d &lt;branch_name&gt;</code></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="branching-git-branch.html#cb30-1"></a><span class="fu">git</span> branch -d cool_new_function</span></code></pre></div>
+<pre><code>## Deleted branch cool_new_function (was 5e13b4f).</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="branching-git-branch.html#cb32-1"></a><span class="fu">git</span> branch</span></code></pre></div>
+<pre><code>## * master</code></pre>
 
 </div>
 </div>
@@ -249,8 +384,8 @@ its not only for programmers</a>
           </div>
         </div>
       </div>
-<a href="putting-codes-on-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="collaborating-git-fetch-pull.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="revert-to-a-previous-commit-git-checkout.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -280,7 +415,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/08-get-a-repo.Rmd",
+"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/12-branching.Rmd",
 "text": "Edit"
 },
 "history": {

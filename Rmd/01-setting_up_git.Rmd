@@ -40,6 +40,6 @@ The default text editor for git is [Vim](https://eastmanreference.com/a-quick-st
 #### Helpful links to setting up git 
 https://help.github.com/en/articles/configuring-git-to-handle-line-endings#platform-all
 
----
+***
 **Now you should have Git installed on your personal computer (or server), with basic configurations all set and ready to go!**
 
