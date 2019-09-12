@@ -18,8 +18,12 @@ echo ignore_this.txt >> .gitignore
 
 Try adding a file we told `.gitignore` to not track
 
-```{bash}
-git add ignore_this.txt
+`git add ignore_this.txt`
+
+```
+The following paths are ignored by one of your .gitignore files:
+ignore_this.txt
+Use -f if you really want to add them.
 ```
 
 If you want to `add` a suppsoedly ignored file, use the `-f` flag
