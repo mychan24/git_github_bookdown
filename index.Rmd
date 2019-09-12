@@ -75,3 +75,14 @@ The content in this workshop is heavily borrowed from [Software Carpentry's git 
 [Git the Simple Guide](https://rogerdudler.github.io/git-guide/)
 All the necessary commands to use git is in here.
 
+## How to read the book? {-}
+
+All codes/commands and its output are in gray boxes. However, the difference is that the output will always immediately follow the codes/commands and will start with `##`.
+
+For example, if we wanted to run the command `ls` to see what files are in the current directory.
+
+Below is the code
+```{bash}
+ls
+```
+Above is the output
