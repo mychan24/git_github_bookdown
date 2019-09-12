@@ -10,7 +10,7 @@
 Notes for Windows users. The above download will install `Git` and `Git Bash`. [Git Bash](https://www.atlassian.com/git/tutorials/git-bash) gives you a linux-like terminal that runs Bash. Git can also be run from Power Shell, but Git Bash would allow you to run every command in this tutorial (e.g., functions such as `touch` or `echo` for making file and printing lines in a terminal). 
 	
 ## Configuring git 
-This user name and email is your identity when using git. Sometimes you don't want to use a personal email, a no-reply email associated with Github is available for that. For now, just use your personal email.
+This user name and email is your identity when using git. Sometimes you don't want to use a personal email, a [no-reply email associated with Github](https://help.github.com/en/articles/setting-your-commit-email-address#setting-your-commit-email-address-on-github) is available for that. For now, just use your personal email.
 
 ### Setup username and email
 ```{bash}
