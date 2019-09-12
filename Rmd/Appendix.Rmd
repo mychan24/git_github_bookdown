@@ -1,0 +1,32 @@
+# (PART) Appendix {-}
+
+
+
+```{r echo=F}
+# Change directory out of workdir so we can remove it
+knitr::opts_knit$set(root.dir="~/")
+```
+
+```{bash cleanup, include = F}
+## Recover original git config username and email (if there was one)
+## Remove workdir(s) and files
+
+nufile=$(echo ~/workdir_tmp/username.txt)
+nefile=$(echo ~/workdir_tmp/email.txt)
+
+if [[ -f "$nufile" ]];
+then
+  git config --global user.name "$(cat $nufile)"
+fi
+
+if [[ -f "$nefile" ]];
+then
+  git config --global user.email "$(cat $nefile)"
+fi
+
+rm -rf ~/workdir
+rm -rf ~/workdir_fake_collab
+rm -rf ~/workdir_tmp
+
+```
+

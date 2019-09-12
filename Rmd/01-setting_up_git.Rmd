@@ -13,6 +13,27 @@ Notes for Windows users. The above download will install `Git` and `Git Bash`. [
 This user name and email is your identity when using git. Sometimes you don't want to use a personal email, a [no-reply email associated with Github](https://help.github.com/en/articles/setting-your-commit-email-address#setting-your-commit-email-address-on-github) is available for that. For now, just use your personal email.
 
 ### Setup username and email
+```{bash, include = F}
+## save your original user.name and email into text files. 
+## These will be restored after the entire Rmd is knitted.
+
+nu=$(git config --list | grep user.name | wc -l)
+ne=$(git config --list | grep user.email | wc -l)
+
+mkdir ~/workdir_tmp
+
+if [ $nu > 0 ];
+then
+  git config --list | grep user.name | cut -d"=" -f 2 > ~/workdir_tmp/username.txt
+fi
+
+if [ $ne > 0 ];
+then
+  git config --list | grep user.email | cut -d"=" -f 2 > ~/workdir_tmp/email.txt
+fi
+
+```
+
 ```{bash}
 git config --global user.name "Shady Whale"
 
