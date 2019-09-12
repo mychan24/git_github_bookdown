@@ -9,13 +9,13 @@
 ## Create a directory call `workdir` in your Desktop for this tutorial
 
 ```{bash}
-mkdir ~/Desktop/workdir
-cd ~/Desktop/workdir	
+mkdir ~/workdir
+cd ~/workdir	
 ```
 
 ```{r echo=F}
 # Change directory into workdir so the rest of the bash commands will be run in it
-knitr::opts_knit$set(root.dir="~/Desktop/workdir")
+knitr::opts_knit$set(root.dir="~/workdir")
 ```
 
 
