@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -231,28 +233,28 @@ its not only for programmers</a>
 <p>Clone the <strong>workdir</strong> repo into your local computer but a different folder as if you have a collaborator</p>
 <p><code>git clone https://github.com/your_username/workdir.git ~/workdir_fake_collab</code></p>
 <p>Lets pretend you are the collaborator, and you will make some changes and push it to Github</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-1"></a><span class="bu">cd</span> ~/workdir_fake_collab</span>
-<span id="cb44-2"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-2"></a></span>
-<span id="cb44-3"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-3"></a><span class="fu">touch</span> foofoo.txt</span>
-<span id="cb44-4"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-4"></a></span>
-<span id="cb44-5"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-5"></a><span class="fu">git</span> add foofoo.txt</span>
-<span id="cb44-6"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-6"></a></span>
-<span id="cb44-7"><a href="collaborating-git-fetch-merge-or-pull.html#cb44-7"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add foofoo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master ef937fb] Add foofoo.txt
+<div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="collaborating-git-fetch-merge-or-pull.html#cb46-1"></a><span class="bu">cd</span> ~/workdir_fake_collab</span>
+<span id="cb46-2"><a href="collaborating-git-fetch-merge-or-pull.html#cb46-2"></a></span>
+<span id="cb46-3"><a href="collaborating-git-fetch-merge-or-pull.html#cb46-3"></a><span class="fu">touch</span> foofoo.txt</span>
+<span id="cb46-4"><a href="collaborating-git-fetch-merge-or-pull.html#cb46-4"></a></span>
+<span id="cb46-5"><a href="collaborating-git-fetch-merge-or-pull.html#cb46-5"></a><span class="fu">git</span> add foofoo.txt</span>
+<span id="cb46-6"><a href="collaborating-git-fetch-merge-or-pull.html#cb46-6"></a></span>
+<span id="cb46-7"><a href="collaborating-git-fetch-merge-or-pull.html#cb46-7"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add foofoo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master 3c90d5f] Add foofoo.txt
 ##  2 files changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 foofoo.txt
 ##  create mode 100644 ignore_this.txt</code></pre>
 <p>Push this change to Github</p>
 <pre><code>git push origin master</code></pre>
 <p>Lets check what is in the current folder</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="collaborating-git-fetch-merge-or-pull.html#cb47-1"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="collaborating-git-fetch-merge-or-pull.html#cb49-1"></a><span class="fu">ls</span></span></code></pre></div>
 <pre><code>## foo.txt
 ## foofoo.txt
 ## ignore_this.txt</code></pre>
 <p>Check what is on the workdir repository on Github. It should contain <code>foofoo.txt</code></p>
 <p>But what about the original <code>workdir</code> folder?</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="collaborating-git-fetch-merge-or-pull.html#cb49-1"></a><span class="bu">cd</span>  ~/workdir</span>
-<span id="cb49-2"><a href="collaborating-git-fetch-merge-or-pull.html#cb49-2"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="collaborating-git-fetch-merge-or-pull.html#cb51-1"></a><span class="bu">cd</span>  ~/workdir</span>
+<span id="cb51-2"><a href="collaborating-git-fetch-merge-or-pull.html#cb51-2"></a><span class="fu">ls</span></span></code></pre></div>
 <pre><code>## foo.txt
 ## ignore_this.txt</code></pre>
 <p><code>foofoo.txt</code> should be missing. Now lets say you want to check what changes your collaborator made.</p>

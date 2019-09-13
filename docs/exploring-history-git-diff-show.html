@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -223,9 +225,9 @@ its not only for programmers</a>
 <div id="difference-between-current-file-and-n-commit-ago-git-diff-head" class="section level2">
 <h2><span class="header-section-number">4.1</span> Difference between current file and N commit ago (<code>git diff HEAD</code>)</h2>
 <p>Lets add another line to <code>foo.txt</code></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="exploring-history-git-diff-show.html#cb28-1"></a><span class="bu">echo</span> world <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="exploring-history-git-diff-show.html#cb30-1"></a><span class="bu">echo</span> world <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
 <p>Check what is different from your current version of foo.txt compare to the last commit</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="exploring-history-git-diff-show.html#cb29-1"></a><span class="fu">git</span> diff HEAD foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="exploring-history-git-diff-show.html#cb31-1"></a><span class="fu">git</span> diff HEAD foo.txt</span></code></pre></div>
 <pre><code>## diff --git a/foo.txt b/foo.txt
 ## index ce01362..94954ab 100644
 ## --- a/foo.txt
@@ -234,7 +236,7 @@ its not only for programmers</a>
 ##  hello
 ## +world</code></pre>
 <p>Check difference compare to two commits ago</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="exploring-history-git-diff-show.html#cb31-1"></a><span class="fu">git</span> diff HEAD~1 foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="exploring-history-git-diff-show.html#cb33-1"></a><span class="fu">git</span> diff HEAD~1 foo.txt</span></code></pre></div>
 <pre><code>## diff --git a/foo.txt b/foo.txt
 ## index e69de29..94954ab 100644
 ## --- a/foo.txt
@@ -248,10 +250,10 @@ its not only for programmers</a>
 <div id="what-was-done-in-____-commit-git-show" class="section level2">
 <h2><span class="header-section-number">4.2</span> What was done in ____ commit? (<code>git show</code>)</h2>
 <p>Sometimes we want to check what was done during a certain commit (instead of comparing differences)</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="exploring-history-git-diff-show.html#cb33-1"></a><span class="fu">git</span> show HEAD~1 foo.txt</span></code></pre></div>
-<pre><code>## commit 8547a38777844320ca4175d4ce6df9220cf59fa6
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="exploring-history-git-diff-show.html#cb35-1"></a><span class="fu">git</span> show HEAD~1 foo.txt</span></code></pre></div>
+<pre><code>## commit 0be3530be887f8e6b9ae42a6b2dcabb90ae5e19b
 ## Author: Shady Whale &lt;shadywhale@allthewhales.com&gt;
-## Date:   Thu Sep 12 16:03:06 2019 -0500
+## Date:   Thu Sep 12 17:36:05 2019 -0500
 ## 
 ##     Add foo.txt to repo
 ## 

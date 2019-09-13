@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -225,14 +227,14 @@ its not only for programmers</a>
 <div id="push-an-existing-repository-from-your-local-computer" class="section level2">
 <h2><span class="header-section-number">7.1</span> Push an existing repository from your local computer</h2>
 <p>Go back to the loacl directory, workdir that we made in previous sections.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="putting-codes-on-github.html#cb39-1"></a><span class="bu">cd</span> ~/workdir</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="putting-codes-on-github.html#cb41-1"></a><span class="bu">cd</span> ~/workdir</span></code></pre></div>
 <p>Add the github repo you just made as a remote repository that you want to push your data to.</p>
 <ul>
 <li><strong>Replace</strong> your_username with your github username</li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="putting-codes-on-github.html#cb40-1"></a><span class="fu">git</span> remote add origin https://github.com/your_username/workdir.git</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="putting-codes-on-github.html#cb42-1"></a><span class="fu">git</span> remote add origin https://github.com/your_username/workdir.git</span></code></pre></div>
 <p>Check what is listed as your remote repository now.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="putting-codes-on-github.html#cb41-1"></a><span class="fu">git</span> remote -v</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="putting-codes-on-github.html#cb43-1"></a><span class="fu">git</span> remote -v</span></code></pre></div>
 <pre><code>## origin   https://github.com/your_username/workdir.git (fetch)
 ## origin   https://github.com/your_username/workdir.git (push)</code></pre>
 <p>Push your local repository to your Github</p>

@@ -20,6 +20,11 @@ output:
 
 The goal of this tutorial is to help scientists with no formal programming background to **(1) start using [git](https://git-scm.com/) locally for [version-control](https://en.wikipedia.org/wiki/Version_control) of your code**, and **(2) begin using [GitHub](https://github.com) to share your code and collaborate with others.**
 
+
+Git for version control      |  GitHub for sharing your code
+:-------------------------:|:-------------------------:
+![](img/Git-Logo-2Color.png)  |  ![](img/GitHub_Logo.png)
+
 Note: If we try to wait until we have perfect codes to share, more likely than not, we will end up never sharing them.
 
 ## Why is git important for scientists? {-} 
@@ -45,6 +50,7 @@ Collaborator BigName wants to know what preprocessing parameters were used in yo
 ¯\\\_(._.)\_/¯
 
 ![Saving something as Final.doc is bad...but Final_script.R is just as bad](http://phdcomics.com/comics/archive/phd101212s.gif "Final.doc")
+Image Credit: [PhD Comic](http://phdcomics.com/comics/archive.php?comicid=1531)
 
 
 ### II. Git and Remote Hosts (e.g., GitHub) makes sharing/collaborating easier {-} 

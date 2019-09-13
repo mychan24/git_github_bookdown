@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -227,29 +229,29 @@ its not only for programmers</a>
 <div id="going-back-to-a-specific-version-of-a-file-git-checkout" class="section level2">
 <h2><span class="header-section-number">11.1</span> Going back to a specific version of a file (<code>git checkout</code>)</h2>
 <p>Make sure you are in your original <code>workdir</code></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb59-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb59-1"></a><span class="bu">cd</span> ~/workdir</span>
-<span id="cb59-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb59-2"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb61-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb61-1"></a><span class="bu">cd</span> ~/workdir</span>
+<span id="cb61-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb61-2"></a><span class="fu">ls</span></span></code></pre></div>
 <pre><code>## foo.txt
 ## ignore_this.txt</code></pre>
 <p>Make some changes to <code>foo.txt</code></p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb61-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb61-1"></a><span class="bu">echo</span> <span class="st">&quot;A whole new world&quot;</span> <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb63-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb63-1"></a><span class="bu">echo</span> <span class="st">&quot;A whole new world&quot;</span> <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
 <p>Let assume we want to go back to a previous version of foo.txt.</p>
 <p>Before going back to a previous state of a file, COMMIT what you have now</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb62-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb62-1"></a><span class="fu">git</span> add foo.txt</span>
-<span id="cb62-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb62-2"></a></span>
-<span id="cb62-3"><a href="revert-to-a-previous-commit-git-checkout.html#cb62-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add &#39;A whole new world&#39; to foo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master d33d920] Add &#39;A whole new world&#39; to foo.txt
+<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb64-1"></a><span class="fu">git</span> add foo.txt</span>
+<span id="cb64-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb64-2"></a></span>
+<span id="cb64-3"><a href="revert-to-a-previous-commit-git-checkout.html#cb64-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add &#39;A whole new world&#39; to foo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master 3a24e51] Add &#39;A whole new world&#39; to foo.txt
 ##  1 file changed, 1 insertion(+)</code></pre>
 <p>Recover the <code>foo.txt</code> that doesn’t have “A whole new world” in it (use HEAD~1 or unique identifier)</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb64-1"></a><span class="fu">git</span> checkout HEAD~1 foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb66-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb66-1"></a><span class="fu">git</span> checkout HEAD~1 foo.txt</span></code></pre></div>
 <p>Check what is in <code>foo.txt</code></p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb65-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb65-1"></a><span class="fu">cat</span> foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb67-1"></a><span class="fu">cat</span> foo.txt</span></code></pre></div>
 <pre><code>## hello
 ## world</code></pre>
 <p>Go back to the state where “A whole new world” is in the file</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb67-1"></a><span class="fu">git</span> checkout HEAD foo.txt</span>
-<span id="cb67-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb67-2"></a></span>
-<span id="cb67-3"><a href="revert-to-a-previous-commit-git-checkout.html#cb67-3"></a><span class="fu">cat</span> foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb69-1"></a><span class="fu">git</span> checkout HEAD foo.txt</span>
+<span id="cb69-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb69-2"></a></span>
+<span id="cb69-3"><a href="revert-to-a-previous-commit-git-checkout.html#cb69-3"></a><span class="fu">cat</span> foo.txt</span></code></pre></div>
 <pre><code>## hello
 ## world
 ## A whole new world</code></pre>
@@ -257,7 +259,7 @@ its not only for programmers</a>
 <div id="going-back-to-an-entire-commit---detached-head-caution" class="section level2">
 <h2><span class="header-section-number">11.2</span> Going back to an entire commit - Detached HEAD (CAUTION)</h2>
 <p>If you <code>git checkout</code> a previous commit without also specifying a file, you will revert the entire directory to a previous condition</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb69-1"></a><span class="fu">git</span> checkout HEAD~1 </span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb71-1"></a><span class="fu">git</span> checkout HEAD~1 </span></code></pre></div>
 <pre><code>## Note: checking out &#39;HEAD~1&#39;.
 ## 
 ## You are in &#39;detached HEAD&#39; state. You can look around, make experimental
@@ -269,7 +271,7 @@ its not only for programmers</a>
 ## 
 ##   git checkout -b &lt;new-branch-name&gt;
 ## 
-## HEAD is now at 522697e Add real me line to foo.txt</code></pre>
+## HEAD is now at 3453cfc Add real me line to foo.txt</code></pre>
 <p>You should see a warning message about being in a <strong>‘detached HEAD’</strong>.</p>
 <p>Use <code>git checkout HEAD</code> to return to most recent state. IF you checkout a previous commit without first committing your current state, then anything not committed would be lost!!!</p>
 </div>

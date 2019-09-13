@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -223,18 +225,18 @@ its not only for programmers</a>
 <p>The key commands for documenting changes are <code>git add</code> and <code>git commit</code>.</p>
 <p><strong>Key terms/commands:</strong></p>
 <ul>
-<li><p><strong>git add</strong>: Tells git which files’ changes you want to document. Formally, this is call adding a file to the “index/staging area”.</p></li>
+<li><p><strong>git add</strong>: Tells git which file’s changes you want to document. Formally, this is called adding a file to the “index/staging area”.</p></li>
 <li><p><strong>git commit</strong>: Tell git to document the changes you specified using <code>git add</code> (i.e., the files in the staging area), with an accompanying <strong>commit message</strong> that you <strong>have to provide</strong> to explain what changes were made.</p></li>
 </ul>
 <p>While the process of adding and then committing seems redundant, overtime it will be apparent why we don’t always just commit ALL changes that have been made to your files, and how the ‘mandatory’ commit message creates a good documentation for your project.</p>
 <div id="adding-new-filesmodification-git-add" class="section level2">
 <h2><span class="header-section-number">3.1</span> Adding new files/modification (<code>git add</code>)</h2>
 <p>Make sure you are in the correct directory</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="tracking-changes-git-add-commit.html#cb12-1"></a><span class="bu">cd</span> ~/workdir</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="tracking-changes-git-add-commit.html#cb14-1"></a><span class="bu">cd</span> ~/workdir</span></code></pre></div>
 <p>Make a new file <code>foo.txt</code></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="tracking-changes-git-add-commit.html#cb13-1"></a><span class="fu">touch</span> foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="tracking-changes-git-add-commit.html#cb15-1"></a><span class="fu">touch</span> foo.txt</span></code></pre></div>
 <p>Check the status</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="tracking-changes-git-add-commit.html#cb14-1"></a><span class="fu">git</span> status</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="tracking-changes-git-add-commit.html#cb16-1"></a><span class="fu">git</span> status</span></code></pre></div>
 <pre><code>## On branch master
 ## 
 ## No commits yet
@@ -246,9 +248,9 @@ its not only for programmers</a>
 ## 
 ## nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
 <p>If there are <strong>untracked files</strong>, we would like to add those files so git will track their changes:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="tracking-changes-git-add-commit.html#cb16-1"></a><span class="fu">git</span> add foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="tracking-changes-git-add-commit.html#cb18-1"></a><span class="fu">git</span> add foo.txt</span></code></pre></div>
 <p>Check the status again, <code>foo.txt</code> should now be ready to get committed (a commit is a revision to your files).</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="tracking-changes-git-add-commit.html#cb17-1"></a><span class="fu">git</span> status</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="tracking-changes-git-add-commit.html#cb19-1"></a><span class="fu">git</span> status</span></code></pre></div>
 <pre><code>## On branch master
 ## 
 ## No commits yet
@@ -261,24 +263,24 @@ its not only for programmers</a>
 <div id="saving-these-changes-to-the-repository-git-commit" class="section level2">
 <h2><span class="header-section-number">3.2</span> Saving these changes to the repository (<code>git commit</code>)</h2>
 <p>Commit the file and note the identifier for this commit (e.g., <code>f22b25e</code>):</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="tracking-changes-git-add-commit.html#cb19-1"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add foo.txt to repo&quot;</span></span></code></pre></div>
-<pre><code>## [master (root-commit) 8547a38] Add foo.txt to repo
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="tracking-changes-git-add-commit.html#cb21-1"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add foo.txt to repo&quot;</span></span></code></pre></div>
+<pre><code>## [master (root-commit) 0be3530] Add foo.txt to repo
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 foo.txt</code></pre>
 <p>What have we done so far? Lets check the log, which list all the commits made so far.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="tracking-changes-git-add-commit.html#cb21-1"></a><span class="fu">git</span> log</span></code></pre></div>
-<pre><code>## commit 8547a38777844320ca4175d4ce6df9220cf59fa6
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="tracking-changes-git-add-commit.html#cb23-1"></a><span class="fu">git</span> log</span></code></pre></div>
+<pre><code>## commit 0be3530be887f8e6b9ae42a6b2dcabb90ae5e19b
 ## Author: Shady Whale &lt;shadywhale@allthewhales.com&gt;
-## Date:   Thu Sep 12 16:03:06 2019 -0500
+## Date:   Thu Sep 12 17:36:05 2019 -0500
 ## 
 ##     Add foo.txt to repo</code></pre>
 </div>
 <div id="bonus---checking-what-has-changed-before-addcommit-git-diff" class="section level2 unnumbered">
 <h2>BONUS - Checking what has changed before add/commit (<code>git diff</code>)</h2>
 <p>Add some text to the file <code>foo.txt</code></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="tracking-changes-git-add-commit.html#cb23-1"></a><span class="bu">echo</span> hello <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="tracking-changes-git-add-commit.html#cb25-1"></a><span class="bu">echo</span> hello <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
 <p>Check what has changed between your last commit and now:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="tracking-changes-git-add-commit.html#cb24-1"></a><span class="fu">git</span> diff</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="tracking-changes-git-add-commit.html#cb26-1"></a><span class="fu">git</span> diff</span></code></pre></div>
 <pre><code>## diff --git a/foo.txt b/foo.txt
 ## index e69de29..ce01362 100644
 ## --- a/foo.txt
@@ -286,9 +288,9 @@ its not only for programmers</a>
 ## @@ -0,0 +1 @@
 ## +hello</code></pre>
 <p>Add &amp; commit your changes to <code>foo.txt</code></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="tracking-changes-git-add-commit.html#cb26-1"></a><span class="fu">git</span> add foo.txt</span>
-<span id="cb26-2"><a href="tracking-changes-git-add-commit.html#cb26-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add hello in foo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master e6ce3b3] Add hello in foo.txt
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="tracking-changes-git-add-commit.html#cb28-1"></a><span class="fu">git</span> add foo.txt</span>
+<span id="cb28-2"><a href="tracking-changes-git-add-commit.html#cb28-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add hello in foo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master 1f8bd52] Add hello in foo.txt
 ##  1 file changed, 1 insertion(+)</code></pre>
 <p>Check the status and log again using <code>git status</code> and <code>git log</code></p>
 </div>

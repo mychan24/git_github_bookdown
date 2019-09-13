@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -227,25 +229,25 @@ its not only for programmers</a>
 <div id="create-a-conflict" class="section level2">
 <h2><span class="header-section-number">10.1</span> Create a conflict</h2>
 <p>Go into your fake collaborator’s folder and add a line to <code>foo.txt</code>.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="conflicts.html#cb52-1"></a><span class="bu">cd</span> ~/workdir_fake_collab</span>
-<span id="cb52-2"><a href="conflicts.html#cb52-2"></a><span class="bu">echo</span> fake_colab <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="conflicts.html#cb54-1"></a><span class="bu">cd</span> ~/workdir_fake_collab</span>
+<span id="cb54-2"><a href="conflicts.html#cb54-2"></a><span class="bu">echo</span> fake_colab <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
 <p>Add &amp; commit your change.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="conflicts.html#cb53-1"></a><span class="fu">git</span> add foo.txt</span>
-<span id="cb53-2"><a href="conflicts.html#cb53-2"></a></span>
-<span id="cb53-3"><a href="conflicts.html#cb53-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add fake collab line to foo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master 62334ce] Add fake collab line to foo.txt
+<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="conflicts.html#cb55-1"></a><span class="fu">git</span> add foo.txt</span>
+<span id="cb55-2"><a href="conflicts.html#cb55-2"></a></span>
+<span id="cb55-3"><a href="conflicts.html#cb55-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add fake collab line to foo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master 4ad438f] Add fake collab line to foo.txt
 ##  1 file changed, 2 insertions(+)</code></pre>
 <p>Push the change to the remote repository
 <code>git push</code></p>
 <p>Now go into the original <code>workdir</code> and add a different line to <code>foo.txt</code></p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="conflicts.html#cb55-1"></a><span class="bu">cd</span> ~/Desktop/workdir</span>
-<span id="cb55-2"><a href="conflicts.html#cb55-2"></a></span>
-<span id="cb55-3"><a href="conflicts.html#cb55-3"></a><span class="bu">echo</span> real_me <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb57-1"><a href="conflicts.html#cb57-1"></a><span class="bu">cd</span> ~/Desktop/workdir</span>
+<span id="cb57-2"><a href="conflicts.html#cb57-2"></a></span>
+<span id="cb57-3"><a href="conflicts.html#cb57-3"></a><span class="bu">echo</span> real_me <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
 <p>Add and commit the change</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb56-1"><a href="conflicts.html#cb56-1"></a><span class="fu">git</span> add foo.txt</span>
-<span id="cb56-2"><a href="conflicts.html#cb56-2"></a></span>
-<span id="cb56-3"><a href="conflicts.html#cb56-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add real me line to foo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master 522697e] Add real me line to foo.txt
+<div class="sourceCode" id="cb58"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb58-1"><a href="conflicts.html#cb58-1"></a><span class="fu">git</span> add foo.txt</span>
+<span id="cb58-2"><a href="conflicts.html#cb58-2"></a></span>
+<span id="cb58-3"><a href="conflicts.html#cb58-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add real me line to foo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master 3453cfc] Add real me line to foo.txt
 ##  2 files changed, 1 insertion(+)
 ##  create mode 100644 ignore_this.txt</code></pre>
 <p>Try to push it, and you should get an error</p>

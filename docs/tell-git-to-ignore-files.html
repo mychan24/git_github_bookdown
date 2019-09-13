@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -222,16 +224,16 @@ its not only for programmers</a>
 <h1><span class="header-section-number">5</span> Tell git to ignore files</h1>
 <p>Make a file named <code>.gitignore</code> (you can also use nano/any-text-editor to do it)</p>
 <p>Make a file that we would want <code>git</code> to ignore</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="tell-git-to-ignore-files.html#cb35-1"></a><span class="fu">touch</span> ignore_this.txt</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="tell-git-to-ignore-files.html#cb37-1"></a><span class="fu">touch</span> ignore_this.txt</span></code></pre></div>
 <p>Add this file to <code>.gitignore</code></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="tell-git-to-ignore-files.html#cb36-1"></a><span class="bu">echo</span> ignore_this.txt <span class="op">&gt;&gt;</span> .gitignore</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="tell-git-to-ignore-files.html#cb38-1"></a><span class="bu">echo</span> ignore_this.txt <span class="op">&gt;&gt;</span> .gitignore</span></code></pre></div>
 <p>Try adding a file we told <code>.gitignore</code> to not track</p>
 <p><code>git add ignore_this.txt</code></p>
 <pre><code>The following paths are ignored by one of your .gitignore files:
 ignore_this.txt
 Use -f if you really want to add them.</code></pre>
 <p>If you want to <code>add</code> a suppsoedly ignored file, use the <code>-f</code> flag</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="tell-git-to-ignore-files.html#cb38-1"></a><span class="fu">git</span> add -f ignore_this.txt</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="tell-git-to-ignore-files.html#cb40-1"></a><span class="fu">git</span> add -f ignore_this.txt</span></code></pre></div>
 <div id="bonus---use-wildcard" class="section level2">
 <h2><span class="header-section-number">5.1</span> BONUS - Use wildcard</h2>
 <p>You can use wildcard expressions in this file as well. Some common things in a <code>.gitignore</code> file are <code>.*</code>, <code>*~</code>, <code>~*</code>, which are often temporary or backup files.</p>

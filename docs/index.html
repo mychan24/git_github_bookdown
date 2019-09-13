@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -165,7 +166,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II GitHub and Other Remote Hosts</b></span></li>
 <li class="chapter" data-level="6" data-path="git-ne-github.html"><a href="git-ne-github.html"><i class="fa fa-check"></i><b>6</b> Git <span class="math inline">\(\ne\)</span> GitHub</a><ul>
 <li class="chapter" data-level="6.1" data-path="git-ne-github.html"><a href="git-ne-github.html#git-is-a-remote-server-that-hosts-a-repository-remote-host"><i class="fa fa-check"></i><b>6.1</b> Git is a remote server that hosts a repository (remote host)</a></li>
-<li class="chapter" data-level="6.2" data-path="git-ne-github.html"><a href="git-ne-github.html#create-aa-repository-in-on-github-a-remote-repo"><i class="fa fa-check"></i><b>6.2</b> Create aa repository in on github (a remote repo)</a></li>
+<li class="chapter" data-level="6.2" data-path="git-ne-github.html"><a href="git-ne-github.html#create-a-repository-on-github-a-remote-repo"><i class="fa fa-check"></i><b>6.2</b> Create a repository on github (a remote repo)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html"><i class="fa fa-check"></i><b>7</b> Putting codes on Github</a><ul>
 <li class="chapter" data-level="7.1" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html#push-an-existing-repository-from-your-local-computer"><i class="fa fa-check"></i><b>7.1</b> Push an existing repository from your local computer</a></li>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -228,6 +230,20 @@ its not only for programmers</h1>
 <div id="what-is-this-gitgithub-tutorial-about" class="section level2 unnumbered">
 <h2>What is this Git/GitHub Tutorial about?</h2>
 <p>The goal of this tutorial is to help scientists with no formal programming background to <strong>(1) start using <a href="https://git-scm.com/">git</a> locally for <a href="https://en.wikipedia.org/wiki/Version_control">version-control</a> of your code</strong>, and <strong>(2) begin using <a href="https://github.com">GitHub</a> to share your code and collaborate with others.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Git for version control</th>
+<th align="center">GitHub for sharing your code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="img/Git-Logo-2Color.png" /></td>
+<td align="center"><img src="img/GitHub_Logo.png" /></td>
+</tr>
+</tbody>
+</table>
 <p>Note: If we try to wait until we have perfect codes to share, more likely than not, we will end up never sharing them.</p>
 </div>
 <div id="why-is-git-important-for-scientists" class="section level2 unnumbered">
@@ -251,10 +267,8 @@ its not only for programmers</h1>
 <h4>Scenario C: We made changes a long time ago…</h4>
 <p>Collaborator BigName wants to know what preprocessing parameters were used in your manuscript from 5 years ago. You have since changed multiple parameters in your default processing pipeline.
 ¯\_(._.)_/¯</p>
-<div class="figure">
-<img src="http://phdcomics.com/comics/archive/phd101212s.gif" title="Final.doc" alt="" />
-<p class="caption">Saving something as Final.doc is bad…but Final_script.R is just as bad</p>
-</div>
+<p><img src="http://phdcomics.com/comics/archive/phd101212s.gif" title="Final.doc" alt="Saving something as Final.doc is bad…but Final_script.R is just as bad" />
+Image Credit: <a href="http://phdcomics.com/comics/archive.php?comicid=1531">PhD Comic</a></p>
 </div>
 </div>
 <div id="ii.-git-and-remote-hosts-e.g.-github-makes-sharingcollaborating-easier" class="section level3 unnumbered">
@@ -284,6 +298,23 @@ its not only for programmers</h1>
 <h2>Other helpful links</h2>
 <p><a href="https://rogerdudler.github.io/git-guide/">Git the Simple Guide</a>
 All the necessary commands to use git is in here.</p>
+</div>
+<div id="how-to-read-the-book" class="section level2 unnumbered">
+<h2>How to read the book?</h2>
+<p>All codes/commands and its output are in gray boxes. However, the difference is that the output will always immediately follow the codes/commands and will start with <code>##</code>.</p>
+<p>For example, if we wanted to run the command <code>ls</code> to see what files are in the current directory.</p>
+<p>Below is the code</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## DESCRIPTION
+## README.md
+## Rmd
+## _bookdown.yml
+## docs
+## git_github_bookdown.Rproj
+## git_github_workshop.Rmd
+## img
+## index.Rmd</code></pre>
+<p>Above is the output</p>
 
 </div>
 </div>

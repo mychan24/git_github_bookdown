@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -231,12 +233,12 @@ its not only for programmers</a>
 </div>
 <div id="configuring-git" class="section level2">
 <h2><span class="header-section-number">1.2</span> Configuring git</h2>
-<p>This user name and email is your identity when using git. Sometimes you don’t want to use a personal email, a no-reply email associated with Github is available for that. For now, just use your personal email.</p>
+<p>This user name and email is your identity when using git. Sometimes you don’t want to use a personal email, a <a href="https://help.github.com/en/articles/setting-your-commit-email-address#setting-your-commit-email-address-on-github">no-reply email associated with Github</a> is available for that. For now, just use your personal email.</p>
 <div id="setup-username-and-email" class="section level3">
 <h3><span class="header-section-number">1.2.1</span> Setup username and email</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="setting-up-git.html#cb1-1"></a><span class="fu">git</span> config --global user.name <span class="st">&quot;Shady Whale&quot;</span></span>
-<span id="cb1-2"><a href="setting-up-git.html#cb1-2"></a></span>
-<span id="cb1-3"><a href="setting-up-git.html#cb1-3"></a><span class="fu">git</span> config --global user.email <span class="st">&quot;shadywhale@allthewhales.com&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="setting-up-git.html#cb3-1"></a><span class="fu">git</span> config --global user.name <span class="st">&quot;Shady Whale&quot;</span></span>
+<span id="cb3-2"><a href="setting-up-git.html#cb3-2"></a></span>
+<span id="cb3-3"><a href="setting-up-git.html#cb3-3"></a><span class="fu">git</span> config --global user.email <span class="st">&quot;shadywhale@allthewhales.com&quot;</span></span></code></pre></div>
 </div>
 <div id="setup-the-correct-linebreaks-encoding" class="section level3">
 <h3><span class="header-section-number">1.2.2</span> Setup the correct linebreaks encoding</h3>
@@ -249,11 +251,11 @@ its not only for programmers</a>
 <div id="setup-nano-as-the-text-editor-to-interface-with-git" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Setup “nano” as the text editor to interface with git</h3>
 <p>The default text editor for git is <a href="https://eastmanreference.com/a-quick-start-guide-for-beginners-to-the-vim-text-editor">Vim</a>, which is difficult to use. <a href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">nano</a> is a good alternative that can still handle text editing within the terminal. (You could setup other text editors as your default).</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="setting-up-git.html#cb2-1"></a><span class="fu">git</span> config --global core.editor <span class="st">&quot;nano -w&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="setting-up-git.html#cb4-1"></a><span class="fu">git</span> config --global core.editor <span class="st">&quot;nano -w&quot;</span></span></code></pre></div>
 </div>
 <div id="check-to-ensure-settings-are-correct" class="section level3">
 <h3><span class="header-section-number">1.2.4</span> Check to ensure settings are correct</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="setting-up-git.html#cb3-1"></a><span class="fu">git</span> config --list</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="setting-up-git.html#cb5-1"></a><span class="fu">git</span> config --list</span></code></pre></div>
 <pre><code>## credential.helper=osxkeychain
 ## filter.hawser.clean=git hawser clean %f
 ## filter.hawser.smudge=git hawser smudge %f

@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -200,6 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
 </ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
 </ul>
 
       </nav>
@@ -220,28 +222,28 @@ its not only for programmers</a>
             <section class="normal" id="section-">
 <div id="creating-a-repository-git-init" class="section level1">
 <h1><span class="header-section-number">2</span> Creating a Repository (<code>git init</code>)</h1>
-<p><strong>Key tersm/command</strong></p>
+<p><strong>Key terms/commands</strong></p>
 <ul>
 <li><strong>Repository (repo)</strong>: A repo is a <code>.git/</code> folder that lives inside the directory that you want to track all the changes you made to it.</li>
 <li><strong>git init</strong>: A git command that creates a repository (the <code>.git/</code> folder).</li>
 </ul>
 <div id="create-a-directory-call-workdir-in-your-home-directory-for-this-tutorial" class="section level2">
 <h2><span class="header-section-number">2.1</span> Create a directory call <code>workdir</code> in your home directory for this tutorial</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="creating-a-repository-git-init.html#cb5-1"></a><span class="fu">mkdir</span> ~/workdir</span>
-<span id="cb5-2"><a href="creating-a-repository-git-init.html#cb5-2"></a><span class="bu">cd</span> ~/workdir    </span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="creating-a-repository-git-init.html#cb7-1"></a><span class="fu">mkdir</span> ~/workdir</span>
+<span id="cb7-2"><a href="creating-a-repository-git-init.html#cb7-2"></a><span class="bu">cd</span> ~/workdir    </span></code></pre></div>
 </div>
 <div id="create-a-repository-where-git-store-versions-of-your-file" class="section level2">
 <h2><span class="header-section-number">2.2</span> Create a repository, where git store versions of your file</h2>
 <p>Create a repository within a folder</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="creating-a-repository-git-init.html#cb6-1"></a><span class="fu">git</span> init</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="creating-a-repository-git-init.html#cb8-1"></a><span class="fu">git</span> init</span></code></pre></div>
 <pre><code>## Initialized empty Git repository in /Users/mxc108120/workdir/.git/</code></pre>
 <p>Check that a hidden folder <code>.git</code> has been created</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="creating-a-repository-git-init.html#cb8-1"></a><span class="fu">ls</span> -a</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="creating-a-repository-git-init.html#cb10-1"></a><span class="fu">ls</span> -a</span></code></pre></div>
 <pre><code>## .
 ## ..
 ## .git</code></pre>
 <p>Check the status of git</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="creating-a-repository-git-init.html#cb10-1"></a><span class="fu">git</span> status</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="creating-a-repository-git-init.html#cb12-1"></a><span class="fu">git</span> status</span></code></pre></div>
 <pre><code>## On branch master
 ## 
 ## No commits yet
