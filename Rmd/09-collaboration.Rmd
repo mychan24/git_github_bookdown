@@ -2,7 +2,7 @@
 
 **Key terms/commands:**
 
-* **git fetch**: look at the changes that is in your remote repository Github. This commands download the changes into the `.git/` folder so you can compare changes to your local files, but it does not actually modify your files (i.e., files outside of the `.git/` folder). 
+* **git fetch**: look at the changes that is in your remote repository GitHub. This command download the changes into the `.git/` folder so you can compare changes to your local files, but it does not actually modify your files (i.e., files outside of the `.git/` folder). 
 
 * **git merge**: implement the changes you have *fetched* into your local files. 
 
@@ -23,7 +23,7 @@ system("cp -r ~/workdir ~/workdir_fake_collab")
 knitr::opts_knit$set(root.dir="~/workdir_fake_collab")
 ```
 
-Lets pretend you are the collaborator, and you will make some changes and push it to Github
+Let's pretend you are the collaborator, and you will make some changes and push it to GitHub
 
 ```{bash}
 cd ~/workdir_fake_collab
@@ -35,7 +35,7 @@ git add foofoo.txt
 git commit -m "Add foofoo.txt"
 ```
 
-Push this change to Github
+Push this change to GitHub
 ```
 git push origin master
 ```
@@ -47,7 +47,7 @@ Lets check what is in the current folder
 ls
 ```
 
-Check what is on the workdir repository on Github. It should contain `foofoo.txt`
+Check what is on the workdir repository on GitHub. It should contain `foofoo.txt`
 
 But what about the original `workdir` folder? 
 
@@ -64,9 +64,11 @@ knitr::opts_knit$set(root.dir="~/workdir")
 
 ## Implement the changes your fake collaborator made
 
-**fetch** the changes your fake collaborator pushed to Github onto your local computer. 
+**fetch** the changes your fake collaborator pushed to GitHub onto your local computer. 
 
-`git fetch`
+```{bash, eval = FALSE}
+git fetch
+```
 
 Here is an example output from running `git fetch`, exact details will vary.
 ```
@@ -107,14 +109,17 @@ Changing the URL of the remote (e.g., you change the remote repository)
 `git remote set-url [name] [newurl]`
 
 
-## Really collaborating on Github
+## Really collaborating on GitHub
 
-* Adding collaborators in your Github repository
+* Adding collaborators in your GitHub repository
 	+ Click **Settings**
-	+ Click **Collaborators** and add them (they need to be on Github)
+	+ Click **Collaborators** and add them (they need to be on GitHub)
 	
 * More Advance way to collaborate (won't cover in detail)
 	+ **fork** a repository you want to make changes 
 	+ **git clone** it to your local computer
 	+ Make changes, **git add**, **git commit** and **git push** it to your forked remote repo
 	+ Make a [Pull Request](https://help.github.com/en/articles/creating-a-pull-request) in the original repository
+	
+***
+**You have now `fetch` and `merge` changes from different people (or yourself on a different computer/folder)!**

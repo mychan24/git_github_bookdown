@@ -17,7 +17,19 @@
 
 **Clone** YOUR git_github_workshop repository onto your local computer: 
 
-`git clone https://github.com/your_username/git_github_workshop.git ~/git_github_workshop`
+```{bash, eval = FALSE}
+git clone https://github.com/your_username/git_github_workshop.git ~/git_github_workshop
+```
+
+```
+## Cloning into 'git_github_workshop'...
+## remote: Enumerating objects: 103, done.
+## remote: Counting objects: 100% (103/103), done.
+## remote: Compressing objects: 100% (76/76), done.
+## remote: Total 103 (delta 45), reused 69 (delta 22), pack-reused 0
+## Receiving objects: 100% (103/103), 1.90 MiB | 6.74 MiB/s, done.
+## Resolving deltas: 100% (45/45), done.
+```
 
 ***
 **You have cloned someone else's repository! This is often how collaboration starts through Github.**

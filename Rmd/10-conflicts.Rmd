@@ -24,12 +24,25 @@ Add & commit your change.
 
 ```{bash}
 git add foo.txt
-
 git commit -m "Add fake collab line to foo.txt"
 ```
 
 Push the change to the remote repository
-`git push`
+
+```{bash, eval = FALSE}
+git push origin master
+```
+
+
+```
+## Counting objects: 3, done.
+## Delta compression using up to 8 threads.
+## Compressing objects: 100% (2/2), done.
+## Writing objects: 100% (3/3), 328 bytes | 328.00 KiB/s, done.
+## Total 3 (delta 0), reused 0 (delta 0)
+## To github.com:your_name/workdir.git
+   09aba9d..d36beb6  master -> master
+```
 
 Now go into the original `workdir` and add a different line to `foo.txt`
 ```{r echo=F}
@@ -38,7 +51,7 @@ knitr::opts_knit$set(root.dir="~/workdir")
 ```
 
 ```{bash}
-cd ~/Desktop/workdir
+cd ~/workdir
 
 echo real_me >> foo.txt
 ```
@@ -47,49 +60,158 @@ Add and commit the change
 
 ```{bash}
 git add foo.txt
-
 git commit -m "Add real me line to foo.txt"
-
 ```
 
 Try to push it, and you should get an error
 
-`git push`
+```{bash, eval = FALSE}
+git push origin master
+```
+
+```
+## To github.com:mychan24/tmp.git
+##  ! [rejected]        master -> master (fetch first)
+## error: failed to push some refs to 'git@github.com:your_name/workdir.git'
+## hint: Updates were rejected because the remote contains work that you do
+## hint: not have locally. This is usually caused by another repository pushing
+## hint: to the same ref. You may want to first integrate the remote changes
+## hint: (e.g., 'git pull ...') before pushing again.
+## hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+* Note that if you have get an error from Git, it tries to give you hints on how to fix the error. 
+* It tells you that there is something in the remote repo. It suggests that you should integrate changes first by using `git pull`. 
 
 ## Resolving a conflict
 
-Pull the changes from the remote server, which your fake collab has made a change
+Pull the changes your fake collaborator made in the remote server
 
-`git pull`
-
-This should result in a conflict message. Two versions of the conflicting line is shown: 
-
-* Your local version is between <<<<<<< HEAD` and `=======`
-* The remote version is between `=======` and `>>>>>>> (unique identifier of the commit)`
-
-Edit the file with conflicting lines
-
-`nano foo.txt`
-
-Then add and commit the edited file
+```{bash, eval = FALSE}
+git pull
+```
 
 ```
-git add foo.txt
+## remote: Enumerating objects: 5, done.
+## : Counting objects: 100% (5/5), done.
+## remote: Compressing objects: 100% (2/2), done.
+## remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+## Unpacking objects: 100% (3/3), done.
+## From github.com:mychan24/tmp
+##    09aba9d..d36beb6  master     -> origin/master
+## Auto-merging foo.txt
+## CONFLICT (content): Merge conflict in foo.txt
+## Automatic merge failed; fix conflicts and then commit the result.
+```
 
+This should result in a conflict message where it tells you the smae file was modified by you and your collaborator. 
+
+When this situation happens, Git will merge the conflicting changes into the file in question (i.e., `foo.txt`), and tells you that manual interventoin is needed.
+
+> "Automatic merge failed; fix conflicts and then commit the result."
+
+### Look at the file with conflict and understanding the conflict message
+
+```{bash, eval = FALSE}
+cat foo.txt
+```
+
+```
+## hello
+## world
+## <<<<<<< HEAD
+## real_me
+## =======
+## fake_collab
+## >>>>>>> d36beb66cb58e2e096964e5677adfdde5c1889ee
+```
+
+* The conflicted portion of the file is indicated by `<<<<<<<` and `=======`
+  + Changes you made in your local copy is between `<<<<<<< HEAD` and `=======`
+  + Changes from the remote version is after `=======` and `>>>>>>> <commit identifier>`
+
+Manually edit the file using a text editor (here we use `nano`) to the state where you want the file to be.
+
+```{bash, eval = FALSE}
+nano foo.txt
+```
+
+Make the resulting file look like this:
+
+```
+hello
+world
+whales are good
+```
+
+Add and commit the edited file
+
+```{bash, eval = FALSE}
+git add foo.txt
 git commit -m "Merge changes from Github"
+```
+
+```
+## [master 0f2d252] Merge changes from Github
 ```
 
 Push your changes to the remote repo
 
-`git push`
+```{bash, eval = FALSE}
+git push
+```
 
-Now we pull from the remote repo again
+```
+## Counting objects: 6, done.
+## Delta compression using up to 8 threads.
+## Compressing objects: 100% (4/4), done.
+## Writing objects: 100% (6/6), 638 bytes | 638.00 KiB/s, done.
+## Total 6 (delta 0), reused 0 (delta 0)
+## To github.com:your_name/workdir.git
+##    d36beb6..0f2d252  master -> master
+```
+
+Now your fake collaborator can `pull` from the remote repo again
+
+```{bash, eval = FALSE}
+cd ~/workdir_fake_collab
+git pull
+```
+
+```
+## remote: Enumerating objects: 10, done.
+## remote: Counting objects: 100% (10/10), done.
+## remote: Compressing objects: 100% (4/4), done.
+## remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
+## Unpacking objects: 100% (6/6), done.
+## From github.com:mychan24/tmp
+##    d36beb6..0f2d252  master     -> origin/master
+## Updating d36beb6..0f2d252
+## Fast-forward
+##  foo.txt | 2 +-
+##  1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+Both you and your fake collaborator now have the updated `foo.txt`. Check by printing the file
+
+```{bash, eval = FALSE}
+cat foo.txt
+```
+
+```
+## hello
+## world
+## whales are good
+```
 
 
 ## Tips to prevent conflicts
 
 * Always fetch/merge (or pull) before making changes locally
-* Use **branches** 
+* Use **branches** (see upcoming chapter)
 * Commit often (so people can pull your changes frequently as well)
 * Have smaller files, so it is less likely for multiple people to edit the same file. 
 * Communicate often with your collaborators :) 
+
+***
+**You have now resolved conflicted commits on git. Follow the tips above and hopefully you don't have to do this often.**

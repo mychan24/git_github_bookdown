@@ -126,3 +126,6 @@ git branch -d cool_new_function
 ```{bash}
 git branch
 ```
+
+***
+**You have started using branches in Git!**

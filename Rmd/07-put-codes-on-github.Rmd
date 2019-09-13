@@ -31,14 +31,16 @@ git remote -v
 
 Push your local repository to your Github
 
-`git push –u origin master`
+```{bash, eval = FALSE}
+git push –u origin master
+```
 
 ```
-Counting objects: 3, done.
-Writing objects: 100% (3/3), 277 bytes | 277.00 KiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To github.com:your_username/tmp.git
-   e06fb6f..d4a8d31  master -> master
+## Counting objects: 3, done.
+## Writing objects: 100% (3/3), 277 bytes | 277.00 KiB/s, done.
+## Total 3 (delta 0), reused 0 (delta 0)
+## To github.com:your_username/tmp.git
+##   e06fb6f..d4a8d31  master -> master
 ```
 
 ## BONUS - SSH keys {-}

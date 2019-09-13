@@ -70,3 +70,5 @@ Use `git checkout HEAD` to return to most recent state. IF you checkout a previo
 ## Notes {-}
 A [detached HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit) means you are not in a branch, and any changes you make will disappear when you switch back to a real branch (e.g., `git checkout master`). More about branching and how to prevent your works from disappearing in the next chapter!
 
+***
+**You have now used `checkout` to look at the past version of a file!**

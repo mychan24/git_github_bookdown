@@ -40,4 +40,4 @@ git status
 ```
 
 ***
-You now have a repository (i.e., a `.git/` folder) within a directory that you want to track!
+**You now have a repository (i.e., a `.git/` folder) within a directory that you want to track!**
