@@ -9,7 +9,6 @@
 Make sure you are in your original `workdir`
 ```{bash}
 cd ~/workdir
-ls
 ```
 
 ```{r echo=F}
@@ -21,16 +20,16 @@ Make some changes to `foo.txt`
 
 ```{bash}
 echo "A whole new world" >> foo.txt
+cat foo.txt
 ```
 
 
 Let assume we want to go back to a previous version of foo.txt.
 
-Before going back to a previous state of a file, COMMIT what you have now
+**Before going back to a previous state of a file, COMMIT what you have now!**
 
 ```{bash}
 git add foo.txt
-
 git commit -m "Add 'A whole new world' to foo.txt"
 ```
 
@@ -50,7 +49,6 @@ Go back to the state where "A whole new world" is in the file
 
 ```{bash}
 git checkout HEAD foo.txt
-
 cat foo.txt
 ```
 

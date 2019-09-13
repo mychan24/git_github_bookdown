@@ -12,11 +12,13 @@ Let's add another line to `foo.txt`
 echo world >> foo.txt
 ```
 
-Check what is different from your current version of foo.txt compared to the last commit
+Check what is different from your current version of `foo.txt` compared to the last commit
 
 ```{bash}
 git diff HEAD foo.txt
 ```
+
+> You see that "world" is preceded by a plus sign, indicating it is an insertion.
 
 Check difference compared to two commits ago
 
@@ -24,9 +26,12 @@ Check difference compared to two commits ago
 git diff HEAD~1 foo.txt
 ```
 
-Check difference against a specific commit based on its identifer (the unique identifier is different for you, use `git log` to check!)
+You can check difference between the current file against a specific commit based on its identifer (the unique identifier is different for you, use `git log` to check!)
 
-`git diff <unique identifier> foo.txt`
+```{bash, eval = FALSE}
+git diff <unique identifier> foo.txt
+```
+
 
 ## What was done in ____ commit? (`git show`)
 

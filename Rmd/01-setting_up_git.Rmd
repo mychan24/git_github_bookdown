@@ -17,19 +17,19 @@ This user name and email is your identity when using git. Sometimes you don't wa
 ## save your original user.name and email into text files. 
 ## These will be restored after the entire Rmd is knitted.
 
-nu=$(git config --list | grep user.name | wc -l)
-ne=$(git config --list | grep user.email | wc -l)
+nu=$(git config --global --list | grep user.name | wc -l)
+ne=$(git config --global --list| grep user.email | wc -l)
 
 mkdir ~/workdir_tmp
 
 if [ $nu > 0 ];
 then
-  git config --list | grep user.name | cut -d"=" -f 2 > ~/workdir_tmp/username.txt
+  git git config --global --list | grep user.name | cut -d"=" -f 2 > ~/workdir_tmp/username.txt
 fi
 
 if [ $ne > 0 ];
 then
-  git config --list | grep user.email | cut -d"=" -f 2 > ~/workdir_tmp/email.txt
+  git git config --global --list | grep user.email | cut -d"=" -f 2 > ~/workdir_tmp/email.txt
 fi
 
 ```

@@ -52,7 +52,6 @@ knitr::opts_knit$set(root.dir="~/workdir")
 
 ```{bash}
 cd ~/workdir
-
 echo real_me >> foo.txt
 ```
 
@@ -104,11 +103,10 @@ git pull
 ## Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-This should result in a conflict message where it tells you the smae file was modified by you and your collaborator. 
+The output shows there is a **Conflict Message**! 
 
 When this situation happens, Git will merge the conflicting changes into the file in question (i.e., `foo.txt`), and tells you that manual interventoin is needed.
 
-> "Automatic merge failed; fix conflicts and then commit the result."
 
 ### Look at the file with conflict and understanding the conflict message
 
@@ -127,8 +125,8 @@ cat foo.txt
 ```
 
 * The conflicted portion of the file is indicated by `<<<<<<<` and `=======`
-  + Changes you made in your local copy is between `<<<<<<< HEAD` and `=======`
-  + Changes from the remote version is after `=======` and `>>>>>>> <commit identifier>`
+  + Changes you made in your **local copy** is between `<<<<<<< HEAD` and `=======`
+  + Changes from the **remote copy** is between `=======` and `>>>>>>> <commit identifier>`
 
 Manually edit the file using a text editor (here we use `nano`) to the state where you want the file to be.
 
@@ -138,6 +136,10 @@ nano foo.txt
 
 Make the resulting file look like this:
 
+```{bash, include =F}
+printf "hello\nworld\nwhales are good\n" > foo.txt
+```
+
 ```
 hello
 world
@@ -146,13 +148,9 @@ whales are good
 
 Add and commit the edited file
 
-```{bash, eval = FALSE}
+```{bash}
 git add foo.txt
-git commit -m "Merge changes from Github"
-```
-
-```
-## [master 0f2d252] Merge changes from Github
+git commit -m "Merge changes from Github, whales are good"
 ```
 
 Push your changes to the remote repo
@@ -194,16 +192,9 @@ git pull
 
 Both you and your fake collaborator now have the updated `foo.txt`. Check by printing the file
 
-```{bash, eval = FALSE}
+```{bash}
 cat foo.txt
 ```
-
-```
-## hello
-## world
-## whales are good
-```
-
 
 ## Tips to prevent conflicts
 

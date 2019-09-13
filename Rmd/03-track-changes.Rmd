@@ -34,8 +34,9 @@ Check the status
 git status
 ```
 
+> The status tells you `foo.txt` is not being tracked, and that you can use `git add` to start tracking it.
 
-If there are **untracked files**, we would like to add those files so git will track their changes:
+**If there are untracked files, we would like to add those files so git will track their changes:**
 
 ```{bash}
 git add foo.txt
@@ -47,6 +48,8 @@ Check the status again, `foo.txt` should now be ready to get committed (a commit
 git status
 ```
 
+> The status now tells you there are "Changes to be commited", and `foo.txt` is listed as a new file (in green).
+
 ## Saving these changes to the repository (`git commit`)
 
 Commit the file and note the identifier for this commit (e.g., `f22b25e`):
@@ -55,6 +58,8 @@ Commit the file and note the identifier for this commit (e.g., `f22b25e`):
 git commit -m "Add foo.txt to repo"
 ```
 
+> The ouptut of a commit will tell you what has changes has been commited to the repository. In this example, "1 file was changed". There is 0 insertions or deletions as the file is empty.
+> "create mode" means that a file is being added to the repository (first time Git is being told this file exist).
 
 What have we done so far? Lets check the log, which list all the commits made so far. 
 
@@ -62,18 +67,15 @@ What have we done so far? Lets check the log, which list all the commits made so
 git log
 ```
 
+> Each commit in the log is identified by a long unique identifier.
+> The author (and their email) of this commit is listed
+> Lastly, the commit message will appear under the identifier and author.
 
-## BONUS - Checking what has changed before add/commit (`git diff`) {-}
+## PRACTICE - Lets add a line to the file and `add`/`commit` it {-}
 Add some text to the file `foo.txt`
 
 ```{bash}
 echo hello >> foo.txt
-```
-
-Check what has changed between your last commit and now:
-
-```{bash}
-git diff
 ```
 
 Add & commit your changes to `foo.txt`
@@ -82,6 +84,8 @@ Add & commit your changes to `foo.txt`
 git add foo.txt
 git commit -m "Add hello in foo.txt"
 ```
+
+> The output tells you that you have added 1 file and there is 1 insertion(+)
 
 Check the status and log again using `git status` and `git log`
 

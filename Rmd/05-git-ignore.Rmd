@@ -16,20 +16,25 @@ Add this file to `.gitignore`
 echo ignore_this.txt >> .gitignore
 ```
 
-Try adding a file we told `.gitignore` to not track
+Try `git add` a file we told `.gitignore` to not track
 
-`git add ignore_this.txt`
+```{bash, eval=FALSE}
+git add ignore_this.txt
+```
 
 ```
-The following paths are ignored by one of your .gitignore files:
-ignore_this.txt
-Use -f if you really want to add them.
+## The following paths are ignored by one of your .gitignore files:
+## ignore_this.txt
+## Use -f if you really want to add them.
 ```
 
 If you want to `add` a supposedly ignored file, use the `-f` flag
 
 ```{bash}
 git add -f ignore_this.txt
+
+# Then commit it too!
+git commit -m "Add ignore_this.txt"
 ```
 
 ## BONUS - Use wildcard

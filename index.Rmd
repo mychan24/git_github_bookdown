@@ -49,8 +49,9 @@ You joined a new lab, and were given a pipeline/script to modify that dated year
 Collaborator BigName wants to know what preprocessing parameters were used in your manuscript from 5 years ago.  You have since changed multiple parameters in your default processing pipeline.
 ¯\\\_(._.)\_/¯
 
-![Saving something as Final.doc is bad...but Final_script.R is just as bad](http://phdcomics.com/comics/archive/phd101212s.gif "Final.doc")
-Image Credit: [PhD Comic](http://phdcomics.com/comics/archive.php?comicid=1531)
+![](http://phdcomics.com/comics/archive/phd101212s.gif "Final.doc")
+
+Saving something as Final.doc is bad...but Final_script.R is just as bad (Image Credit: [PhD Comic](http://phdcomics.com/comics/archive.php?comicid=1531))
 
 
 ### II. Git and Remote Hosts (e.g., GitHub) makes sharing/collaborating easier {-} 

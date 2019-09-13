@@ -39,5 +39,7 @@ Check the status of git
 git status
 ```
 
+> The status tells you have nothing to commit (last line).
+
 ***
 **You now have a repository (i.e., a `.git/` folder) within a directory that you want to track!**
