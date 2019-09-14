@@ -29,7 +29,7 @@ rm -rf ~/workdir_tmp
 ```
 
 
-## Glossary 
+# Glossary {-}
 
 *** 
 **General Terms**
