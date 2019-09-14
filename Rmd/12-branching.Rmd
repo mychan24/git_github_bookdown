@@ -145,31 +145,59 @@ git branch
 Remember the previous chapter mentioned a concept about 'detached HEAD'? Now you have tried branching, you could understand a bit more how detached HEAD can occur, and how branching can help preventing commit loss.
 
 ### Purposely enter a detached HEAD and create a commit
-```{bash}
+```{bash, eval = FALSE}
 git checkout HEAD~2
-git touch loss.txt
+```
+
+```
+## Note: checking out 'HEAD~2'.
+##
+## You are in 'detached HEAD' state. You can look around, make experimental
+## changes and commit them, and you can discard any commits you make in this
+## state without impacting any branches by performing another checkout.
+##
+## If you want to create a new branch to retain commits you create, you may
+## do so (now or later) by using -b with the checkout command again. Example:
+##
+##   git checkout -b <new-branch-name>
+##
+## HEAD is now at [commit identifier] [commit message]
+```
+
+```{bash}
+touch loss.txt
 git add loss.txt
 git commit -m "Adding loss.txt while in detached HEAD"
 ```
 
 ### Return to master branch
-```{bash}
+```{bash, eval = FALSE}
 git checkout master
 ```
 
+```
+## Warning: you are leaving 1 commit behind, not connected to
+## any of your branches:
+##
+##  2d8a023 Adding loss.txt while in detached HEAD
+##
+## If you want to keep it by creating a new branch, this may be a good time
+## to do so with:
+##
+##  git branch <new-branch-name> 2d8a023
+##
+## Switched to branch 'master'
+```
 > The output would warn you that you are "leaving 1 commit behind". 
 
-### You are now back in the 'master' branch, and `loss.txt` is gone
-```{bash}
-ls 
-```
+### You are now back in the 'master' branch, and `loss.txt` is gone (check with `ls`)
 
 Luckily, the output message actually tells you how to recover those changes (for now, before Git evetually deletes it).
-```{bash}
+```{bash, eval=FALSE}
 git branch recover_loss_branch <commit identifier>
 ```
 
-Now if you switch to that branch you just created, you will see `loss.txt`.
+Now if you switch to that branch you just created (use `git checkout`), you will see `loss.txt`.
 
 
 ***
