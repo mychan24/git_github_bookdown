@@ -1,6 +1,10 @@
 # Branching (`git branch`)
 
-<br>
+**Key terms/command**
+
+* **Branch**: independent line of development typically used to develop new features without disturbing the rest of the repository. The default branch is called the **"Master"** branch.
+
+* **git branch**: handles the creation, renaming and deletion of branches. Note that `git checkout` is used to switch between branches.
 
 ```{bash, include = F}
 # ensure master is the active branch
@@ -46,7 +50,10 @@ The one marked with the `*` is the name of branch that you're currently on, also
 ## Create new branch
 
 To create a new branch, we can enter:
-`git branch <branch_name>`
+
+```{bash, eval = FALSE}
+git branch <branch_name>
+```
 
 For example, if we want to make a test a new function on a new branch, we can create the new branch by entering:
 ```{bash}
@@ -62,7 +69,7 @@ git branch
 
 ## Switch between branches (`git commit`)
 
-To switch to the new branch, `git checkout <branch_name>`
+To switch to the new branch, use `git checkout <branch_name>`
 
 Example:
 ```{bash}
@@ -77,7 +84,10 @@ git branch
 Notice that the * is now on cool_new_function.
 
 Note: You can also create and switch to a branch in one command using:
-`git checkout -b <branch_name>`
+
+```{bash, eval = FALSE}
+git checkout -b <branch_name>
+```
 
 Now that you're in your new branch, you can make, edit, and commit script(s) as you want without affecting anything on the master branch.
 
@@ -117,7 +127,10 @@ The cool_new_function.sh file is now available on the master branch after mergin
 Done using a branch or created one by accident?
 
 Delete the branch by entering:
-`git branch -d <branch_name>`
+
+```{bash, eval = FALSE}
+git branch -d <branch_name>
+```
 
 ```{bash}
 git branch -d cool_new_function
@@ -126,6 +139,38 @@ git branch -d cool_new_function
 ```{bash}
 git branch
 ```
+
+## BONUS (Advanced x 2 topic) - detached HEAD {-}
+
+Remember the previous chapter mentioned a concept about 'detached HEAD'? Now you have tried branching, you could understand a bit more how detached HEAD can occur, and how branching can help preventing commit loss.
+
+### Purposely enter a detached HEAD and create a commit
+```{bash}
+git checkout HEAD~2
+git touch loss.txt
+git add loss.txt
+git commit -m "Adding loss.txt while in detached HEAD"
+```
+
+### Return to master branch
+```{bash}
+git checkout master
+```
+
+> The output would warn you that you are "leaving 1 commit behind". 
+
+### You are now back in the 'master' branch, and `loss.txt` is gone
+```{bash}
+ls 
+```
+
+Luckily, the output message actually tells you how to recover those changes (for now, before Git evetually deletes it).
+```{bash}
+git branch recover_loss_branch <commit identifier>
+```
+
+Now if you switch to that branch you just created, you will see `loss.txt`.
+
 
 ***
 **You have started using branches in Git!**

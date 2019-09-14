@@ -2,8 +2,9 @@
 
 **Key terms/commands**
 
-* **Repository (repo)**: A repo is a `.git/` folder that lives inside the directory that you want to track all the changes you made to it. 
-* **git init**: A git command that creates a repository (the `.git/` folder).
+* **Repository (repo)**: a repo tracks all the changes you made in that directory. In tangible form, it is a `.git/` folder that lives inside the directory.
+
+* **git init**: creates a repository (the `.git/` folder).
 
 
 ## Create a directory call `workdir` in your home directory for this tutorial

@@ -2,7 +2,7 @@
 
 **Key terms/commands:**
 
-**git push**: a commmand to upload your code to a remote repository (like Github!)
+* **git push**: upload your commits to a remote repository (like GitHub!)
 
 ## Push an existing repository from your local computer
 Go back to the loacl directory, workdir that we made in previous sections. 

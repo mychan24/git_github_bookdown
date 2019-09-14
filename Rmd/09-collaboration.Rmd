@@ -2,11 +2,11 @@
 
 **Key terms/commands:**
 
-* **git fetch**: look at the changes that is in your remote repository GitHub. This command download the changes into the `.git/` folder so you can compare changes to your local files, but it does not actually modify your files (i.e., files outside of the `.git/` folder). 
+* **git fetch**: fetches the changes that is in your remote repository GitHub. This command download the changes into the `.git/` folder so you can compare changes to your local files, but it does not actually modify your files (i.e., files outside of the `.git/` folder). 
 
 * **git merge**: implement the changes you have *fetched* into your local files. 
 
-* **git pull**: `git fetch` + `git merge`. it is recommended that you fetch first, and check that you want to implement the changes, and then merge.
+* **git pull**: `git fetch` + `git merge`. However, it is recommended that you fetch first, check that you want to implement the changes, and then merge. 
 
 
 ## Setup a fake collaborator, yourself in another directory :) 

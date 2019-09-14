@@ -2,7 +2,7 @@
 
 **Key terms/commands:**
 
-* **git checkout**: A git command to revert a file to a previous state. You can also checkout your entire folder, but that is potentially a dangerous move (read the end of this chapter).
+* **git checkout**: revert (i.e., checkout) a file to a previous state. You can also checkout your entire folder, but it is potentially a dangerous move (puts you in a detached HEAD; read the end of this chapter).
 
 ## Going back to a specific version of a file (`git checkout`)
 
@@ -60,12 +60,15 @@ If you `git checkout` a previous commit without also specifying a file, you will
 git checkout HEAD~1 
 ```
 
-You should see a warning message about being in a **'detached HEAD'**.
+You should see a warning message about being in a **'detached HEAD'**. (Refer to the Glossary section in the Appendix for a brief overview on "HEAD" and "detached HEAD".)  
 
-Use `git checkout HEAD` to return to most recent state. IF you checkout a previous commit without first committing your current state, then anything not committed would be lost!!!
+Use `git checkout HEAD` to return to most recent state. 
 
 
-## Notes {-}
+## BONUS - Detached HEAD {-}
+
+**CAUTION 1**: If you make commits while you aare in a detached HEAD, returning to "master" (or any other branch)  means those changes are loss (again, we will talk about branches soon).
+
 A [detached HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit) means you are not in a branch, and any changes you make will disappear when you switch back to a real branch (e.g., `git checkout master`). More about branching and how to prevent your works from disappearing in the next chapter!
 
 ***

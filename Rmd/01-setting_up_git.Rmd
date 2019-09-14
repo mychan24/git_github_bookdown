@@ -24,12 +24,12 @@ mkdir ~/workdir_tmp
 
 if [ $nu > 0 ];
 then
-  git git config --global --list | grep user.name | cut -d"=" -f 2 > ~/workdir_tmp/username.txt
+  git config --global --list | grep user.name | cut -d"=" -f 2 > ~/workdir_tmp/username.txt
 fi
 
 if [ $ne > 0 ];
 then
-  git git config --global --list | grep user.email | cut -d"=" -f 2 > ~/workdir_tmp/email.txt
+  git config --global --list | grep user.email | cut -d"=" -f 2 > ~/workdir_tmp/email.txt
 fi
 
 ```

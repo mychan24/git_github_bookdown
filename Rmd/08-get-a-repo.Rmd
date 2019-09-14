@@ -2,8 +2,11 @@
 
 **Key terms/commands:**
 
-* **fork**: copy someone's Github repository and putting it in your Github 
-* **clone**: copy (download) a remote repo onto your local computer 
+* **Clone**: the concept of a "clone" just means to copy the entire repository. 
+
+* **Fork**: within the context of GitHub, to fork is to copy someone's GitHub repository and put it in your GitHub account. Under the hood, it is just cloning their repository. 
+
+* **git clone**: copies (download) a remote repo onto your local computer.
 
 ## Fork a repository (remote -> remote)
 
