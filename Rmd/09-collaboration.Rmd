@@ -13,7 +13,9 @@
 
 Clone the **workdir** repo into your local computer but a different folder as if you have a collaborator
 
-`git clone https://github.com/your_username/workdir.git ~/workdir_fake_collab`
+```{bash, eval = FALSE}
+git clone https://github.com/your_username/workdir.git ~/workdir_fake_collab
+```
 
 ```{r echo=F}
 # copy workdir into fakedir using R code that is hidden
@@ -24,7 +26,7 @@ knitr::opts_knit$set(root.dir="~/workdir_fake_collab")
 ```
 
 Let's pretend you are the collaborator, and you will make some changes and push it to GitHub. 
-Here we go into the collab directory, make a new file `foofoo.txt`, then `add`/`commit` it. 
+Here we go into the collab directory, make a new file `foofoo.txt`, then `add` & `commit` it. 
 
 ```{bash}
 cd ~/workdir_fake_collab
@@ -116,8 +118,8 @@ git merge
 ##  create mode 100644 foofoo.txt
 ```
 
-## Notes {-}
-* `git merge` returns message "Already up to date."
+## FAQ {-}
+* What if `git merge` returns message "Already up to date."
 	+ `git merge` impelment the changes that were fetched by `git fetch`, so fetch first. 
 * Will `git fetch` change my stuff? 
 	+ Fetching does not change your local file until your pull. 
