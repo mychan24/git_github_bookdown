@@ -16,4 +16,4 @@ deploy:
   on:
     branch:
     - master
-  fdpn: gitbookdown.site
+  fqdn: gitbookdown.site
