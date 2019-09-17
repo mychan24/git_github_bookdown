@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mychan24/git_github_bookdown.svg?branch=master)](https://travis-ci.org/mychan24/git_github_bookdown)
 
-This tutorial can be accessed at: https://mychan24.github.io/git_github_bookdown/
+This tutorial can be accessed at: https://gitbookdown.site/
 
 Authors: [@mychan24](https://github.com/mychan24) & [@epongpipat](https://github.com/epongpipat)
 
