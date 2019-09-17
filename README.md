@@ -13,6 +13,6 @@ Authors: [@mychan24](https://github.com/mychan24) & [@epongpipat](https://github
 
 ## Acknowledgement
 
-* This tutorial borrows heavily from [Software Carpentry's tutorial](https://swcarpentry.github.io/git-novice/). Software Carpentry makes provides a lot of resources for other courses and teaching in general. Check them out!
+* This tutorial borrows heavily from [Software Carpentry's tutorial](https://swcarpentry.github.io/git-novice/). Software Carpentry provides a lot of resources for other courses and teaching in general. Check them out!
 
 * Special thanks to [@jennywxyz](https://github.com/jennywxyz) for providing feedback and proofreading.
