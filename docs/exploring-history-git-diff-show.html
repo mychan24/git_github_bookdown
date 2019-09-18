@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Exploring History (git diff &amp; show) | Git/GitHub Tutorial for Scientists: its not only for programmers</title>
+  <title>4 Exploring History (git diff &amp; show) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
   <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
-its not only for programmers" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+It’s Not Only for Programmers" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Exploring History (git diff &amp; show) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta property="og:title" content="4 Exploring History (git diff &amp; show) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://gitbookdown.site/" />
   
   
-  
-  
+  <meta name="github-repo" content="mychan24/git_github_bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Exploring History (git diff &amp; show) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta name="twitter:title" content="4 Exploring History (git diff &amp; show) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   
   
   
@@ -31,8 +31,8 @@ its not only for programmers" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tracking-changes-git-add-commit.html"/>
-<link rel="next" href="tell-git-to-ignore-files.html"/>
+<link rel="prev" href="tracking-changes-git-add-commit.html">
+<link rel="next" href="tell-git-to-ignore-files.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -47,30 +47,38 @@ its not only for programmers" />
 
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148151802-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-148151802-1');
+</script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +87,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -126,6 +134,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
+<li><a href="./"><strong>Git & GitHub Tutorial</strong><br></a></li>
+
+<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-this-gitgithub-tutorial-about"><i class="fa fa-check"></i>What is this Git/GitHub Tutorial about?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-is-git-important-for-scientists"><i class="fa fa-check"></i>Why is git important for scientists?</a><ul>
@@ -153,7 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html"><i class="fa fa-check"></i><b>3</b> Tracking Changes (<code>git add &amp; commit</code>)</a><ul>
 <li class="chapter" data-level="3.1" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#adding-new-filesmodification-git-add"><i class="fa fa-check"></i><b>3.1</b> Adding new files/modification (<code>git add</code>)</a></li>
 <li class="chapter" data-level="3.2" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#saving-these-changes-to-the-repository-git-commit"><i class="fa fa-check"></i><b>3.2</b> Saving these changes to the repository (<code>git commit</code>)</a></li>
-<li><a href="tracking-changes-git-add-commit.html#bonus---checking-what-has-changed-before-addcommit-git-diff">BONUS - Checking what has changed before add/commit (<code>git diff</code>)</a></li>
+<li><a href="tracking-changes-git-add-commit.html#practice---lets-add-a-line-to-the-file-and-addcommit-it">PRACTICE - Let’s add a line to the file and <code>add</code>/<code>commit</code> it</a></li>
 <li class="chapter" data-level="" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#notes"><i class="fa fa-check"></i>Notes</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html"><i class="fa fa-check"></i><b>4</b> Exploring History (<code>git diff &amp; show</code>)</a><ul>
@@ -166,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II GitHub and Other Remote Hosts</b></span></li>
 <li class="chapter" data-level="6" data-path="git-ne-github.html"><a href="git-ne-github.html"><i class="fa fa-check"></i><b>6</b> Git <span class="math inline">\(\ne\)</span> GitHub</a><ul>
 <li class="chapter" data-level="6.1" data-path="git-ne-github.html"><a href="git-ne-github.html#git-is-a-remote-server-that-hosts-a-repository-remote-host"><i class="fa fa-check"></i><b>6.1</b> Git is a remote server that hosts a repository (remote host)</a></li>
-<li class="chapter" data-level="6.2" data-path="git-ne-github.html"><a href="git-ne-github.html#create-aa-repository-in-on-github-a-remote-repo"><i class="fa fa-check"></i><b>6.2</b> Create aa repository in on github (a remote repo)</a></li>
+<li class="chapter" data-level="6.2" data-path="git-ne-github.html"><a href="git-ne-github.html#create-a-repository-on-github-a-remote-repo"><i class="fa fa-check"></i><b>6.2</b> Create a repository on github (a remote repo)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html"><i class="fa fa-check"></i><b>7</b> Putting codes on Github</a><ul>
 <li class="chapter" data-level="7.1" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html#push-an-existing-repository-from-your-local-computer"><i class="fa fa-check"></i><b>7.1</b> Push an existing repository from your local computer</a></li>
@@ -179,20 +190,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html"><i class="fa fa-check"></i><b>9</b> Collaborating (<code>git fetch &amp; merge (or pull)</code>)</a><ul>
 <li class="chapter" data-level="9.1" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#setup-a-fake-collaborator-yourself-in-another-directory"><i class="fa fa-check"></i><b>9.1</b> Setup a fake collaborator, yourself in another directory :)</a></li>
 <li class="chapter" data-level="9.2" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#implement-the-changes-your-fake-collaborator-made"><i class="fa fa-check"></i><b>9.2</b> Implement the changes your fake collaborator made</a></li>
-<li class="chapter" data-level="" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#notes-1"><i class="fa fa-check"></i>Notes</a></li>
+<li class="chapter" data-level="" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#faq"><i class="fa fa-check"></i>FAQ</a></li>
 <li class="chapter" data-level="" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#bonus---what-is-my-remote"><i class="fa fa-check"></i>BONUS - What is my remote?</a></li>
-<li class="chapter" data-level="9.3" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#really-collaborating-on-github"><i class="fa fa-check"></i><b>9.3</b> Really collaborating on Github</a></li>
+<li class="chapter" data-level="9.3" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#really-collaborating-on-github"><i class="fa fa-check"></i><b>9.3</b> Really collaborating on GitHub</a></li>
 </ul></li>
 <li class="part"><span><b>III Advanced Git</b></span></li>
 <li class="chapter" data-level="10" data-path="conflicts.html"><a href="conflicts.html"><i class="fa fa-check"></i><b>10</b> Conflicts</a><ul>
 <li class="chapter" data-level="10.1" data-path="conflicts.html"><a href="conflicts.html#create-a-conflict"><i class="fa fa-check"></i><b>10.1</b> Create a conflict</a></li>
-<li class="chapter" data-level="10.2" data-path="conflicts.html"><a href="conflicts.html#resolving-a-conflict"><i class="fa fa-check"></i><b>10.2</b> Resolving a conflict</a></li>
+<li class="chapter" data-level="10.2" data-path="conflicts.html"><a href="conflicts.html#resolving-a-conflict"><i class="fa fa-check"></i><b>10.2</b> Resolving a conflict</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="conflicts.html"><a href="conflicts.html#look-at-the-file-with-conflict-and-understanding-the-conflict-message"><i class="fa fa-check"></i><b>10.2.1</b> Look at the file with conflict and understanding the conflict message</a></li>
+</ul></li>
 <li class="chapter" data-level="10.3" data-path="conflicts.html"><a href="conflicts.html#tips-to-prevent-conflicts"><i class="fa fa-check"></i><b>10.3</b> Tips to prevent conflicts</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html"><i class="fa fa-check"></i><b>11</b> Revert to a previous commit (<code>git checkout</code>)</a><ul>
 <li class="chapter" data-level="11.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>11.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
 <li class="chapter" data-level="11.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>11.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
-<li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#notes-2"><i class="fa fa-check"></i>Notes</a></li>
+<li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#bonus---detached-head"><i class="fa fa-check"></i>BONUS - Detached HEAD</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a><ul>
 <li class="chapter" data-level="12.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#check-what-branch-youre-on"><i class="fa fa-check"></i><b>12.1</b> Check what branch you’re on</a></li>
@@ -200,8 +213,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#switch-between-branches-git-commit"><i class="fa fa-check"></i><b>12.3</b> Switch between branches (<code>git commit</code>)</a></li>
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
+<li class="chapter" data-level="" data-path="branching-git-branch.html"><a href="branching-git-branch.html#bonus-advanced-x-2-topic---detached-head"><i class="fa fa-check"></i>BONUS (Advanced x 2 topic) - detached HEAD</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#purposely-enter-a-detached-head-and-create-a-commit"><i class="fa fa-check"></i><b>12.5.1</b> Purposely enter a detached HEAD and create a commit</a></li>
+<li class="chapter" data-level="12.5.2" data-path="branching-git-branch.html"><a href="branching-git-branch.html#return-to-master-branch"><i class="fa fa-check"></i><b>12.5.2</b> Return to master branch</a></li>
+<li class="chapter" data-level="12.5.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#you-are-now-back-in-the-master-branch-and-loss.txt-is-gone-check-with-ls"><i class="fa fa-check"></i><b>12.5.3</b> You are now back in the ‘master’ branch, and <code>loss.txt</code> is gone (check with <code>ls</code>)</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>IV Appendix</b></span></li>
+<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="divider"></li>
+<li style="padding: 10px 15px; font-weight: bold;">Open access book-in-progress</li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></li>
+<li><a href="https://bookdown.org" target="_blank">Built with Bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -212,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <div class="book-header" role="navigation">
           <h1>
             <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git/GitHub Tutorial for Scientists:<br />
-its not only for programmers</a>
+It’s Not Only for Programmers</a>
           </h1>
         </div>
 
@@ -224,10 +248,10 @@ its not only for programmers</a>
 <h1><span class="header-section-number">4</span> Exploring History (<code>git diff &amp; show</code>)</h1>
 <div id="difference-between-current-file-and-n-commit-ago-git-diff-head" class="section level2">
 <h2><span class="header-section-number">4.1</span> Difference between current file and N commit ago (<code>git diff HEAD</code>)</h2>
-<p>Lets add another line to <code>foo.txt</code></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="exploring-history-git-diff-show.html#cb30-1"></a><span class="bu">echo</span> world <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
-<p>Check what is different from your current version of foo.txt compare to the last commit</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="exploring-history-git-diff-show.html#cb31-1"></a><span class="fu">git</span> diff HEAD foo.txt</span></code></pre></div>
+<p>Let’s add another line to <code>foo.txt</code></p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> world <span class="op">&gt;&gt;</span> foo.txt</code></pre>
+<p>Check what is different from your current version of <code>foo.txt</code> compared to the last commit</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> diff HEAD foo.txt</code></pre>
 <pre><code>## diff --git a/foo.txt b/foo.txt
 ## index ce01362..94954ab 100644
 ## --- a/foo.txt
@@ -235,8 +259,11 @@ its not only for programmers</a>
 ## @@ -1 +1,2 @@
 ##  hello
 ## +world</code></pre>
-<p>Check difference compare to two commits ago</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="exploring-history-git-diff-show.html#cb33-1"></a><span class="fu">git</span> diff HEAD~1 foo.txt</span></code></pre></div>
+<blockquote>
+<p>You see that “world” is preceded by a plus sign, indicating it is an insertion.</p>
+</blockquote>
+<p>Check difference compared to two commits ago</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> diff HEAD~1 foo.txt</code></pre>
 <pre><code>## diff --git a/foo.txt b/foo.txt
 ## index e69de29..94954ab 100644
 ## --- a/foo.txt
@@ -244,16 +271,16 @@ its not only for programmers</a>
 ## @@ -0,0 +1,2 @@
 ## +hello
 ## +world</code></pre>
-<p>Check difference against a specific commit based on its identifer (the unique identifier is different for you, use <code>git log</code> to check!)</p>
-<p><code>git diff &lt;unique identifier&gt; foo.txt</code></p>
+<p>You can check difference between the current file against a specific commit based on its identifer (the unique identifier is different for you, use <code>git log</code> to check!)</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> diff <span class="op">&lt;</span>unique identifier<span class="op">&gt;</span> foo.txt</code></pre>
 </div>
 <div id="what-was-done-in-____-commit-git-show" class="section level2">
 <h2><span class="header-section-number">4.2</span> What was done in ____ commit? (<code>git show</code>)</h2>
 <p>Sometimes we want to check what was done during a certain commit (instead of comparing differences)</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="exploring-history-git-diff-show.html#cb35-1"></a><span class="fu">git</span> show HEAD~1 foo.txt</span></code></pre></div>
-<pre><code>## commit 0be3530be887f8e6b9ae42a6b2dcabb90ae5e19b
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> show HEAD~1 foo.txt</code></pre>
+<pre><code>## commit 2be5f0f26e3d3c90b31b9de49be102dba554b28a
 ## Author: Shady Whale &lt;shadywhale@allthewhales.com&gt;
-## Date:   Thu Sep 12 17:36:05 2019 -0500
+## Date:   Tue Sep 17 22:46:19 2019 -0500
 ## 
 ##     Add foo.txt to repo
 ## 
@@ -328,9 +355,8 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

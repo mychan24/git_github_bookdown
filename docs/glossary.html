@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Putting codes on Github | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
+  <title>Glossary | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
   <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Putting codes on Github | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta property="og:title" content="Glossary | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://gitbookdown.site/" />
   
@@ -17,7 +17,7 @@ It’s Not Only for Programmers" />
   <meta name="github-repo" content="mychan24/git_github_bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Putting codes on Github | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta name="twitter:title" content="Glossary | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   
   
   
@@ -31,8 +31,8 @@ It’s Not Only for Programmers" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="git-ne-github.html">
-<link rel="next" href="getting-a-repository-from-github-fork-git-clone.html">
+<link rel="prev" href="branching-git-branch.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -244,49 +244,46 @@ It’s Not Only for Programmers</a>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="putting-codes-on-github" class="section level1">
-<h1><span class="header-section-number">7</span> Putting codes on Github</h1>
-<p><strong>Key terms/commands:</strong></p>
-<ul>
-<li><strong>git push</strong>: upload your commits to a remote repository (like GitHub!)</li>
-</ul>
-<div id="push-an-existing-repository-from-your-local-computer" class="section level2">
-<h2><span class="header-section-number">7.1</span> Push an existing repository from your local computer</h2>
-<p>Go back to the loacl directory, workdir that we made in previous sections.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/workdir</code></pre>
-<p>Add the github repo you just made as a remote repository that you want to push your data to.</p>
-<ul>
-<li><strong>Replace</strong> your_username with your github username</li>
-</ul>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote add origin https://github.com/your_username/workdir.git</code></pre>
-<p>Check what is listed as your remote repository now.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote -v</code></pre>
-<pre><code>## origin   https://github.com/your_username/workdir.git (fetch)
-## origin   https://github.com/your_username/workdir.git (push)</code></pre>
-<p>Push your local repository to your Github</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> push –u origin master</code></pre>
-<pre><code>## Counting objects: 3, done.
-## Writing objects: 100% (3/3), 277 bytes | 277.00 KiB/s, done.
-## Total 3 (delta 0), reused 0 (delta 0)
-## To github.com:your_username/tmp.git
-##   e06fb6f..d4a8d31  master -&gt; master</code></pre>
-</div>
-<div id="bonus---ssh-keys" class="section level2 unnumbered">
-<h2>BONUS - SSH keys</h2>
-<p>Here is a link to help you setup using SSH keys for authentication with Github
-<a href="https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account" class="uri">https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account</a></p>
+<div id="glossary" class="section level1 unnumbered">
+<h1>Glossary</h1>
 <hr />
-<p><strong>Your code is now available on Github!</strong></p>
+<p><strong>General Terms</strong></p>
+<ul>
+<li><p><strong>Repository (repo)</strong>: a local repository tracks all the changes you made in that directory. In tangible form, it is a <code>.git/</code> folder that lives inside the directory.</p></li>
+<li><p><strong>Branch</strong>: independent line of development typically used to develop new features without disturbing the rest of the repository. The default branch is called the <strong>“Master”</strong> branch.</p></li>
+<li><p><strong>Clone</strong>: the concept of a “clone” just means to copy the entire repository.</p></li>
+<li><p><strong>Conflict</strong>: when the same portion of a file is edited, it creates a conflict that has to be manually resolved before it can be merged together. This often is the reason why you cannot <code>push</code> a commit.</p></li>
+<li><p><strong>Commits</strong>: a “commit” adds your latest changes to your repository. If a change is not committed, Git would not recognize the change.</p></li>
+<li><p><strong>Fork</strong>: within the context of GitHub, to fork is to copy someone’s GitHub repository and put it in your GitHub account. Under the hood, it is just cloning their repository.</p></li>
+<li><strong>HEAD</strong>: refers to the latest commit in the branch you are at. By default, you are the most recent commit of the master branch. When you <code>git checkout different_branch</code>, HEAD is now at the most recent commit of <code>different_branch</code>. If you are not at the most recent commit of a branch (e.g., you <code>git checkout</code> a previous commit), you are now in a <code>detached HEAD</code>.
+<ul>
+<li>Note that changes made in a <strong>detached HEAD</strong> situation would not be recorded once you <code>git checkout</code> back to the HEAD of the branch or to a different branch.</li>
+</ul></li>
+</ul>
+<hr />
+<p><strong>Git Commands</strong></p>
+<ul>
+<li><p><strong>git add</strong>: tells git which file’s changes you want to document. Formally, this is called adding a file to the “index/staging area”.</p></li>
+<li><p><strong>git branch</strong>: handles the creation, renaming and deletion of branches. Note that <code>git checkout</code> is used to switch between branches.</p></li>
+<li><p><strong>git checkout</strong>: revert (i.e., checkout) a file to a previous state. You can also checkout your entire folder, but it is potentially a dangerous move (puts you in a detached HEAD).</p></li>
+<li><p><strong>git clone</strong>: copies (download) a remote repo onto your local computer.</p></li>
+<li><p><strong>git commit</strong>: tells git to document the changes you specified using <code>git add</code> (i.e., the files in the staging area), with an accompanying <strong>commit message</strong> that you <strong>have to provide</strong> to explain what changes were made.</p></li>
+<li><p><strong>git diff</strong>: shows the difference between current state of a file/repository with a commit.</p></li>
+<li><p><strong>git fetch</strong>: fetches the changes that is in your remote repository GitHub. This command download the changes into the <code>.git/</code> folder so you can compare changes to your local files, but it does not actually modify your files (i.e., files outside of the <code>.git/</code> folder).</p></li>
+<li><p><strong>git init</strong>: creates a repository (the <code>.git/</code> folder).</p></li>
+<li><p><strong>git merge</strong>: implement the changes you have <em>fetched</em> into your local files.</p></li>
+<li><p><strong>git pull</strong>: <code>git fetch</code> + <code>git merge</code>. However, it is recommended that you fetch first, check that you want to implement the changes, and then merge.</p></li>
+<li><p><strong>git push</strong>: upload your commits to a remote repository (like GitHub!)</p></li>
+</ul>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="git-ne-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="getting-a-repository-from-github-fork-git-clone.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="branching-git-branch.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -316,7 +313,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/07-put-codes-on-github.Rmd",
+"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/Appendix.Rmd",
 "text": "Edit"
 },
 "history": {
