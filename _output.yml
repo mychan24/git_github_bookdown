@@ -1,6 +1,7 @@
 bookdown::gitbook: 
     includes:
-      in_header: google_analytics.html
+      in_header: google_tag_header.html
+      after_body: google_tag_body.html
     config:
       toc:
         collapse: section
