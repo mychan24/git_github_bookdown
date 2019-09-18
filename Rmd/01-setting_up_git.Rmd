@@ -22,12 +22,12 @@ ne=$(git config --global --list| grep user.email | wc -l)
 
 mkdir ~/workdir_tmp
 
-if [ $nu > 0 ];
+if [ $nu -gt 0 ];
 then
   git config --global --list | grep user.name | cut -d"=" -f 2 > ~/workdir_tmp/username.txt
 fi
 
-if [ $ne > 0 ];
+if [ $ne -gt 0 ];
 then
   git config --global --list | grep user.email | cut -d"=" -f 2 > ~/workdir_tmp/email.txt
 fi
