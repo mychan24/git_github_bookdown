@@ -1,0 +1,63 @@
+# Stashing (`git stash`)
+
+There are times when you may want to stash (set aside) your current work rather than commit.
+
+Examples: 
+
+* Realized that you were working on the wrong branch
+* Realized that you and your collaborator are working on the same lines and resolving conflicts may be difficult
+* Need to immediately swtich to another branch and do not want to commit the change
+* Partial commit
+
+```{bash}
+git branch
+touch temp_script.sh
+git add temp_script.sh
+git status
+```
+
+<br>
+
+## Stash
+
+```{bash}
+git stash
+git stash list
+```
+
+<br>
+
+## Unstash
+
+```{bash}
+git stash apply
+git stash list
+```
+
+```{bash, eval = F}
+git stash apply --index
+git stash list
+```
+
+<br>
+
+## Delete Stash
+
+```{bash}
+git stash drop
+git stash list
+```
+
+<br>
+
+Note: You can perform both `git stash apply` and `git stash drop` at the saem time by entering `git stash pop`.
+
+<br>
+
+## Branch a Stash
+
+Probably the best use of stash: `git stash branch <branch_name>`
+
+```{bash, eval = F}
+git stash branch <branch_name>
+```
