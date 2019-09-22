@@ -149,11 +149,11 @@ git remote set-url [name] [newurl]
 	+ Click **Settings**
 	+ Click **Collaborators** and add them (they need to be on GitHub)
 	
-* More Advance way to collaborate (won't cover in detail)
+* Using pull request (advance)
 	+ **fork** a repository you want to make changes 
 	+ **git clone** it to your local computer
 	+ Make changes, **git add**, **git commit** and **git push** it to your forked remote repo
-	+ Make a [Pull Request](https://help.github.com/en/articles/creating-a-pull-request) in the original repository
+	+ Make a [Pull Request](https://help.github.com/en/articles/creating-a-pull-request) in the original repository so the owner can review and decide whether they want to incorporate the changes you made.
 	
 ***
 **You have now `fetch` and `merge` changes from different people (or yourself on a different computer/folder)!**
