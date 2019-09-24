@@ -95,5 +95,8 @@ Check the status and log again using `git status` and `git log`
 
 * Git does not track an empty directory, so until a directory has a file in it, git would not track it. 
 
+* If you want to correct the **most recent** commmit message, use `git commit --amend`
+
+
 ***
 **You have now used Git to track the file `foo.txt`. You can use `git log` to read what you have done so far in this repository!**
