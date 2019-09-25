@@ -61,19 +61,18 @@ If you found a way to speed up some toolbox, Git/GitHub helps you to suggest thi
 
 [Open source](https://en.wikipedia.org/wiki/Open-source_software) is typically a term used in software development, where it means the source code are open to the public. People can freely look at how a program was written, make improvements with them, etc. 
 
-In science, the idea of open source is closely linked with [open science](https://en.wikipedia.org/wiki/Open_science), a movement to make data, samples, software and all things related to a scientific finding as transparent and easy to access as possible. There are pros and cons to an open and closed system, and the balance between convenience, security, quality control is not a topic that can be adequately covered here. 
+In science, the idea of open source is closely linked with [open science](https://en.wikipedia.org/wiki/Open_science), a movement to make data, samples, software and all things related to a scientific finding as transparent and easy to access as possible. There are pros and cons to an open and closed system, which is not a topic that can be adequately covered here (for more info, checkout [Center for Open Science](https://cos.io/).
 
-However, given a common goal of of wanting more people to understand, reproduce, and build on top of previous work, an **'open’** approach to your code is certainly a good place to start. Git/Github will help facilitate your code being shared publicly. It also enables you to easily contribute to other projects, and let others  contribute to yours.
+However, given a common goal of wanting more people to understand, reproduce, and build on top of previous work, an **'open’** approach to your code is certainly a good place to start. Git/GitHub will help facilitate your code being shared publicly. It also enables you to easily contribute to other projects, and incorporate ideas and contribution from others in a systematic way (even strangers!).
 
 
 ## Acknowledgment {-} 
-The content in this workshop is heavily borrowed from [Software Carpentry's git novice course](https://swcarpentry.github.io/git-novice/). Check them out! 
+The creation of this tutorial would not be possible without [Software Carpentry's git novice course](https://swcarpentry.github.io/git-novice/). Check them out! 
 
 
 ## Other helpful links {-}
-
-[Git the Simple Guide](https://rogerdudler.github.io/git-guide/)
-All the necessary commands to use git is in here.
+* [GitHub Education](https://education.github.com/) provides additional features to students & researchers for free (e.g., Pro account with unlimited collaborators)!
+* [Git the Simple Guide](https://rogerdudler.github.io/git-guide/) provides all the necessary commands to use git.
 
 ## How to read the book? {-}
 
