@@ -9,7 +9,21 @@ Git for version control      |  GitHub for sharing your code
 ![](img/Git-Logo-2Color.png)  |  ![](img/GitHub_Logo.png)
 
 
-Authors: [@mychan24](https://github.com/mychan24) & [@epongpipat](https://github.com/epongpipat)
+Authors: Micaela Chan [@mychan24](https://github.com/mychan24) & Ekarin Pongpipat [@epongpipat](https://github.com/epongpipat)
+
+## Why is git important for scientists?
+
+Git facilitates (1) **documentation**, and (2) **sharing/collaborating**. Both of these are important in science.
+
+* **I. Version-control for code = the lab notebook of experiments. We need documentation for all our processes:**
+  + Scenario A: Things were working, now they are not!
+  + Scenario B: Why were changes made? 
+  + Scenario C: We made changes a long time ago…
+  
+* **II. Git and Remote Hosts (e.g., GitHub) makes sharing/collaborating easier**
+  + Sharing code made easy
+  + Facilitates new collaboration
+  + Encourages open source and open science
 
 ## Acknowledgement
 
