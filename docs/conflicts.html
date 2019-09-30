@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Conflicts | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
-  <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
+  <title>10 Conflicts | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
+  <meta name="description" content="Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Conflicts | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta property="og:title" content="10 Conflicts | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://gitbookdown.site/" />
   
@@ -17,7 +17,7 @@ It’s Not Only for Programmers" />
   <meta name="github-repo" content="mychan24/git_github_bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Conflicts | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta name="twitter:title" content="10 Conflicts | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   
   
   
@@ -47,21 +47,12 @@ It’s Not Only for Programmers" />
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148151802-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-148151802-1');
-</script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -71,14 +62,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,9 +127,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./"><strong>Git & GitHub Tutorial</strong><br></a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-this-gitgithub-tutorial-about"><i class="fa fa-check"></i>What is this Git/GitHub Tutorial about?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-is-git-important-for-scientists"><i class="fa fa-check"></i>Why is git important for scientists?</a><ul>
@@ -219,13 +209,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.5.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#you-are-now-back-in-the-master-branch-and-loss.txt-is-gone-check-with-ls"><i class="fa fa-check"></i><b>12.5.3</b> You are now back in the ‘master’ branch, and <code>loss.txt</code> is gone (check with <code>ls</code>)</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html"><i class="fa fa-check"></i><b>13</b> Stashing (<code>git stash</code>)</a><ul>
+<li class="chapter" data-level="13.1" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#stash"><i class="fa fa-check"></i><b>13.1</b> Stash</a></li>
+<li class="chapter" data-level="13.2" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#unstash"><i class="fa fa-check"></i><b>13.2</b> Unstash</a></li>
+<li class="chapter" data-level="13.3" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#delete-stash"><i class="fa fa-check"></i><b>13.3</b> Delete Stash</a></li>
+<li class="chapter" data-level="13.4" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#branch-a-stash"><i class="fa fa-check"></i><b>13.4</b> Branch a Stash</a></li>
+</ul></li>
 <li class="part"><span><b>IV Appendix</b></span></li>
 <li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="divider"></li>
-<li style="padding: 10px 15px; font-weight: bold;">Open access book-in-progress</li>
-<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></li>
-<li><a href="https://bookdown.org" target="_blank">Built with Bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -235,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git/GitHub Tutorial for Scientists:<br />
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers</a>
           </h1>
         </div>
@@ -253,15 +244,15 @@ It’s Not Only for Programmers</a>
 <div id="create-a-conflict" class="section level2">
 <h2><span class="header-section-number">10.1</span> Create a conflict</h2>
 <p>Go into your fake collaborator’s folder and add a line to <code>foo.txt</code>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/workdir_fake_collab
-<span class="bu">echo</span> fake_colab <span class="op">&gt;&gt;</span> foo.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb68-1"><a href="conflicts.html#cb68-1"></a><span class="bu">cd</span> ~/workdir_fake_collab</span>
+<span id="cb68-2"><a href="conflicts.html#cb68-2"></a><span class="bu">echo</span> fake_colab <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
 <p>Add &amp; commit your change.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add foo.txt
-<span class="fu">git</span> commit -m <span class="st">&quot;Add fake collab line to foo.txt&quot;</span></code></pre>
-<pre><code>## [master 25be033] Add fake collab line to foo.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="conflicts.html#cb69-1"></a><span class="fu">git</span> add foo.txt</span>
+<span id="cb69-2"><a href="conflicts.html#cb69-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add fake collab line to foo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master 8fe12ee] Add fake collab line to foo.txt
 ##  1 file changed, 2 insertions(+)</code></pre>
 <p>Push the change to the remote repository</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> push origin master</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="conflicts.html#cb71-1"></a><span class="fu">git</span> push origin master</span></code></pre></div>
 <pre><code>## Counting objects: 3, done.
 ## Delta compression using up to 8 threads.
 ## Compressing objects: 100% (2/2), done.
@@ -270,15 +261,15 @@ It’s Not Only for Programmers</a>
 ## To github.com:your_name/workdir.git
    09aba9d..d36beb6  master -&gt; master</code></pre>
 <p>Now go into the original <code>workdir</code> and add a different line to <code>foo.txt</code></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/workdir
-<span class="bu">echo</span> real_me <span class="op">&gt;&gt;</span> foo.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb73-1"><a href="conflicts.html#cb73-1"></a><span class="bu">cd</span> ~/workdir</span>
+<span id="cb73-2"><a href="conflicts.html#cb73-2"></a><span class="bu">echo</span> real_me <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
 <p>Add and commit the change</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add foo.txt
-<span class="fu">git</span> commit -m <span class="st">&quot;Add real me line to foo.txt&quot;</span></code></pre>
-<pre><code>## [master ff28ead] Add real me line to foo.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb74-1"><a href="conflicts.html#cb74-1"></a><span class="fu">git</span> add foo.txt</span>
+<span id="cb74-2"><a href="conflicts.html#cb74-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add real me line to foo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master ad4b7a5] Add real me line to foo.txt
 ##  1 file changed, 2 insertions(+)</code></pre>
 <p>Try to push it, and you should get an error</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> push origin master</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="conflicts.html#cb76-1"></a><span class="fu">git</span> push origin master</span></code></pre></div>
 <pre><code>## To github.com:mychan24/tmp.git
 ##  ! [rejected]        master -&gt; master (fetch first)
 ## error: failed to push some refs to &#39;git@github.com:your_name/workdir.git&#39;
@@ -295,7 +286,7 @@ It’s Not Only for Programmers</a>
 <div id="resolving-a-conflict" class="section level2">
 <h2><span class="header-section-number">10.2</span> Resolving a conflict</h2>
 <p>Pull the changes your fake collaborator made in the remote server</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> pull</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb78-1"><a href="conflicts.html#cb78-1"></a><span class="fu">git</span> pull</span></code></pre></div>
 <pre><code>## remote: Enumerating objects: 5, done.
 ## : Counting objects: 100% (5/5), done.
 ## remote: Compressing objects: 100% (2/2), done.
@@ -310,7 +301,7 @@ It’s Not Only for Programmers</a>
 <p>When this situation happens, Git will merge the conflicting changes into the file in question (i.e., <code>foo.txt</code>), and tells you that manual interventoin is needed.</p>
 <div id="look-at-the-file-with-conflict-and-understanding-the-conflict-message" class="section level3">
 <h3><span class="header-section-number">10.2.1</span> Look at the file with conflict and understanding the conflict message</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> foo.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb80-1"><a href="conflicts.html#cb80-1"></a><span class="fu">cat</span> foo.txt</span></code></pre></div>
 <pre><code>## hello
 ## world
 ## &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
@@ -326,18 +317,18 @@ It’s Not Only for Programmers</a>
 </ul></li>
 </ul>
 <p>Manually edit the file using a text editor (here we use <code>nano</code>) to the state where you want the file to be.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">nano</span> foo.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb82-1"><a href="conflicts.html#cb82-1"></a><span class="fu">nano</span> foo.txt</span></code></pre></div>
 <p>Make the resulting file look like this:</p>
 <pre><code>hello
 world
 whales are good</code></pre>
 <p>Add and commit the edited file</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add foo.txt
-<span class="fu">git</span> commit -m <span class="st">&quot;Merge changes from Github, whales are good&quot;</span></code></pre>
-<pre><code>## [master 23a61a0] Merge changes from Github, whales are good
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb84-1"><a href="conflicts.html#cb84-1"></a><span class="fu">git</span> add foo.txt</span>
+<span id="cb84-2"><a href="conflicts.html#cb84-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Merge changes from Github, whales are good&quot;</span></span></code></pre></div>
+<pre><code>## [master b2a4550] Merge changes from Github, whales are good
 ##  1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
 <p>Push your changes to the remote repo</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> push</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb86-1"><a href="conflicts.html#cb86-1"></a><span class="fu">git</span> push</span></code></pre></div>
 <pre><code>## Counting objects: 6, done.
 ## Delta compression using up to 8 threads.
 ## Compressing objects: 100% (4/4), done.
@@ -346,8 +337,8 @@ whales are good</code></pre>
 ## To github.com:your_name/workdir.git
 ##    d36beb6..0f2d252  master -&gt; master</code></pre>
 <p>Now your fake collaborator can <code>pull</code> from the remote repo again</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/workdir_fake_collab
-<span class="fu">git</span> pull</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb88-1"><a href="conflicts.html#cb88-1"></a><span class="bu">cd</span> ~/workdir_fake_collab</span>
+<span id="cb88-2"><a href="conflicts.html#cb88-2"></a><span class="fu">git</span> pull</span></code></pre></div>
 <pre><code>## remote: Enumerating objects: 10, done.
 ## remote: Counting objects: 100% (10/10), done.
 ## remote: Compressing objects: 100% (4/4), done.
@@ -360,7 +351,7 @@ whales are good</code></pre>
 ##  foo.txt | 2 +-
 ##  1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
 <p>Both you and your fake collaborator now have the updated <code>foo.txt</code>. Check by printing the file</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> foo.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb90-1"><a href="conflicts.html#cb90-1"></a><span class="fu">cat</span> foo.txt</span></code></pre></div>
 <pre><code>## hello
 ## world
 ## whales are good</code></pre>
@@ -425,13 +416,8 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section",
-"scroll_highlight": true
-},
-"toolbar": {
-"position": "static"
-},
-"search": true
+"collapse": "subsection"
+}
 });
 });
 </script>

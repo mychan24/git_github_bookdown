@@ -148,7 +148,13 @@ git remote set-url [name] [newurl]
 * Adding collaborators in your GitHub repository
 	+ Click **Settings**
 	+ Click **Collaborators** and add them (they need to be on GitHub)
-	
+
+<br>
+
+![](img/ch9_collab_fig.png)
+
+<br>
+
 * Using pull request (advance)
 	+ **fork** a repository you want to make changes 
 	+ **git clone** it to your local computer

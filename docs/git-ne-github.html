@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Git \(\ne\) GitHub | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
-  <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
+  <title>6 Git \(\ne\) GitHub | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
+  <meta name="description" content="Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Git \(\ne\) GitHub | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta property="og:title" content="6 Git \(\ne\) GitHub | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://gitbookdown.site/" />
   
@@ -17,7 +17,7 @@ It’s Not Only for Programmers" />
   <meta name="github-repo" content="mychan24/git_github_bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Git \(\ne\) GitHub | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta name="twitter:title" content="6 Git \(\ne\) GitHub | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   
   
   
@@ -47,21 +47,12 @@ It’s Not Only for Programmers" />
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148151802-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-148151802-1');
-</script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -71,14 +62,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,9 +127,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./"><strong>Git & GitHub Tutorial</strong><br></a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-this-gitgithub-tutorial-about"><i class="fa fa-check"></i>What is this Git/GitHub Tutorial about?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-is-git-important-for-scientists"><i class="fa fa-check"></i>Why is git important for scientists?</a><ul>
@@ -219,13 +209,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.5.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#you-are-now-back-in-the-master-branch-and-loss.txt-is-gone-check-with-ls"><i class="fa fa-check"></i><b>12.5.3</b> You are now back in the ‘master’ branch, and <code>loss.txt</code> is gone (check with <code>ls</code>)</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html"><i class="fa fa-check"></i><b>13</b> Stashing (<code>git stash</code>)</a><ul>
+<li class="chapter" data-level="13.1" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#stash"><i class="fa fa-check"></i><b>13.1</b> Stash</a></li>
+<li class="chapter" data-level="13.2" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#unstash"><i class="fa fa-check"></i><b>13.2</b> Unstash</a></li>
+<li class="chapter" data-level="13.3" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#delete-stash"><i class="fa fa-check"></i><b>13.3</b> Delete Stash</a></li>
+<li class="chapter" data-level="13.4" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#branch-a-stash"><i class="fa fa-check"></i><b>13.4</b> Branch a Stash</a></li>
+</ul></li>
 <li class="part"><span><b>IV Appendix</b></span></li>
 <li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="divider"></li>
-<li style="padding: 10px 15px; font-weight: bold;">Open access book-in-progress</li>
-<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></li>
-<li><a href="https://bookdown.org" target="_blank">Built with Bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -235,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git/GitHub Tutorial for Scientists:<br />
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers</a>
           </h1>
         </div>
@@ -319,13 +310,8 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section",
-"scroll_highlight": true
-},
-"toolbar": {
-"position": "static"
-},
-"search": true
+"collapse": "subsection"
+}
 });
 });
 </script>

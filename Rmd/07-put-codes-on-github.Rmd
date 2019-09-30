@@ -5,7 +5,7 @@
 * **git push**: upload your commits to a remote repository (like GitHub!)
 
 ## Push an existing repository from your local computer
-Go back to the loacl directory, workdir that we made in previous sections. 
+Go back to the local directory, workdir that we made in previous sections. 
 
 ```{r echo=F}
 # Change directory into workdir so the rest of the bash commands will be run in it

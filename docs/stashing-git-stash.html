@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Collaborating (git fetch &amp; pull) | Git/GitHub Tutorial for Scientists: its not only for programmers</title>
-  <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
-its not only for programmers" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <title>13 Stashing (git stash) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
+  <meta name="description" content="Git &amp; GitHub Tutorial for Scientists:<br />
+It’s Not Only for Programmers" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Collaborating (git fetch &amp; pull) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta property="og:title" content="13 Stashing (git stash) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://gitbookdown.site/" />
   
   
-  
-  
+  <meta name="github-repo" content="mychan24/git_github_bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Collaborating (git fetch &amp; pull) | Git/GitHub Tutorial for Scientists: its not only for programmers" />
+  <meta name="twitter:title" content="13 Stashing (git stash) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   
   
   
@@ -31,8 +31,8 @@ its not only for programmers" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="getting-a-repository-from-github-fork-git-clone.html"/>
-<link rel="next" href="conflicts.html"/>
+<link rel="prev" href="branching-git-branch.html">
+<link rel="next" href="glossary.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,6 +55,7 @@ code.sourceCode > span { color: inherit; text-decoration: inherit; }
 code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -134,6 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
 <li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
@@ -146,13 +148,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html"><i class="fa fa-check"></i><b>2</b> Creating a Repository (<code>git init</code>)</a><ul>
-<li class="chapter" data-level="2.1" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html#create-a-directory-call-workdir-in-your-desktop-for-this-tutorial"><i class="fa fa-check"></i><b>2.1</b> Create a directory call <code>workdir</code> in your Desktop for this tutorial</a></li>
+<li class="chapter" data-level="2.1" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html#create-a-directory-call-workdir-in-your-home-directory-for-this-tutorial"><i class="fa fa-check"></i><b>2.1</b> Create a directory call <code>workdir</code> in your home directory for this tutorial</a></li>
 <li class="chapter" data-level="2.2" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html#create-a-repository-where-git-store-versions-of-your-file"><i class="fa fa-check"></i><b>2.2</b> Create a repository, where git store versions of your file</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html"><i class="fa fa-check"></i><b>3</b> Tracking Changes (<code>git add &amp; commit</code>)</a><ul>
 <li class="chapter" data-level="3.1" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#adding-new-filesmodification-git-add"><i class="fa fa-check"></i><b>3.1</b> Adding new files/modification (<code>git add</code>)</a></li>
 <li class="chapter" data-level="3.2" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#saving-these-changes-to-the-repository-git-commit"><i class="fa fa-check"></i><b>3.2</b> Saving these changes to the repository (<code>git commit</code>)</a></li>
-<li><a href="tracking-changes-git-add-commit.html#bonus---checking-what-has-changed-before-addcommit-git-diff">BONUS - Checking what has changed before add/commit (<code>git diff</code>)</a></li>
+<li><a href="tracking-changes-git-add-commit.html#practice---lets-add-a-line-to-the-file-and-addcommit-it">PRACTICE - Let’s add a line to the file and <code>add</code>/<code>commit</code> it</a></li>
 <li class="chapter" data-level="" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#notes"><i class="fa fa-check"></i>Notes</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html"><i class="fa fa-check"></i><b>4</b> Exploring History (<code>git diff &amp; show</code>)</a><ul>
@@ -165,7 +167,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II GitHub and Other Remote Hosts</b></span></li>
 <li class="chapter" data-level="6" data-path="git-ne-github.html"><a href="git-ne-github.html"><i class="fa fa-check"></i><b>6</b> Git <span class="math inline">\(\ne\)</span> GitHub</a><ul>
 <li class="chapter" data-level="6.1" data-path="git-ne-github.html"><a href="git-ne-github.html#git-is-a-remote-server-that-hosts-a-repository-remote-host"><i class="fa fa-check"></i><b>6.1</b> Git is a remote server that hosts a repository (remote host)</a></li>
-<li class="chapter" data-level="6.2" data-path="git-ne-github.html"><a href="git-ne-github.html#create-aa-repository-in-on-github-a-remote-repo"><i class="fa fa-check"></i><b>6.2</b> Create aa repository in on github (a remote repo)</a></li>
+<li class="chapter" data-level="6.2" data-path="git-ne-github.html"><a href="git-ne-github.html#create-a-repository-on-github-a-remote-repo"><i class="fa fa-check"></i><b>6.2</b> Create a repository on github (a remote repo)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html"><i class="fa fa-check"></i><b>7</b> Putting codes on Github</a><ul>
 <li class="chapter" data-level="7.1" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html#push-an-existing-repository-from-your-local-computer"><i class="fa fa-check"></i><b>7.1</b> Push an existing repository from your local computer</a></li>
@@ -175,22 +177,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#fork-a-repository-remote---remote"><i class="fa fa-check"></i><b>8.1</b> Fork a repository (remote -&gt; remote)</a></li>
 <li class="chapter" data-level="8.2" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#cloning-a-repository-remote---local"><i class="fa fa-check"></i><b>8.2</b> Cloning a repository (remote -&gt; local)</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html"><i class="fa fa-check"></i><b>9</b> Collaborating (<code>git fetch &amp; pull</code>)</a><ul>
-<li class="chapter" data-level="9.1" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#setup-a-fake-collaborator-yourself-in-another-directory"><i class="fa fa-check"></i><b>9.1</b> Setup a fake collaborator, yourself in another directory :)</a></li>
-<li class="chapter" data-level="9.2" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#implement-the-changes-your-fake-collaborator-made"><i class="fa fa-check"></i><b>9.2</b> Implement the changes your fake collaborator made</a></li>
-<li class="chapter" data-level="" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#notes-1"><i class="fa fa-check"></i>Notes</a></li>
-<li class="chapter" data-level="" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#bonus---what-is-my-remote"><i class="fa fa-check"></i>BONUS - What is my remote?</a></li>
-<li class="chapter" data-level="9.3" data-path="collaborating-git-fetch-pull.html"><a href="collaborating-git-fetch-pull.html#really-collaborating-on-github"><i class="fa fa-check"></i><b>9.3</b> Really collaborating on Github</a></li>
+<li class="chapter" data-level="9" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html"><i class="fa fa-check"></i><b>9</b> Collaborating (<code>git fetch &amp; merge (or pull)</code>)</a><ul>
+<li class="chapter" data-level="9.1" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#setup-a-fake-collaborator-yourself-in-another-directory"><i class="fa fa-check"></i><b>9.1</b> Setup a fake collaborator, yourself in another directory :)</a></li>
+<li class="chapter" data-level="9.2" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#implement-the-changes-your-fake-collaborator-made"><i class="fa fa-check"></i><b>9.2</b> Implement the changes your fake collaborator made</a></li>
+<li class="chapter" data-level="" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#faq"><i class="fa fa-check"></i>FAQ</a></li>
+<li class="chapter" data-level="" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#bonus---what-is-my-remote"><i class="fa fa-check"></i>BONUS - What is my remote?</a></li>
+<li class="chapter" data-level="9.3" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#really-collaborating-on-github"><i class="fa fa-check"></i><b>9.3</b> Really collaborating on GitHub</a></li>
 </ul></li>
 <li class="part"><span><b>III Advanced Git</b></span></li>
 <li class="chapter" data-level="10" data-path="conflicts.html"><a href="conflicts.html"><i class="fa fa-check"></i><b>10</b> Conflicts</a><ul>
 <li class="chapter" data-level="10.1" data-path="conflicts.html"><a href="conflicts.html#create-a-conflict"><i class="fa fa-check"></i><b>10.1</b> Create a conflict</a></li>
-<li class="chapter" data-level="10.2" data-path="conflicts.html"><a href="conflicts.html#resolving-a-conflict"><i class="fa fa-check"></i><b>10.2</b> Resolving a conflict</a></li>
+<li class="chapter" data-level="10.2" data-path="conflicts.html"><a href="conflicts.html#resolving-a-conflict"><i class="fa fa-check"></i><b>10.2</b> Resolving a conflict</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="conflicts.html"><a href="conflicts.html#look-at-the-file-with-conflict-and-understanding-the-conflict-message"><i class="fa fa-check"></i><b>10.2.1</b> Look at the file with conflict and understanding the conflict message</a></li>
+</ul></li>
 <li class="chapter" data-level="10.3" data-path="conflicts.html"><a href="conflicts.html#tips-to-prevent-conflicts"><i class="fa fa-check"></i><b>10.3</b> Tips to prevent conflicts</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html"><i class="fa fa-check"></i><b>11</b> Revert to a previous commit (<code>git checkout</code>)</a><ul>
 <li class="chapter" data-level="11.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>11.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
 <li class="chapter" data-level="11.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>11.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
+<li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#bonus---detached-head"><i class="fa fa-check"></i>BONUS - Detached HEAD</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a><ul>
 <li class="chapter" data-level="12.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#check-what-branch-youre-on"><i class="fa fa-check"></i><b>12.1</b> Check what branch you’re on</a></li>
@@ -198,7 +203,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#switch-between-branches-git-commit"><i class="fa fa-check"></i><b>12.3</b> Switch between branches (<code>git commit</code>)</a></li>
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
+<li class="chapter" data-level="" data-path="branching-git-branch.html"><a href="branching-git-branch.html#bonus-advanced-x-2-topic---detached-head"><i class="fa fa-check"></i>BONUS (Advanced x 2 topic) - detached HEAD</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#purposely-enter-a-detached-head-and-create-a-commit"><i class="fa fa-check"></i><b>12.5.1</b> Purposely enter a detached HEAD and create a commit</a></li>
+<li class="chapter" data-level="12.5.2" data-path="branching-git-branch.html"><a href="branching-git-branch.html#return-to-master-branch"><i class="fa fa-check"></i><b>12.5.2</b> Return to master branch</a></li>
+<li class="chapter" data-level="12.5.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#you-are-now-back-in-the-master-branch-and-loss.txt-is-gone-check-with-ls"><i class="fa fa-check"></i><b>12.5.3</b> You are now back in the ‘master’ branch, and <code>loss.txt</code> is gone (check with <code>ls</code>)</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html"><i class="fa fa-check"></i><b>13</b> Stashing (<code>git stash</code>)</a><ul>
+<li class="chapter" data-level="13.1" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#stash"><i class="fa fa-check"></i><b>13.1</b> Stash</a></li>
+<li class="chapter" data-level="13.2" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#unstash"><i class="fa fa-check"></i><b>13.2</b> Unstash</a></li>
+<li class="chapter" data-level="13.3" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#delete-stash"><i class="fa fa-check"></i><b>13.3</b> Delete Stash</a></li>
+<li class="chapter" data-level="13.4" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#branch-a-stash"><i class="fa fa-check"></i><b>13.4</b> Branch a Stash</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
 </ul>
 
       </nav>
@@ -208,8 +226,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git/GitHub Tutorial for Scientists:<br />
-its not only for programmers</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git &amp; GitHub Tutorial for Scientists:<br />
+It’s Not Only for Programmers</a>
           </h1>
         </div>
 
@@ -217,105 +235,73 @@ its not only for programmers</a>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="collaborating-git-fetch-pull" class="section level1">
-<h1><span class="header-section-number">9</span> Collaborating (<code>git fetch &amp; pull</code>)</h1>
-<p><strong>Key terms/commands:</strong></p>
+<div id="stashing-git-stash" class="section level1">
+<h1><span class="header-section-number">13</span> Stashing (<code>git stash</code>)</h1>
+<p>There are times when you may want to stash (set aside) your current work rather than commit.</p>
+<p>Examples:</p>
 <ul>
-<li><p><strong>git fetch</strong>: look at the changes that is in your remote repository Github. This commands download the changes into the <code>.git/</code> folder so you can compare changes to your local files, but it does not actually modify your files (i.e., files outside of the <code>.git/</code> folder).</p></li>
-<li><p><strong>git pull</strong>: implement the changes you have <em>fetched</em> into your local files.</p></li>
+<li>Realized that you were working on the wrong branch</li>
+<li>Realized that you and your collaborator are working on the same lines and resolving conflicts may be difficult</li>
+<li>Need to immediately swtich to another branch and do not want to commit the change</li>
+<li>Partial commit</li>
 </ul>
-<div id="setup-a-fake-collaborator-yourself-in-another-directory" class="section level2">
-<h2><span class="header-section-number">9.1</span> Setup a fake collaborator, yourself in another directory :)</h2>
-<p>Clone the <strong>workdir</strong> repo into your local computer but a different folder as if you have a collaborator</p>
-<blockquote>
-<p>git clone <a href="https://github.com/your_username/workdir.git" class="uri">https://github.com/your_username/workdir.git</a> ~/Desktop/workdir_fake_collab</p>
-</blockquote>
-<p>Lets pretend you are the collaborator, and you will make some changes and push it to Github</p>
-<blockquote>
-<p>cd ~/Desktop/workdir_fake_collab</p>
-</blockquote>
-<blockquote>
-<p>touch foofoo.txt</p>
-</blockquote>
-<blockquote>
-<p>git add foofoo.txt</p>
-</blockquote>
-<blockquote>
-<p>git commit -m “Add foofoo.txt”</p>
-</blockquote>
-<blockquote>
-<p>git push origin master</p>
-</blockquote>
-<p>Lets check what is in the current folder</p>
-<blockquote>
-<p>ls</p>
-</blockquote>
-<p>Check what is on the workdir repository on Github. It should contain <code>foofoo.txt</code></p>
-<p>But what about the original <code>workdir</code> folder?</p>
-<blockquote>
-<p>ls ~/Desktop/workdir</p>
-</blockquote>
-<p><code>foofoo.txt</code> should be missing. Now lets say you want to check what changes your collaborator made.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb134-1"><a href="stashing-git-stash.html#cb134-1"></a><span class="fu">git</span> branch</span>
+<span id="cb134-2"><a href="stashing-git-stash.html#cb134-2"></a><span class="fu">touch</span> temp_script.sh</span>
+<span id="cb134-3"><a href="stashing-git-stash.html#cb134-3"></a><span class="fu">git</span> add temp_script.sh</span>
+<span id="cb134-4"><a href="stashing-git-stash.html#cb134-4"></a><span class="fu">git</span> status</span></code></pre></div>
+<pre><code>## * master
+## On branch master
+## Changes to be committed:
+##   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+## 
+##  new file:   temp_script.sh
+## 
+## Untracked files:
+##   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+## 
+##  .gitignore</code></pre>
+<p><br></p>
+<div id="stash" class="section level2">
+<h2><span class="header-section-number">13.1</span> Stash</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb136-1"><a href="stashing-git-stash.html#cb136-1"></a><span class="fu">git</span> stash</span>
+<span id="cb136-2"><a href="stashing-git-stash.html#cb136-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
+<pre><code>## Saved working directory and index state WIP on master: a64c960 Adding loss.txt while in detached HEAD
+## stash@{0}: WIP on master: a64c960 Adding loss.txt while in detached HEAD</code></pre>
+<p><br></p>
 </div>
-<div id="implement-the-changes-your-fake-collaborator-made" class="section level2">
-<h2><span class="header-section-number">9.2</span> Implement the changes your fake collaborator made</h2>
-<p><strong>fetch</strong> the changes your fake collaborator pushed to Github onto your local computer.</p>
-<blockquote>
-<p>git fetch</p>
-</blockquote>
-<p>NOTE that this does not change the files in your directory. But now you can use <code>git diff</code> to see what your collaborator has changed</p>
-<blockquote>
-<p>git diff master origin/master</p>
-</blockquote>
-<p>If you decided these are changes you want in your local directory (the origainl <code>workdir</code>)</p>
-<blockquote>
-<p>git pull</p>
-</blockquote>
+<div id="unstash" class="section level2">
+<h2><span class="header-section-number">13.2</span> Unstash</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb138-1"><a href="stashing-git-stash.html#cb138-1"></a><span class="fu">git</span> stash apply</span>
+<span id="cb138-2"><a href="stashing-git-stash.html#cb138-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
+<pre><code>## On branch master
+## Changes to be committed:
+##   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+## 
+##  new file:   temp_script.sh
+## 
+## Untracked files:
+##   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+## 
+##  .gitignore
+## 
+## stash@{0}: WIP on master: a64c960 Adding loss.txt while in detached HEAD</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb140-1"><a href="stashing-git-stash.html#cb140-1"></a><span class="fu">git</span> stash apply --index</span>
+<span id="cb140-2"><a href="stashing-git-stash.html#cb140-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
+<p><br></p>
 </div>
-<div id="notes-1" class="section level2 unnumbered">
-<h2>Notes</h2>
-<ul>
-<li><code>git pull</code> returns message “Already up to date.”
-<ul>
-<li><code>git pull</code> impelment the changes that were fetched by <code>git fetch</code>, so fetch first.</li>
-</ul></li>
-<li>Will <code>git fetch</code> change my stuff?
-<ul>
-<li>Fetching does not change your local file until your pull.</li>
-</ul></li>
-</ul>
+<div id="delete-stash" class="section level2">
+<h2><span class="header-section-number">13.3</span> Delete Stash</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb141-1"><a href="stashing-git-stash.html#cb141-1"></a><span class="fu">git</span> stash drop</span>
+<span id="cb141-2"><a href="stashing-git-stash.html#cb141-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
+<pre><code>## Dropped refs/stash@{0} (8231ec4dd44240aaf63d640b3840f46e2ff0df29)</code></pre>
+<p><br></p>
+<p>Note: You can perform both <code>git stash apply</code> and <code>git stash drop</code> at the saem time by entering <code>git stash pop</code>.</p>
+<p><br></p>
 </div>
-<div id="bonus---what-is-my-remote" class="section level2 unnumbered">
-<h2>BONUS - What is my remote?</h2>
-<p>What is your remote?</p>
-<blockquote>
-<p>git remote -v</p>
-</blockquote>
-<p>Adding a different remote</p>
-<blockquote>
-<p>git add remote [name] [url]</p>
-</blockquote>
-<p>Changing the URL of the remote (e.g., you change the remote repository)</p>
-<blockquote>
-<p>git remote set-url [name] [newurl]</p>
-</blockquote>
-</div>
-<div id="really-collaborating-on-github" class="section level2">
-<h2><span class="header-section-number">9.3</span> Really collaborating on Github</h2>
-<ul>
-<li>Adding collaborators in your Github repository
-<ul>
-<li>Click <strong>Settings</strong></li>
-<li>Click <strong>Collaborators</strong> and add them (they need to be on Github)</li>
-</ul></li>
-<li>More Advance way to collaborate (won’t cover in detail)
-<ul>
-<li><strong>fork</strong> a repository you want to make changes</li>
-<li><strong>git clone</strong> it to your local computer</li>
-<li>Make changes, <strong>git add</strong>, <strong>git commit</strong> and <strong>git push</strong> it to your forked remote repo</li>
-<li>Make a <a href="https://help.github.com/en/articles/creating-a-pull-request">Pull Request</a> in the original repository</li>
-</ul></li>
-</ul>
+<div id="branch-a-stash" class="section level2">
+<h2><span class="header-section-number">13.4</span> Branch a Stash</h2>
+<p>Probably the best use of stash: <code>git stash branch &lt;branch_name&gt;</code></p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb143-1"><a href="stashing-git-stash.html#cb143-1"></a><span class="fu">git</span> stash branch <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 
 </div>
 </div>
@@ -327,8 +313,8 @@ its not only for programmers</a>
           </div>
         </div>
       </div>
-<a href="getting-a-repository-from-github-fork-git-clone.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="conflicts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="branching-git-branch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="glossary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -358,7 +344,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/09-collaboration.Rmd",
+"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/13-stashing.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -367,13 +353,8 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section",
-"scroll_highlight": true
-},
-"toolbar": {
-"position": "static"
-},
-"search": true
+"collapse": "subsection"
+}
 });
 });
 </script>
@@ -385,9 +366,8 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

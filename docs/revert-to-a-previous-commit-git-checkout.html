@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>11 Revert to a previous commit (git checkout) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
-  <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
+  <title>11 Revert to a previous commit (git checkout) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
+  <meta name="description" content="Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="11 Revert to a previous commit (git checkout) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta property="og:title" content="11 Revert to a previous commit (git checkout) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://gitbookdown.site/" />
   
@@ -17,7 +17,7 @@ It’s Not Only for Programmers" />
   <meta name="github-repo" content="mychan24/git_github_bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="11 Revert to a previous commit (git checkout) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta name="twitter:title" content="11 Revert to a previous commit (git checkout) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   
   
   
@@ -47,21 +47,12 @@ It’s Not Only for Programmers" />
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148151802-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-148151802-1');
-</script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -71,14 +62,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,9 +127,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./"><strong>Git & GitHub Tutorial</strong><br></a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-this-gitgithub-tutorial-about"><i class="fa fa-check"></i>What is this Git/GitHub Tutorial about?</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-is-git-important-for-scientists"><i class="fa fa-check"></i>Why is git important for scientists?</a><ul>
@@ -219,13 +209,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.5.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#you-are-now-back-in-the-master-branch-and-loss.txt-is-gone-check-with-ls"><i class="fa fa-check"></i><b>12.5.3</b> You are now back in the ‘master’ branch, and <code>loss.txt</code> is gone (check with <code>ls</code>)</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html"><i class="fa fa-check"></i><b>13</b> Stashing (<code>git stash</code>)</a><ul>
+<li class="chapter" data-level="13.1" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#stash"><i class="fa fa-check"></i><b>13.1</b> Stash</a></li>
+<li class="chapter" data-level="13.2" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#unstash"><i class="fa fa-check"></i><b>13.2</b> Unstash</a></li>
+<li class="chapter" data-level="13.3" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#delete-stash"><i class="fa fa-check"></i><b>13.3</b> Delete Stash</a></li>
+<li class="chapter" data-level="13.4" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#branch-a-stash"><i class="fa fa-check"></i><b>13.4</b> Branch a Stash</a></li>
+</ul></li>
 <li class="part"><span><b>IV Appendix</b></span></li>
 <li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="divider"></li>
-<li style="padding: 10px 15px; font-weight: bold;">Open access book-in-progress</li>
-<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></li>
-<li><a href="https://bookdown.org" target="_blank">Built with Bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -235,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git/GitHub Tutorial for Scientists:<br />
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers</a>
           </h1>
         </div>
@@ -253,31 +244,33 @@ It’s Not Only for Programmers</a>
 <div id="going-back-to-a-specific-version-of-a-file-git-checkout" class="section level2">
 <h2><span class="header-section-number">11.1</span> Going back to a specific version of a file (<code>git checkout</code>)</h2>
 <p>Make sure you are in your original <code>workdir</code></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/workdir</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb92-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb92-1"></a><span class="bu">cd</span> ~/workdir</span></code></pre></div>
 <p>Make some changes to <code>foo.txt</code></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;A whole new world&quot;</span> <span class="op">&gt;&gt;</span> foo.txt
-<span class="fu">cat</span> foo.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb93-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb93-1"></a><span class="bu">echo</span> <span class="st">&quot;A whole new world&quot;</span> <span class="op">&gt;&gt;</span> foo.txt</span>
+<span id="cb93-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb93-2"></a><span class="fu">cat</span> foo.txt</span></code></pre></div>
 <pre><code>## hello
 ## world
 ## whales are good
 ## A whole new world</code></pre>
 <p>Let assume we want to go back to a previous version of foo.txt.</p>
 <p><strong>Before going back to a previous state of a file, COMMIT what you have now!</strong></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add foo.txt
-<span class="fu">git</span> commit -m <span class="st">&quot;Add &#39;A whole new world&#39; to foo.txt&quot;</span></code></pre>
-<pre><code>## [master 98f4fba] Add &#39;A whole new world&#39; to foo.txt
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb95-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb95-1"></a><span class="fu">git</span> add foo.txt</span>
+<span id="cb95-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb95-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add &#39;A whole new world&#39; to foo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master e1d1a49] Add &#39;A whole new world&#39; to foo.txt
 ##  1 file changed, 1 insertion(+)</code></pre>
 <p>Recover the <code>foo.txt</code> that doesn’t have “A whole new world” in it (use HEAD~1 or unique identifier)</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout HEAD~1 foo.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb97-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb97-1"></a><span class="fu">git</span> checkout HEAD~1 foo.txt</span></code></pre></div>
+<pre><code>## Updated 1 path from 1b61113</code></pre>
 <p>Check what is in <code>foo.txt</code></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> foo.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb99-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb99-1"></a><span class="fu">cat</span> foo.txt</span></code></pre></div>
 <pre><code>## hello
 ## world
 ## whales are good</code></pre>
 <p>Go back to the state where “A whole new world” is in the file</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout HEAD foo.txt
-<span class="fu">cat</span> foo.txt</code></pre>
-<pre><code>## hello
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb101-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb101-1"></a><span class="fu">git</span> checkout HEAD foo.txt</span>
+<span id="cb101-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb101-2"></a><span class="fu">cat</span> foo.txt</span></code></pre></div>
+<pre><code>## Updated 1 path from 6d02667
+## hello
 ## world
 ## whales are good
 ## A whole new world</code></pre>
@@ -285,7 +278,7 @@ It’s Not Only for Programmers</a>
 <div id="going-back-to-an-entire-commit---detached-head-caution" class="section level2">
 <h2><span class="header-section-number">11.2</span> Going back to an entire commit - Detached HEAD (CAUTION)</h2>
 <p>If you <code>git checkout</code> a previous commit without also specifying a file, you will revert the entire directory to a previous condition</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout HEAD~1 </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb103-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb103-1"></a><span class="fu">git</span> checkout HEAD~1 </span></code></pre></div>
 <pre><code>## Note: checking out &#39;HEAD~1&#39;.
 ## 
 ## You are in &#39;detached HEAD&#39; state. You can look around, make experimental
@@ -297,7 +290,7 @@ It’s Not Only for Programmers</a>
 ## 
 ##   git checkout -b &lt;new-branch-name&gt;
 ## 
-## HEAD is now at 23a61a0 Merge changes from Github, whales are good</code></pre>
+## HEAD is now at b2a4550 Merge changes from Github, whales are good</code></pre>
 <p>You should see a warning message about being in a <strong>‘detached HEAD’</strong>. (Refer to the Glossary section in the Appendix for a brief overview on “HEAD” and “detached HEAD”.)</p>
 <p>Use <code>git checkout HEAD</code> to return to most recent state.</p>
 </div>
@@ -355,13 +348,8 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section",
-"scroll_highlight": true
-},
-"toolbar": {
-"position": "static"
-},
-"search": true
+"collapse": "subsection"
+}
 });
 });
 </script>
