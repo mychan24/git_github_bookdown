@@ -144,26 +144,25 @@ git remote set-url [name] [newurl]
 ```
 
 ## Really collaborating on GitHub
+<br>
 
-* Adding collaborators in your GitHub repository
-	+ Click **Settings**
-	+ Click **Collaborators** and add them (they need to be on GitHub)
+![](img/ch9_collab_fig.png)
 
-* **Using pull request (advance)**
+<br>
+^[Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons), [Dave Gandy](https://www.flaticon.com/authors/dave-gandy), [Iconnice](https://www.flaticon.com/authors/iconnice) from Flaticon]
+
+* **Using pull request (advance)**, useful for collaborating with anyone, including strangers!
 	+ **fork** a repository you want to make changes 
 	+ **git clone** it to your local computer
 	+ Make changes, **git add**, **git commit** and **git push** it to your forked remote repo
 	+ Make a [Pull Request](https://help.github.com/en/articles/creating-a-pull-request) in the original repository so the owner can review and decide whether they want to incorporate the changes you made.
 
-<br>
+* Adding collaborators in your GitHub repository
+	+ Click **Settings**
+	+ Click **Collaborators** and add them (they need to be on GitHub)
 
-![Workflow of collaborating on GitHub](img/ch9_collab_fig.png)
-
-<br>
-	
 
 ***
 **You have now `fetch` and `merge` changes from different people (or yourself on a different computer/folder)!**
 
 
-^[Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons), [Dave Gandy](https://www.flaticon.com/authors/dave-gandy), [Iconnice](https://www.flaticon.com/authors/iconnice) from Flaticon]
