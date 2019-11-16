@@ -4,7 +4,7 @@
 
 Thus far, everything is within your local computer and done using `git`. That is the **version control** portion of git, which is important and powerful. However, what makes git a efficient tool for collaboration is its power to share through remote hosts like **GitHub**.
 
-* GitHub is not the only option, there are other companies that offer free remote hosting, here are a few alterantives [Bitbucket](https://bitbucket.org/), [Gitlab](https://gitlab.com/)
+* GitHub is not the only option, there are other companies that offer free remote hosting, here are a few alternatives [Bitbucket](https://bitbucket.org/), [Gitlab](https://gitlab.com/)
 
 ## Git is a remote server that hosts a repository (remote host)
 

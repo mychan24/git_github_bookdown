@@ -192,7 +192,7 @@ git checkout master
 
 ### You are now back in the 'master' branch, and `loss.txt` is gone (check with `ls`)
 
-Luckily, the output message actually tells you how to recover those changes (for now, before Git evetually deletes it).
+Luckily, the output message actually tells you how to recover those changes (for now, before Git eventually deletes it).
 ```{bash, eval=FALSE}
 git branch recover_loss_branch <commit identifier>
 ```

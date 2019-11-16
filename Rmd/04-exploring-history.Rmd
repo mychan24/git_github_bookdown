@@ -26,7 +26,7 @@ Check difference compared to two commits ago
 git diff HEAD~1 foo.txt
 ```
 
-You can check difference between the current file against a specific commit based on its identifer (the unique identifier is different for you, use `git log` to check!)
+You can check difference between the current file against a specific commit based on its identifier (the unique identifier is different for you, use `git log` to check!)
 
 ```{bash, eval = FALSE}
 git diff <unique identifier> foo.txt

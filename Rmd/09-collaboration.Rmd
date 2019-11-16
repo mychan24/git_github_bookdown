@@ -104,7 +104,7 @@ git diff master origin/master`
 ## index 0000000..e69de29
 ```
 
-If you decided these are changes you want in your local directory (the origainl `workdir`)
+If you decided these are changes you want in your local directory (the original `workdir`)
 
 ```{bash, eval = FALSE}
 git merge
@@ -120,7 +120,7 @@ git merge
 
 ## FAQ {-}
 * What if `git merge` returns message "Already up to date."
-	+ `git merge` impelment the changes that were fetched by `git fetch`, so fetch first. 
+	+ `git merge` implement the changes that were fetched by `git fetch`, so fetch first. 
 * Will `git fetch` change my stuff? 
 	+ Fetching does not change your local file until your pull. 
 

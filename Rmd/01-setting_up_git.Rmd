@@ -41,7 +41,7 @@ git config --global user.email "shadywhale@allthewhales.com"
 ```
 
 ### Setup the correct linebreaks encoding
-Differnt operating systems (OS) uses different characters to encode new lines (linebreaks). Setting git to make sure it reads the correct type of characters as linebreaks.
+Different operating systems (OS) uses different characters to encode new lines (linebreaks). Setting git to make sure it reads the correct type of characters as linebreaks.
 
 **Mac/Linux**
 

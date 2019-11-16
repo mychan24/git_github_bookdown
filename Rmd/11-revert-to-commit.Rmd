@@ -67,7 +67,7 @@ Use `git checkout HEAD` to return to most recent state.
 
 ## BONUS - Detached HEAD {-}
 
-**CAUTION 1**: If you make commits while you aare in a detached HEAD, returning to "master" (or any other branch)  means those changes are loss (again, we will talk about branches soon).
+**CAUTION 1**: If you make commits while you are in a detached HEAD, returning to "master" (or any other branch)  means those changes are loss (again, we will talk about branches soon).
 
 A [detached HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit) means you are not in a branch, and any changes you make will disappear when you switch back to a real branch (e.g., `git checkout master`). More about branching and how to prevent your works from disappearing in the next chapter!
 
