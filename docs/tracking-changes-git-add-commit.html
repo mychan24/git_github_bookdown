@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Tracking Changes (git add &amp; commit) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
-  <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
+  <title>3 Tracking Changes (git add &amp; commit) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
+  <meta name="description" content="Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Tracking Changes (git add &amp; commit) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta property="og:title" content="3 Tracking Changes (git add &amp; commit) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://gitbookdown.site/" />
   
@@ -17,7 +17,7 @@ It’s Not Only for Programmers" />
   <meta name="github-repo" content="mychan24/git_github_bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Tracking Changes (git add &amp; commit) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta name="twitter:title" content="3 Tracking Changes (git add &amp; commit) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   
   
   
@@ -31,8 +31,8 @@ It’s Not Only for Programmers" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="creating-a-repository-git-init.html">
-<link rel="next" href="exploring-history-git-diff-show.html">
+<link rel="prev" href="creating-a-repository-git-init.html"/>
+<link rel="next" href="exploring-history-git-diff-show.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -47,38 +47,37 @@ It’s Not Only for Programmers" />
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148151802-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-148151802-1');
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9PKDM2');</script>
+<!-- End Google Tag Manager -->
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +86,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -235,7 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git/GitHub Tutorial for Scientists:<br />
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers</a>
           </h1>
         </div>
@@ -257,11 +256,11 @@ It’s Not Only for Programmers</a>
 <div id="adding-new-filesmodification-git-add" class="section level2">
 <h2><span class="header-section-number">3.1</span> Adding new files/modification (<code>git add</code>)</h2>
 <p>Make sure you are in the correct directory</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/workdir</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="tracking-changes-git-add-commit.html#cb14-1"></a><span class="bu">cd</span> ~/workdir</span></code></pre></div>
 <p>Make a new file <code>foo.txt</code></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">touch</span> foo.txt</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="tracking-changes-git-add-commit.html#cb15-1"></a><span class="fu">touch</span> foo.txt</span></code></pre></div>
 <p>Check the status</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> status</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="tracking-changes-git-add-commit.html#cb16-1"></a><span class="fu">git</span> status</span></code></pre></div>
 <pre><code>## On branch master
 ## 
 ## No commits yet
@@ -276,9 +275,9 @@ It’s Not Only for Programmers</a>
 <p>The status tells you <code>foo.txt</code> is not being tracked, and that you can use <code>git add</code> to start tracking it.</p>
 </blockquote>
 <p><strong>If there are untracked files, we would like to add those files so git will track their changes:</strong></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add foo.txt</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="tracking-changes-git-add-commit.html#cb18-1"></a><span class="fu">git</span> add foo.txt</span></code></pre></div>
 <p>Check the status again, <code>foo.txt</code> should now be ready to get committed (a commit is a revision to your files).</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> status</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="tracking-changes-git-add-commit.html#cb19-1"></a><span class="fu">git</span> status</span></code></pre></div>
 <pre><code>## On branch master
 ## 
 ## No commits yet
@@ -294,8 +293,8 @@ It’s Not Only for Programmers</a>
 <div id="saving-these-changes-to-the-repository-git-commit" class="section level2">
 <h2><span class="header-section-number">3.2</span> Saving these changes to the repository (<code>git commit</code>)</h2>
 <p>Commit the file and note the identifier for this commit (e.g., <code>f22b25e</code>):</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> commit -m <span class="st">&quot;Add foo.txt to repo&quot;</span></code></pre>
-<pre><code>## [master (root-commit) 2be5f0f] Add foo.txt to repo
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="tracking-changes-git-add-commit.html#cb21-1"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add foo.txt to repo&quot;</span></span></code></pre></div>
+<pre><code>## [master (root-commit) 78ec066] Add foo.txt to repo
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 foo.txt</code></pre>
 <blockquote>
@@ -303,10 +302,10 @@ It’s Not Only for Programmers</a>
 “create mode” means that a file is being added to the repository (first time Git is being told this file exist).</p>
 </blockquote>
 <p>What have we done so far? Let’s check the log, which list all the commits made so far.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> log</code></pre>
-<pre><code>## commit 2be5f0f26e3d3c90b31b9de49be102dba554b28a
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="tracking-changes-git-add-commit.html#cb23-1"></a><span class="fu">git</span> log</span></code></pre></div>
+<pre><code>## commit 78ec0662a2e1cf0747f8b85aa45e9ad8fe2005eb
 ## Author: Shady Whale &lt;shadywhale@allthewhales.com&gt;
-## Date:   Tue Sep 17 22:46:19 2019 -0500
+## Date:   Wed Sep 18 11:24:39 2019 -0500
 ## 
 ##     Add foo.txt to repo</code></pre>
 <blockquote>
@@ -318,11 +317,11 @@ Lastly, the commit message will appear under the identifier and author.</p>
 <div id="practice---lets-add-a-line-to-the-file-and-addcommit-it" class="section level2 unnumbered">
 <h2>PRACTICE - Let’s add a line to the file and <code>add</code>/<code>commit</code> it</h2>
 <p>Add some text to the file <code>foo.txt</code></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> hello <span class="op">&gt;&gt;</span> foo.txt</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="tracking-changes-git-add-commit.html#cb25-1"></a><span class="bu">echo</span> hello <span class="op">&gt;&gt;</span> foo.txt</span></code></pre></div>
 <p>Add &amp; commit your changes to <code>foo.txt</code></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add foo.txt
-<span class="fu">git</span> commit -m <span class="st">&quot;Add hello in foo.txt&quot;</span></code></pre>
-<pre><code>## [master f22a96a] Add hello in foo.txt
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="tracking-changes-git-add-commit.html#cb26-1"></a><span class="fu">git</span> add foo.txt</span>
+<span id="cb26-2"><a href="tracking-changes-git-add-commit.html#cb26-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add hello in foo.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master 9491659] Add hello in foo.txt
 ##  1 file changed, 1 insertion(+)</code></pre>
 <blockquote>
 <p>The output tells you that you have added 1 file and there is 1 insertion(+)</p>
@@ -339,6 +338,10 @@ Lastly, the commit message will appear under the identifier and author.</p>
 
 </div>
 </div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PKDM2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
             </section>
 
           </div>
@@ -402,8 +405,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

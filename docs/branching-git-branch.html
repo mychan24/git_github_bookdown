@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>12 Branching (git branch) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
-  <meta name="description" content="Git/GitHub Tutorial for Scientists:<br />
+  <title>12 Branching (git branch) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
+  <meta name="description" content="Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="12 Branching (git branch) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta property="og:title" content="12 Branching (git branch) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://gitbookdown.site/" />
   
@@ -17,7 +17,7 @@ It’s Not Only for Programmers" />
   <meta name="github-repo" content="mychan24/git_github_bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="12 Branching (git branch) | Git/GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta name="twitter:title" content="12 Branching (git branch) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
   
   
   
@@ -31,8 +31,8 @@ It’s Not Only for Programmers" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="revert-to-a-previous-commit-git-checkout.html">
-<link rel="next" href="glossary.html">
+<link rel="prev" href="revert-to-a-previous-commit-git-checkout.html"/>
+<link rel="next" href="glossary.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -47,38 +47,37 @@ It’s Not Only for Programmers" />
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148151802-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-148151802-1');
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9PKDM2');</script>
+<!-- End Google Tag Manager -->
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +86,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -235,7 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git/GitHub Tutorial for Scientists:<br />
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git &amp; GitHub Tutorial for Scientists:<br />
 It’s Not Only for Programmers</a>
           </h1>
         </div>
@@ -260,7 +259,7 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">12.1</span> Check what branch you’re on</h2>
 <p>If you’ve never changed a branch. You’re likely using the <code>master</code> or main branch.</p>
 <p>It’s always a good idea to check what branch you’re using:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb104-1"><a href="branching-git-branch.html#cb104-1"></a><span class="fu">git</span> branch</span></code></pre></div>
 <pre><code>## * master</code></pre>
 <p>The one marked with the <code>*</code> is the name of branch that you’re currently on, also known as the active branch.</p>
 <p><br></p>
@@ -268,11 +267,11 @@ It’s Not Only for Programmers</a>
 <div id="create-new-branch" class="section level2">
 <h2><span class="header-section-number">12.2</span> Create new branch</h2>
 <p>To create a new branch, we can enter:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb106-1"><a href="branching-git-branch.html#cb106-1"></a><span class="fu">git</span> branch <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 <p>For example, if we want to make a test a new function on a new branch, we can create the new branch by entering:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch cool_new_function</code></pre>
+<div class="sourceCode" id="cb107"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb107-1"><a href="branching-git-branch.html#cb107-1"></a><span class="fu">git</span> branch cool_new_function</span></code></pre></div>
 <p>To make sure the branch exists, we can enter:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb108-1"><a href="branching-git-branch.html#cb108-1"></a><span class="fu">git</span> branch</span></code></pre></div>
 <pre><code>##   cool_new_function
 ## * master</code></pre>
 <p><br></p>
@@ -281,21 +280,21 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">12.3</span> Switch between branches (<code>git commit</code>)</h2>
 <p>To switch to the new branch, use <code>git checkout &lt;branch_name&gt;</code></p>
 <p>Example:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout cool_new_function</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb110-1"><a href="branching-git-branch.html#cb110-1"></a><span class="fu">git</span> checkout cool_new_function</span></code></pre></div>
 <pre><code>## Switched to branch &#39;cool_new_function&#39;</code></pre>
 <p>Let’s check that we actually switched.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb112-1"><a href="branching-git-branch.html#cb112-1"></a><span class="fu">git</span> branch</span></code></pre></div>
 <pre><code>## * cool_new_function
 ##   master</code></pre>
 <p>Notice that the * is now on cool_new_function.</p>
 <p>Note: You can also create and switch to a branch in one command using:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout -b <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb114-1"><a href="branching-git-branch.html#cb114-1"></a><span class="fu">git</span> checkout -b <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 <p>Now that you’re in your new branch, you can make, edit, and commit script(s) as you want without affecting anything on the master branch.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">touch</span> cool_new_function.sh
-<span class="fu">git</span> add cool_new_function.sh
-<span class="fu">git</span> commit -m <span class="st">&quot;added cool new function&quot;</span>
-<span class="fu">ls</span></code></pre>
-<pre><code>## [cool_new_function e173025] added cool new function
+<div class="sourceCode" id="cb115"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb115-1"><a href="branching-git-branch.html#cb115-1"></a><span class="fu">touch</span> cool_new_function.sh</span>
+<span id="cb115-2"><a href="branching-git-branch.html#cb115-2"></a><span class="fu">git</span> add cool_new_function.sh</span>
+<span id="cb115-3"><a href="branching-git-branch.html#cb115-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;added cool new function&quot;</span></span>
+<span id="cb115-4"><a href="branching-git-branch.html#cb115-4"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## [cool_new_function 30718fa] added cool new function
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 cool_new_function.sh
 ## cool_new_function.sh
@@ -307,15 +306,15 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">12.4</span> Merge branch</h2>
 <p>Ready to make the modification available to everyone? Let’s merge the change back to the master branch.</p>
 <p>First, we have to switch back to the master branch <code>git checkout master</code> and then merge the commit <code>git merge &lt;branch_name&gt;</code></p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout master
-<span class="fu">ls</span></code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb117-1"><a href="branching-git-branch.html#cb117-1"></a><span class="fu">git</span> checkout master</span>
+<span id="cb117-2"><a href="branching-git-branch.html#cb117-2"></a><span class="fu">ls</span></span></code></pre></div>
 <pre><code>## Switched to branch &#39;master&#39;
 ## foo.txt
 ## ignore_this.txt</code></pre>
 <p>Notice that there is no cool_new_function.sh file in the master branch.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> merge cool_new_function
-<span class="fu">ls</span></code></pre>
-<pre><code>## Updating 98f4fba..e173025
+<div class="sourceCode" id="cb119"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb119-1"><a href="branching-git-branch.html#cb119-1"></a><span class="fu">git</span> merge cool_new_function</span>
+<span id="cb119-2"><a href="branching-git-branch.html#cb119-2"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## Updating 9f0da7a..30718fa
 ## Fast-forward
 ##  cool_new_function.sh | 0
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
@@ -330,10 +329,10 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">12.5</span> Delete a branch</h2>
 <p>Done using a branch or created one by accident?</p>
 <p>Delete the branch by entering:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch -d <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch -d cool_new_function</code></pre>
-<pre><code>## Deleted branch cool_new_function (was e173025).</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb121-1"><a href="branching-git-branch.html#cb121-1"></a><span class="fu">git</span> branch -d <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb122-1"><a href="branching-git-branch.html#cb122-1"></a><span class="fu">git</span> branch -d cool_new_function</span></code></pre></div>
+<pre><code>## Deleted branch cool_new_function (was 30718fa).</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb124-1"><a href="branching-git-branch.html#cb124-1"></a><span class="fu">git</span> branch</span></code></pre></div>
 <pre><code>## * master</code></pre>
 </div>
 <div id="bonus-advanced-x-2-topic---detached-head" class="section level2 unnumbered">
@@ -341,7 +340,7 @@ It’s Not Only for Programmers</a>
 <p>Remember the previous chapter mentioned a concept about ‘detached HEAD’? Now you have tried branching, you could understand a bit more how detached HEAD can occur, and how branching can help preventing commit loss.</p>
 <div id="purposely-enter-a-detached-head-and-create-a-commit" class="section level3">
 <h3><span class="header-section-number">12.5.1</span> Purposely enter a detached HEAD and create a commit</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout HEAD~2</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb126-1"><a href="branching-git-branch.html#cb126-1"></a><span class="fu">git</span> checkout HEAD~2</span></code></pre></div>
 <pre><code>## Note: checking out &#39;HEAD~2&#39;.
 ##
 ## You are in &#39;detached HEAD&#39; state. You can look around, make experimental
@@ -354,16 +353,16 @@ It’s Not Only for Programmers</a>
 ##   git checkout -b &lt;new-branch-name&gt;
 ##
 ## HEAD is now at [commit identifier] [commit message]</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">touch</span> loss.txt
-<span class="fu">git</span> add loss.txt
-<span class="fu">git</span> commit -m <span class="st">&quot;Adding loss.txt while in detached HEAD&quot;</span></code></pre>
-<pre><code>## [master e9fd415] Adding loss.txt while in detached HEAD
+<div class="sourceCode" id="cb128"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb128-1"><a href="branching-git-branch.html#cb128-1"></a><span class="fu">touch</span> loss.txt</span>
+<span id="cb128-2"><a href="branching-git-branch.html#cb128-2"></a><span class="fu">git</span> add loss.txt</span>
+<span id="cb128-3"><a href="branching-git-branch.html#cb128-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;Adding loss.txt while in detached HEAD&quot;</span></span></code></pre></div>
+<pre><code>## [master bfbfe1d] Adding loss.txt while in detached HEAD
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 loss.txt</code></pre>
 </div>
 <div id="return-to-master-branch" class="section level3">
 <h3><span class="header-section-number">12.5.2</span> Return to master branch</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout master</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb130-1"><a href="branching-git-branch.html#cb130-1"></a><span class="fu">git</span> checkout master</span></code></pre></div>
 <pre><code>## Warning: you are leaving 1 commit behind, not connected to
 ## any of your branches:
 ##
@@ -382,7 +381,7 @@ It’s Not Only for Programmers</a>
 <div id="you-are-now-back-in-the-master-branch-and-loss.txt-is-gone-check-with-ls" class="section level3">
 <h3><span class="header-section-number">12.5.3</span> You are now back in the ‘master’ branch, and <code>loss.txt</code> is gone (check with <code>ls</code>)</h3>
 <p>Luckily, the output message actually tells you how to recover those changes (for now, before Git evetually deletes it).</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch recover_loss_branch <span class="op">&lt;</span>commit identifier<span class="op">&gt;</span></code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb132-1"><a href="branching-git-branch.html#cb132-1"></a><span class="fu">git</span> branch recover_loss_branch <span class="op">&lt;</span>commit identifier<span class="op">&gt;</span></span></code></pre></div>
 <p>Now if you switch to that branch you just created (use <code>git checkout</code>), you will see <code>loss.txt</code>.</p>
 <hr />
 <p><strong>You have started using branches in Git!</strong></p>
@@ -393,6 +392,10 @@ It’s Not Only for Programmers</a>
 
 
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9PKDM2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
             </section>
 
           </div>
@@ -456,8 +459,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
