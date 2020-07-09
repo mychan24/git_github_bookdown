@@ -105,7 +105,7 @@ git pull
 
 The output shows there is a **Conflict Message**! 
 
-When this situation happens, Git will merge the conflicting changes into the file in question (i.e., `foo.txt`), and tells you that manual interventoin is needed.
+When this situation happens, Git will merge the conflicting changes into the file in question (i.e., `foo.txt`), and tells you that manual intervention is needed.
 
 
 ### Look at the file with conflict and understanding the conflict message

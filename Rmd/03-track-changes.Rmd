@@ -60,7 +60,7 @@ Commit the file and note the identifier for this commit (e.g., `f22b25e`):
 git commit -m "Add foo.txt to repo"
 ```
 
-> The ouptut of a commit will tell you what has changes has been commited to the repository. In this example, "1 file was changed". There is 0 insertions or deletions as the file is empty.
+> The output of a commit will tell you what has changes has been commited to the repository. In this example, "1 file was changed". There is 0 insertions or deletions as the file is empty.
 > "create mode" means that a file is being added to the repository (first time Git is being told this file exist).
 
 What have we done so far? Let's check the log, which list all the commits made so far. 
@@ -95,7 +95,7 @@ Check the status and log again using `git status` and `git log`
 
 * Git does not track an empty directory, so until a directory has a file in it, git would not track it. 
 
-* If you want to correct the **most recent** commmit message, use `git commit --amend`
+* If you want to correct the **most recent** commit message, use `git commit --amend`
 
 
 ***
