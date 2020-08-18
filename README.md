@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mychan24/git_github_bookdown.svg?branch=master)](https://travis-ci.org/mychan24/git_github_bookdown)
 
-This is a tutorial on Git & GitHub for scientists without formal programming background: https://gitbookdown.site/
+This is a tutorial on Git & GitHub for scientists without formal programming background: https://gitbookdown.dallasdatascience.com
 
 Git for version control      |  GitHub for sharing your code
 :-------------------------:|:-------------------------:

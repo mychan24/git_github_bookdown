@@ -4,7 +4,7 @@ author: "Micaela Chan & Ekarin Pongpipat"
 site: bookdown::bookdown_site
 documentclass: book
 
-url: 'https\://gitbookdown.site/'
+url: 'https\://gitbookdown.dallasdatascience.com/'
 github-repo: mychan24/git_github_bookdown
 ---
 
