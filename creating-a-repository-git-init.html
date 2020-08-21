@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Creating a Repository (git init) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers</title>
+  <meta name="description" content="Git &amp; GitHub Tutorial for Scientists:<br />
+It’s Not Only for Programmers" />
+  <meta name="generator" content="bookdown 0.20.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Creating a Repository (git init) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://gitbookdown.dallasdatascience.com/" />
+  
+  
+  <meta name="github-repo" content="mychan24/git_github_bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Creating a Repository (git init) | Git &amp; GitHub Tutorial for Scientists: It’s Not Only for Programmers" />
+  
+  
+  
+
+<meta name="author" content="Micaela Chan &amp; Ekarin Pongpipat" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="setting-up-git.html"/>
+<link rel="next" href="tracking-changes-git-add-commit.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5736TB');</script>
+<!-- End Google Tag Manager -->
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><strong>Git & GitHub Tutorial</strong><br></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-this-gitgithub-tutorial-about"><i class="fa fa-check"></i>What is this Git/GitHub Tutorial about?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-is-git-important-for-scientists"><i class="fa fa-check"></i>Why is git important for scientists?</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#i.-version-control-for-code-the-lab-notebook-of-experiments"><i class="fa fa-check"></i>I. Version-control for code = the lab notebook of experiments</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ii.-git-and-remote-hosts-e.g.-github-makes-sharingcollaborating-easier"><i class="fa fa-check"></i>II. Git and Remote Hosts (e.g., GitHub) makes sharing/collaborating easier</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgment"><i class="fa fa-check"></i>Acknowledgment</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#other-helpful-links"><i class="fa fa-check"></i>Other helpful links</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
+</ul></li>
+<li class="part"><span><b>I Git</b></span></li>
+<li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
+<li class="chapter" data-level="1.1" data-path="setting-up-git.html"><a href="setting-up-git.html#download-git"><i class="fa fa-check"></i><b>1.1</b> Download git</a></li>
+<li class="chapter" data-level="1.2" data-path="setting-up-git.html"><a href="setting-up-git.html#configuring-git"><i class="fa fa-check"></i><b>1.2</b> Configuring git</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setting-up-git.html"><a href="setting-up-git.html#setup-username-and-email"><i class="fa fa-check"></i><b>1.2.1</b> Setup username and email</a></li>
+<li class="chapter" data-level="1.2.2" data-path="setting-up-git.html"><a href="setting-up-git.html#setup-the-correct-linebreaks-encoding"><i class="fa fa-check"></i><b>1.2.2</b> Setup the correct linebreaks encoding</a></li>
+<li class="chapter" data-level="1.2.3" data-path="setting-up-git.html"><a href="setting-up-git.html#setup-nano-as-the-text-editor-to-interface-with-git"><i class="fa fa-check"></i><b>1.2.3</b> Setup “nano” as the text editor to interface with git</a></li>
+<li class="chapter" data-level="1.2.4" data-path="setting-up-git.html"><a href="setting-up-git.html#check-to-ensure-settings-are-correct"><i class="fa fa-check"></i><b>1.2.4</b> Check to ensure settings are correct</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html"><i class="fa fa-check"></i><b>2</b> Creating a Repository (<code>git init</code>)</a><ul>
+<li class="chapter" data-level="2.1" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html#create-a-directory-call-workdir-in-your-home-directory-for-this-tutorial"><i class="fa fa-check"></i><b>2.1</b> Create a directory call <code>workdir</code> in your home directory for this tutorial</a></li>
+<li class="chapter" data-level="2.2" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html#create-a-repository-where-git-store-versions-of-your-file"><i class="fa fa-check"></i><b>2.2</b> Create a repository, where git store versions of your file</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html"><i class="fa fa-check"></i><b>3</b> Tracking Changes (<code>git add &amp; commit</code>)</a><ul>
+<li class="chapter" data-level="3.1" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#adding-new-filesmodification-git-add"><i class="fa fa-check"></i><b>3.1</b> Adding new files/modification (<code>git add</code>)</a></li>
+<li class="chapter" data-level="3.2" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#saving-these-changes-to-the-repository-git-commit"><i class="fa fa-check"></i><b>3.2</b> Saving these changes to the repository (<code>git commit</code>)</a></li>
+<li><a href="tracking-changes-git-add-commit.html#practice---lets-add-a-line-to-the-file-and-addcommit-it">PRACTICE - Let’s add a line to the file and <code>add</code>/<code>commit</code> it</a></li>
+<li class="chapter" data-level="" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#notes"><i class="fa fa-check"></i>Notes</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html"><i class="fa fa-check"></i><b>4</b> Exploring History (<code>git diff &amp; show</code>)</a><ul>
+<li class="chapter" data-level="4.1" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html#difference-between-current-file-and-n-commit-ago-git-diff-head"><i class="fa fa-check"></i><b>4.1</b> Difference between current file and N commit ago (<code>git diff HEAD</code>)</a></li>
+<li class="chapter" data-level="4.2" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html#what-was-done-in-____-commit-git-show"><i class="fa fa-check"></i><b>4.2</b> What was done in ____ commit? (<code>git show</code>)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tell-git-to-ignore-files.html"><a href="tell-git-to-ignore-files.html"><i class="fa fa-check"></i><b>5</b> Tell git to ignore files</a><ul>
+<li class="chapter" data-level="5.1" data-path="tell-git-to-ignore-files.html"><a href="tell-git-to-ignore-files.html#bonus---use-wildcard"><i class="fa fa-check"></i><b>5.1</b> BONUS - Use wildcard</a></li>
+</ul></li>
+<li class="part"><span><b>II GitHub and Other Remote Hosts</b></span></li>
+<li class="chapter" data-level="6" data-path="git-ne-github.html"><a href="git-ne-github.html"><i class="fa fa-check"></i><b>6</b> Git <span class="math inline">\(\ne\)</span> GitHub</a><ul>
+<li class="chapter" data-level="6.1" data-path="git-ne-github.html"><a href="git-ne-github.html#git-is-a-remote-server-that-hosts-a-repository-remote-host"><i class="fa fa-check"></i><b>6.1</b> Git is a remote server that hosts a repository (remote host)</a></li>
+<li class="chapter" data-level="6.2" data-path="git-ne-github.html"><a href="git-ne-github.html#create-a-repository-on-github-a-remote-repo"><i class="fa fa-check"></i><b>6.2</b> Create a repository on github (a remote repo)</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html"><i class="fa fa-check"></i><b>7</b> Putting codes on Github</a><ul>
+<li class="chapter" data-level="7.1" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html#push-an-existing-repository-from-your-local-computer"><i class="fa fa-check"></i><b>7.1</b> Push an existing repository from your local computer</a></li>
+<li class="chapter" data-level="" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html#bonus---ssh-keys"><i class="fa fa-check"></i>BONUS - SSH keys</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html"><i class="fa fa-check"></i><b>8</b> Getting a repository from Github (fork &amp; <code>git clone</code>)</a><ul>
+<li class="chapter" data-level="8.1" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#fork-a-repository-remote---remote"><i class="fa fa-check"></i><b>8.1</b> Fork a repository (remote -&gt; remote)</a></li>
+<li class="chapter" data-level="8.2" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#cloning-a-repository-remote---local"><i class="fa fa-check"></i><b>8.2</b> Cloning a repository (remote -&gt; local)</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html"><i class="fa fa-check"></i><b>9</b> Collaborating (<code>git fetch &amp; merge (or pull)</code>)</a><ul>
+<li class="chapter" data-level="9.1" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#setup-a-fake-collaborator-yourself-in-another-directory"><i class="fa fa-check"></i><b>9.1</b> Setup a fake collaborator, yourself in another directory :)</a></li>
+<li class="chapter" data-level="9.2" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#implement-the-changes-your-fake-collaborator-made"><i class="fa fa-check"></i><b>9.2</b> Implement the changes your fake collaborator made</a></li>
+<li class="chapter" data-level="" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#faq"><i class="fa fa-check"></i>FAQ</a></li>
+<li class="chapter" data-level="" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#bonus---what-is-my-remote"><i class="fa fa-check"></i>BONUS - What is my remote?</a></li>
+<li class="chapter" data-level="9.3" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#really-collaborating-on-github"><i class="fa fa-check"></i><b>9.3</b> Really collaborating on GitHub</a></li>
+</ul></li>
+<li class="part"><span><b>III Advanced Git</b></span></li>
+<li class="chapter" data-level="10" data-path="conflicts.html"><a href="conflicts.html"><i class="fa fa-check"></i><b>10</b> Conflicts</a><ul>
+<li class="chapter" data-level="10.1" data-path="conflicts.html"><a href="conflicts.html#create-a-conflict"><i class="fa fa-check"></i><b>10.1</b> Create a conflict</a></li>
+<li class="chapter" data-level="10.2" data-path="conflicts.html"><a href="conflicts.html#resolving-a-conflict"><i class="fa fa-check"></i><b>10.2</b> Resolving a conflict</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="conflicts.html"><a href="conflicts.html#look-at-the-file-with-conflict-and-understanding-the-conflict-message"><i class="fa fa-check"></i><b>10.2.1</b> Look at the file with conflict and understanding the conflict message</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="conflicts.html"><a href="conflicts.html#tips-to-prevent-conflicts"><i class="fa fa-check"></i><b>10.3</b> Tips to prevent conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html"><i class="fa fa-check"></i><b>11</b> Revert to a previous commit (<code>git checkout</code>)</a><ul>
+<li class="chapter" data-level="11.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>11.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
+<li class="chapter" data-level="11.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>11.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
+<li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#bonus---detached-head"><i class="fa fa-check"></i>BONUS - Detached HEAD</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a><ul>
+<li class="chapter" data-level="12.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#check-what-branch-youre-on"><i class="fa fa-check"></i><b>12.1</b> Check what branch you’re on</a></li>
+<li class="chapter" data-level="12.2" data-path="branching-git-branch.html"><a href="branching-git-branch.html#create-new-branch"><i class="fa fa-check"></i><b>12.2</b> Create new branch</a></li>
+<li class="chapter" data-level="12.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#switch-between-branches-git-commit"><i class="fa fa-check"></i><b>12.3</b> Switch between branches (<code>git commit</code>)</a></li>
+<li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
+<li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
+<li class="chapter" data-level="" data-path="branching-git-branch.html"><a href="branching-git-branch.html#bonus-advanced-x-2-topic---detached-head"><i class="fa fa-check"></i>BONUS (Advanced x 2 topic) - detached HEAD</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#purposely-enter-a-detached-head-and-create-a-commit"><i class="fa fa-check"></i><b>12.5.1</b> Purposely enter a detached HEAD and create a commit</a></li>
+<li class="chapter" data-level="12.5.2" data-path="branching-git-branch.html"><a href="branching-git-branch.html#return-to-master-branch"><i class="fa fa-check"></i><b>12.5.2</b> Return to master branch</a></li>
+<li class="chapter" data-level="12.5.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#you-are-now-back-in-the-master-branch-and-loss.txt-is-gone-check-with-ls"><i class="fa fa-check"></i><b>12.5.3</b> You are now back in the ‘master’ branch, and <code>loss.txt</code> is gone (check with <code>ls</code>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html"><i class="fa fa-check"></i><b>13</b> Stashing (<code>git stash</code>)</a><ul>
+<li class="chapter" data-level="13.1" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#stash"><i class="fa fa-check"></i><b>13.1</b> Stash</a></li>
+<li class="chapter" data-level="13.2" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#unstash"><i class="fa fa-check"></i><b>13.2</b> Unstash</a></li>
+<li class="chapter" data-level="13.3" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#delete-stash"><i class="fa fa-check"></i><b>13.3</b> Delete Stash</a></li>
+<li class="chapter" data-level="13.4" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#branch-a-stash"><i class="fa fa-check"></i><b>13.4</b> Branch a Stash</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="divider"></li>
+<li style="padding: 10px 15px; font-weight: bold;">Open access book-in-progress</li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></li>
+<li><a href="https://bookdown.org" target="_blank">Built with Bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Git &amp; GitHub Tutorial for Scientists:<br />
+It’s Not Only for Programmers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="creating-a-repository-git-init" class="section level1">
+<h1><span class="header-section-number">2</span> Creating a Repository (<code>git init</code>)</h1>
+<p><strong>Key terms/commands</strong></p>
+<ul>
+<li><p><strong>Repository (repo)</strong>: a repo tracks all the changes you made in that directory. In tangible form, it is a <code>.git/</code> folder that lives inside the directory.</p></li>
+<li><p><strong>git init</strong>: creates a repository (the <code>.git/</code> folder).</p></li>
+</ul>
+<div id="create-a-directory-call-workdir-in-your-home-directory-for-this-tutorial" class="section level2">
+<h2><span class="header-section-number">2.1</span> Create a directory call <code>workdir</code> in your home directory for this tutorial</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">mkdir</span> ~/workdir</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="bu">cd</span> ~/workdir    </a></code></pre></div>
+</div>
+<div id="create-a-repository-where-git-store-versions-of-your-file" class="section level2">
+<h2><span class="header-section-number">2.2</span> Create a repository, where git store versions of your file</h2>
+<p>Create a repository within a folder</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="fu">git</span> init</a></code></pre></div>
+<pre><code>## Initialized empty Git repository in /home/travis/workdir/.git/</code></pre>
+<p>Check that a hidden folder <code>.git</code> has been created</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="fu">ls</span> -a</a></code></pre></div>
+<pre><code>## .
+## ..
+## .git</code></pre>
+<p>Check the status of git</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">git</span> status</a></code></pre></div>
+<pre><code>## On branch master
+## 
+## No commits yet
+## 
+## nothing to commit (create/copy files and use &quot;git add&quot; to track)</code></pre>
+<blockquote>
+<p>The status tells you have nothing to commit (last line).</p>
+</blockquote>
+<hr />
+<p><strong>You now have a repository (i.e., a <code>.git/</code> folder) within a directory that you want to track!</strong></p>
+
+</div>
+</div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5736TB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="setting-up-git.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tracking-changes-git-add-commit.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/mychan24/git_github_bookdown/edit/master/Rmd/02-create_repo.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "static"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
