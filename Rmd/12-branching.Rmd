@@ -67,7 +67,7 @@ git branch
 
 <br>
 
-## Switch between branches (`git commit`)
+## Switch between branches (`git checkout`)
 
 To switch to the new branch, use `git checkout <branch_name>`
 
