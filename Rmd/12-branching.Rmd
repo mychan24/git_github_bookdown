@@ -74,7 +74,7 @@ To switch to the new branch, use `git checkout <branch_name>`
 Example:
 ```{bash}
 git checkout cool_new_function
-````
+```
 
 Let's check that we actually switched.
 ```{bash}
