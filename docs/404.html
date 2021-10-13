@@ -33,7 +33,6 @@ It’s Not Only for Programmers" />
   
 
 
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,6 +50,7 @@ It’s Not Only for Programmers" />
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <!-- Google Tag Manager -->
@@ -63,18 +63,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -94,7 +94,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -143,11 +143,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./"><strong>Git & GitHub Tutorial</strong><br></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-this-gitgithub-tutorial-about"><i class="fa fa-check"></i>What is this Git/GitHub Tutorial about?</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-is-git-important-for-scientists"><i class="fa fa-check"></i>Why is git important for scientists?</a>
-<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-is-git-important-for-scientists"><i class="fa fa-check"></i>Why is git important for scientists?</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#i.-version-control-for-code-the-lab-notebook-of-experiments"><i class="fa fa-check"></i>I. Version-control for code = the lab notebook of experiments</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#ii.-git-and-remote-hosts-e.g.-github-makes-sharingcollaborating-easier"><i class="fa fa-check"></i>II. Git and Remote Hosts (e.g., GitHub) makes sharing/collaborating easier</a></li>
 </ul></li>
@@ -156,56 +154,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-the-book"><i class="fa fa-check"></i>How to read the book?</a></li>
 </ul></li>
 <li class="part"><span><b>I Git</b></span></li>
-<li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a>
-<ul>
+<li class="chapter" data-level="1" data-path="setting-up-git.html"><a href="setting-up-git.html"><i class="fa fa-check"></i><b>1</b> Setting up git</a><ul>
 <li class="chapter" data-level="1.1" data-path="setting-up-git.html"><a href="setting-up-git.html#download-git"><i class="fa fa-check"></i><b>1.1</b> Download git</a></li>
-<li class="chapter" data-level="1.2" data-path="setting-up-git.html"><a href="setting-up-git.html#configuring-git"><i class="fa fa-check"></i><b>1.2</b> Configuring git</a>
-<ul>
+<li class="chapter" data-level="1.2" data-path="setting-up-git.html"><a href="setting-up-git.html#configuring-git"><i class="fa fa-check"></i><b>1.2</b> Configuring git</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="setting-up-git.html"><a href="setting-up-git.html#setup-username-and-email"><i class="fa fa-check"></i><b>1.2.1</b> Setup username and email</a></li>
 <li class="chapter" data-level="1.2.2" data-path="setting-up-git.html"><a href="setting-up-git.html#setup-the-correct-linebreaks-encoding"><i class="fa fa-check"></i><b>1.2.2</b> Setup the correct linebreaks encoding</a></li>
 <li class="chapter" data-level="1.2.3" data-path="setting-up-git.html"><a href="setting-up-git.html#setup-nano-as-the-text-editor-to-interface-with-git"><i class="fa fa-check"></i><b>1.2.3</b> Setup “nano” as the text editor to interface with git</a></li>
 <li class="chapter" data-level="1.2.4" data-path="setting-up-git.html"><a href="setting-up-git.html#check-to-ensure-settings-are-correct"><i class="fa fa-check"></i><b>1.2.4</b> Check to ensure settings are correct</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html"><i class="fa fa-check"></i><b>2</b> Creating a Repository (<code>git init</code>)</a>
-<ul>
+<li class="chapter" data-level="2" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html"><i class="fa fa-check"></i><b>2</b> Creating a Repository (<code>git init</code>)</a><ul>
 <li class="chapter" data-level="2.1" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html#create-a-directory-call-workdir-in-your-home-directory-for-this-tutorial"><i class="fa fa-check"></i><b>2.1</b> Create a directory call <code>workdir</code> in your home directory for this tutorial</a></li>
 <li class="chapter" data-level="2.2" data-path="creating-a-repository-git-init.html"><a href="creating-a-repository-git-init.html#create-a-repository-where-git-store-versions-of-your-file"><i class="fa fa-check"></i><b>2.2</b> Create a repository, where git store versions of your file</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html"><i class="fa fa-check"></i><b>3</b> Tracking Changes (<code>git add &amp; commit</code>)</a>
-<ul>
+<li class="chapter" data-level="3" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html"><i class="fa fa-check"></i><b>3</b> Tracking Changes (<code>git add &amp; commit</code>)</a><ul>
 <li class="chapter" data-level="3.1" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#adding-new-filesmodification-git-add"><i class="fa fa-check"></i><b>3.1</b> Adding new files/modification (<code>git add</code>)</a></li>
 <li class="chapter" data-level="3.2" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#saving-these-changes-to-the-repository-git-commit"><i class="fa fa-check"></i><b>3.2</b> Saving these changes to the repository (<code>git commit</code>)</a></li>
 <li><a href="tracking-changes-git-add-commit.html#practice---lets-add-a-line-to-the-file-and-addcommit-it">PRACTICE - Let’s add a line to the file and <code>add</code>/<code>commit</code> it</a></li>
 <li class="chapter" data-level="" data-path="tracking-changes-git-add-commit.html"><a href="tracking-changes-git-add-commit.html#notes"><i class="fa fa-check"></i>Notes</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html"><i class="fa fa-check"></i><b>4</b> Exploring History (<code>git diff &amp; show</code>)</a>
-<ul>
+<li class="chapter" data-level="4" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html"><i class="fa fa-check"></i><b>4</b> Exploring History (<code>git diff &amp; show</code>)</a><ul>
 <li class="chapter" data-level="4.1" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html#difference-between-current-file-and-n-commit-ago-git-diff-head"><i class="fa fa-check"></i><b>4.1</b> Difference between current file and N commit ago (<code>git diff HEAD</code>)</a></li>
 <li class="chapter" data-level="4.2" data-path="exploring-history-git-diff-show.html"><a href="exploring-history-git-diff-show.html#what-was-done-in-____-commit-git-show"><i class="fa fa-check"></i><b>4.2</b> What was done in ____ commit? (<code>git show</code>)</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="tell-git-to-ignore-files.html"><a href="tell-git-to-ignore-files.html"><i class="fa fa-check"></i><b>5</b> Tell git to ignore files</a>
-<ul>
+<li class="chapter" data-level="5" data-path="tell-git-to-ignore-files.html"><a href="tell-git-to-ignore-files.html"><i class="fa fa-check"></i><b>5</b> Tell git to ignore files</a><ul>
 <li class="chapter" data-level="5.1" data-path="tell-git-to-ignore-files.html"><a href="tell-git-to-ignore-files.html#bonus---use-wildcard"><i class="fa fa-check"></i><b>5.1</b> BONUS - Use wildcard</a></li>
 </ul></li>
 <li class="part"><span><b>II GitHub and Other Remote Hosts</b></span></li>
-<li class="chapter" data-level="6" data-path="git-ne-github.html"><a href="git-ne-github.html"><i class="fa fa-check"></i><b>6</b> Git <span class="math inline">\(\ne\)</span> GitHub</a>
-<ul>
+<li class="chapter" data-level="6" data-path="git-ne-github.html"><a href="git-ne-github.html"><i class="fa fa-check"></i><b>6</b> Git <span class="math inline">\(\ne\)</span> GitHub</a><ul>
 <li class="chapter" data-level="6.1" data-path="git-ne-github.html"><a href="git-ne-github.html#git-is-a-remote-server-that-hosts-a-repository-remote-host"><i class="fa fa-check"></i><b>6.1</b> Git is a remote server that hosts a repository (remote host)</a></li>
 <li class="chapter" data-level="6.2" data-path="git-ne-github.html"><a href="git-ne-github.html#create-a-repository-on-github-a-remote-repo"><i class="fa fa-check"></i><b>6.2</b> Create a repository on github (a remote repo)</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html"><i class="fa fa-check"></i><b>7</b> Putting codes on Github</a>
-<ul>
+<li class="chapter" data-level="7" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html"><i class="fa fa-check"></i><b>7</b> Putting codes on Github</a><ul>
 <li class="chapter" data-level="7.1" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html#push-an-existing-repository-from-your-local-computer"><i class="fa fa-check"></i><b>7.1</b> Push an existing repository from your local computer</a></li>
 <li class="chapter" data-level="" data-path="putting-codes-on-github.html"><a href="putting-codes-on-github.html#bonus---ssh-keys"><i class="fa fa-check"></i>BONUS - SSH keys</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html"><i class="fa fa-check"></i><b>8</b> Getting a repository from Github (fork &amp; <code>git clone</code>)</a>
-<ul>
+<li class="chapter" data-level="8" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html"><i class="fa fa-check"></i><b>8</b> Getting a repository from Github (fork &amp; <code>git clone</code>)</a><ul>
 <li class="chapter" data-level="8.1" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#fork-a-repository-remote---remote"><i class="fa fa-check"></i><b>8.1</b> Fork a repository (remote -&gt; remote)</a></li>
 <li class="chapter" data-level="8.2" data-path="getting-a-repository-from-github-fork-git-clone.html"><a href="getting-a-repository-from-github-fork-git-clone.html#cloning-a-repository-remote---local"><i class="fa fa-check"></i><b>8.2</b> Cloning a repository (remote -&gt; local)</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html"><i class="fa fa-check"></i><b>9</b> Collaborating (<code>git fetch &amp; merge (or pull)</code>)</a>
-<ul>
+<li class="chapter" data-level="9" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html"><i class="fa fa-check"></i><b>9</b> Collaborating (<code>git fetch &amp; merge (or pull)</code>)</a><ul>
 <li class="chapter" data-level="9.1" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#setup-a-fake-collaborator-yourself-in-another-directory"><i class="fa fa-check"></i><b>9.1</b> Setup a fake collaborator, yourself in another directory :)</a></li>
 <li class="chapter" data-level="9.2" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#implement-the-changes-your-fake-collaborator-made"><i class="fa fa-check"></i><b>9.2</b> Implement the changes your fake collaborator made</a></li>
 <li class="chapter" data-level="" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#faq"><i class="fa fa-check"></i>FAQ</a></li>
@@ -213,37 +201,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="collaborating-git-fetch-merge-or-pull.html"><a href="collaborating-git-fetch-merge-or-pull.html#really-collaborating-on-github"><i class="fa fa-check"></i><b>9.3</b> Really collaborating on GitHub</a></li>
 </ul></li>
 <li class="part"><span><b>III Advanced Git</b></span></li>
-<li class="chapter" data-level="10" data-path="conflicts.html"><a href="conflicts.html"><i class="fa fa-check"></i><b>10</b> Conflicts</a>
-<ul>
+<li class="chapter" data-level="10" data-path="conflicts.html"><a href="conflicts.html"><i class="fa fa-check"></i><b>10</b> Conflicts</a><ul>
 <li class="chapter" data-level="10.1" data-path="conflicts.html"><a href="conflicts.html#create-a-conflict"><i class="fa fa-check"></i><b>10.1</b> Create a conflict</a></li>
-<li class="chapter" data-level="10.2" data-path="conflicts.html"><a href="conflicts.html#resolving-a-conflict"><i class="fa fa-check"></i><b>10.2</b> Resolving a conflict</a>
-<ul>
+<li class="chapter" data-level="10.2" data-path="conflicts.html"><a href="conflicts.html#resolving-a-conflict"><i class="fa fa-check"></i><b>10.2</b> Resolving a conflict</a><ul>
 <li class="chapter" data-level="10.2.1" data-path="conflicts.html"><a href="conflicts.html#look-at-the-file-with-conflict-and-understanding-the-conflict-message"><i class="fa fa-check"></i><b>10.2.1</b> Look at the file with conflict and understanding the conflict message</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="conflicts.html"><a href="conflicts.html#tips-to-prevent-conflicts"><i class="fa fa-check"></i><b>10.3</b> Tips to prevent conflicts</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html"><i class="fa fa-check"></i><b>11</b> Revert to a previous commit (<code>git checkout</code>)</a>
-<ul>
+<li class="chapter" data-level="11" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html"><i class="fa fa-check"></i><b>11</b> Revert to a previous commit (<code>git checkout</code>)</a><ul>
 <li class="chapter" data-level="11.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>11.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
 <li class="chapter" data-level="11.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>11.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
 <li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#bonus---detached-head"><i class="fa fa-check"></i>BONUS - Detached HEAD</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a>
-<ul>
+<li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a><ul>
 <li class="chapter" data-level="12.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#check-what-branch-youre-on"><i class="fa fa-check"></i><b>12.1</b> Check what branch you’re on</a></li>
 <li class="chapter" data-level="12.2" data-path="branching-git-branch.html"><a href="branching-git-branch.html#create-new-branch"><i class="fa fa-check"></i><b>12.2</b> Create new branch</a></li>
 <li class="chapter" data-level="12.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#switch-between-branches-git-checkout"><i class="fa fa-check"></i><b>12.3</b> Switch between branches (<code>git checkout</code>)</a></li>
 <li class="chapter" data-level="12.4" data-path="branching-git-branch.html"><a href="branching-git-branch.html#merge-branch"><i class="fa fa-check"></i><b>12.4</b> Merge branch</a></li>
 <li class="chapter" data-level="12.5" data-path="branching-git-branch.html"><a href="branching-git-branch.html#delete-a-branch"><i class="fa fa-check"></i><b>12.5</b> Delete a branch</a></li>
-<li class="chapter" data-level="" data-path="branching-git-branch.html"><a href="branching-git-branch.html#bonus-advanced-x-2-topic---detached-head"><i class="fa fa-check"></i>BONUS (Advanced x 2 topic) - detached HEAD</a>
-<ul>
+<li class="chapter" data-level="" data-path="branching-git-branch.html"><a href="branching-git-branch.html#bonus-advanced-x-2-topic---detached-head"><i class="fa fa-check"></i>BONUS (Advanced x 2 topic) - detached HEAD</a><ul>
 <li class="chapter" data-level="12.5.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#purposely-enter-a-detached-head-and-create-a-commit"><i class="fa fa-check"></i><b>12.5.1</b> Purposely enter a detached HEAD and create a commit</a></li>
 <li class="chapter" data-level="12.5.2" data-path="branching-git-branch.html"><a href="branching-git-branch.html#return-to-master-branch"><i class="fa fa-check"></i><b>12.5.2</b> Return to master branch</a></li>
 <li class="chapter" data-level="12.5.3" data-path="branching-git-branch.html"><a href="branching-git-branch.html#you-are-now-back-in-the-master-branch-and-loss.txt-is-gone-check-with-ls"><i class="fa fa-check"></i><b>12.5.3</b> You are now back in the ‘master’ branch, and <code>loss.txt</code> is gone (check with <code>ls</code>)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html"><i class="fa fa-check"></i><b>13</b> Stashing (<code>git stash</code>)</a>
-<ul>
+<li class="chapter" data-level="13" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html"><i class="fa fa-check"></i><b>13</b> Stashing (<code>git stash</code>)</a><ul>
 <li class="chapter" data-level="13.1" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#stash"><i class="fa fa-check"></i><b>13.1</b> Stash</a></li>
 <li class="chapter" data-level="13.2" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#unstash"><i class="fa fa-check"></i><b>13.2</b> Unstash</a></li>
 <li class="chapter" data-level="13.3" data-path="stashing-git-stash.html"><a href="stashing-git-stash.html#delete-stash"><i class="fa fa-check"></i><b>13.3</b> Delete Stash</a></li>
