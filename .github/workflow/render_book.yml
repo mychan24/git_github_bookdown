@@ -1,0 +1,25 @@
+on:
+  push:
+    branches: master
+
+name: render book
+
+jobs:
+  render:
+    name: render book
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@master
+      - uses: r-lib/actions/setup-pandoc@master
+      - name: Install dependencies
+        run: |
+          install.packages("bookdown")
+        shell: Rscript {0}
+      - name: Render book
+        run: Rscript -e 'bookdown::render_book(output_dir = "docs/")'
+      - name: Commit results
+        run: |
+          git add -f docs/
+          git commit -m 'gh actions: render and commit book'
+          git push origin
