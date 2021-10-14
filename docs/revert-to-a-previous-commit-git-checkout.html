@@ -277,7 +277,7 @@ It’s Not Only for Programmers</a>
 <p><strong>Before going back to a previous state of a file, COMMIT what you have now!</strong></p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb95-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb95-1"></a><span class="fu">git</span> add foo.txt</span>
 <span id="cb95-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb95-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add &#39;A whole new world&#39; to foo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master 18085ef] Add &#39;A whole new world&#39; to foo.txt
+<pre><code>## [master ebd9cf2] Add &#39;A whole new world&#39; to foo.txt
 ##  1 file changed, 1 insertion(+)</code></pre>
 <p>Recover the <code>foo.txt</code> that doesn’t have “A whole new world” in it (use HEAD~1 or unique identifier)</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb97-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb97-1"></a><span class="fu">git</span> checkout HEAD~1 foo.txt</span></code></pre></div>
@@ -300,7 +300,7 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">11.2</span> Going back to an entire commit - Detached HEAD (CAUTION)</h2>
 <p>If you <code>git checkout</code> a previous commit without also specifying a file, you will revert the entire directory to a previous condition</p>
 <div class="sourceCode" id="cb103"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb103-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb103-1"></a><span class="fu">git</span> checkout HEAD~1 </span></code></pre></div>
-<pre><code>## HEAD is now at 80d18c0 Merge changes from Github, whales are good</code></pre>
+<pre><code>## HEAD is now at f7b394f Merge changes from Github, whales are good</code></pre>
 <p>You should see a warning message about being in a <strong>‘detached HEAD’</strong>. (Refer to the Glossary section in the Appendix for a brief overview on “HEAD” and “detached HEAD”.)</p>
 <p>Use <code>git checkout HEAD</code> to return to most recent state.</p>
 </div>
