@@ -62,10 +62,10 @@ git checkout HEAD~1
 
 You should see a warning message about being in a **'detached HEAD'**. (Refer to the Glossary section in the Appendix for a brief overview on "HEAD" and "detached HEAD".)  
 
-Use `git checkout HEAD` to return to most recent state. 
+Use `git checkout master` to return to most recent state. 
 
 ```{bash}
-git checkout HEAD 
+git checkout master 
 ```
 
 ## BONUS - Detached HEAD {-}
@@ -85,6 +85,7 @@ Let's create a bug in our files and commit it.
 ```{bash}
 touch bug.txt
 echo "Brand new feature, surely nothing wrong here..." >> bug.txt
+git add bug.txt
 git commit -m "added bug.txt"
 ```
 
