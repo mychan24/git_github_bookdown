@@ -93,6 +93,9 @@ git commit -m "added bug.txt"
 
 ```{bash}
 git revert --no-commit HEAD
+```
+
+```{bash}
 ls
 ```
 
@@ -114,12 +117,21 @@ touch badjoke.txt
 echo "In case of fire," >> badjoke.txt
 git add badjoke.txt
 git commit -m "badjoke 1"
+```
+
+```{bash}
 echo "git commit, git push," >> badjoke.txt
 git add badjoke.txt
 git commit -m "badjoke 2"
+```
+
+```{bash}
 echo "and git out of there!" >> badjoke.txt
 git add badjoke.txt
 git commit -m "badjoke 3"
+```
+
+```{bash}
 cat badjoke.txt
 ```
 
