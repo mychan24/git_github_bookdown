@@ -22,7 +22,7 @@ It’s Not Only for Programmers" />
   
   
 
-<meta name="author" content="Micaela Chan &amp; Ekarin Pongpipat" />
+<meta name="author" content="Micaela Chan, Ekarin Pongpipat, and Luke Moraglia" />
 
 
 
@@ -212,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>11.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
 <li class="chapter" data-level="11.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>11.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
 <li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#bonus---detached-head"><i class="fa fa-check"></i>BONUS - Detached HEAD</a></li>
+<li class="chapter" data-level="11.3" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#reverting-back-to-a-past-commit-git-revert"><i class="fa fa-check"></i><b>11.3</b> Reverting back to a past commit (<code>git revert</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a><ul>
 <li class="chapter" data-level="12.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#check-what-branch-youre-on"><i class="fa fa-check"></i><b>12.1</b> Check what branch you’re on</a></li>
@@ -272,7 +273,7 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">12.1</span> Check what branch you’re on</h2>
 <p>If you’ve never changed a branch. You’re likely using the <code>master</code> or main branch.</p>
 <p>It’s always a good idea to check what branch you’re using:</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb105-1"><a href="branching-git-branch.html#cb105-1"></a><span class="fu">git</span> branch</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb127-1"><a href="branching-git-branch.html#cb127-1"></a><span class="fu">git</span> branch</span></code></pre></div>
 <pre><code>## * master</code></pre>
 <p>The one marked with the <code>*</code> is the name of branch that you’re currently on, also known as the active branch.</p>
 <p><br></p>
@@ -280,11 +281,11 @@ It’s Not Only for Programmers</a>
 <div id="create-new-branch" class="section level2">
 <h2><span class="header-section-number">12.2</span> Create new branch</h2>
 <p>To create a new branch, we can enter:</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb107-1"><a href="branching-git-branch.html#cb107-1"></a><span class="fu">git</span> branch <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb129-1"><a href="branching-git-branch.html#cb129-1"></a><span class="fu">git</span> branch <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 <p>For example, if we want to make a test a new function on a new branch, we can create the new branch by entering:</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb108-1"><a href="branching-git-branch.html#cb108-1"></a><span class="fu">git</span> branch cool_new_function</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb130-1"><a href="branching-git-branch.html#cb130-1"></a><span class="fu">git</span> branch cool_new_function</span></code></pre></div>
 <p>To make sure the branch exists, we can enter:</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb109-1"><a href="branching-git-branch.html#cb109-1"></a><span class="fu">git</span> branch</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb131-1"><a href="branching-git-branch.html#cb131-1"></a><span class="fu">git</span> branch</span></code></pre></div>
 <pre><code>##   cool_new_function
 ## * master</code></pre>
 <p><br></p>
@@ -293,21 +294,21 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">12.3</span> Switch between branches (<code>git checkout</code>)</h2>
 <p>To switch to the new branch, use <code>git checkout &lt;branch_name&gt;</code></p>
 <p>Example:</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb111-1"><a href="branching-git-branch.html#cb111-1"></a><span class="fu">git</span> checkout cool_new_function</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb133-1"><a href="branching-git-branch.html#cb133-1"></a><span class="fu">git</span> checkout cool_new_function</span></code></pre></div>
 <pre><code>## Switched to branch &#39;cool_new_function&#39;</code></pre>
 <p>Let’s check that we actually switched.</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb113-1"><a href="branching-git-branch.html#cb113-1"></a><span class="fu">git</span> branch</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb135-1"><a href="branching-git-branch.html#cb135-1"></a><span class="fu">git</span> branch</span></code></pre></div>
 <pre><code>## * cool_new_function
 ##   master</code></pre>
 <p>Notice that the * is now on cool_new_function.</p>
 <p>Note: You can also create and switch to a branch in one command using:</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb115-1"><a href="branching-git-branch.html#cb115-1"></a><span class="fu">git</span> checkout -b <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb137-1"><a href="branching-git-branch.html#cb137-1"></a><span class="fu">git</span> checkout -b <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 <p>Now that you’re in your new branch, you can make, edit, and commit script(s) as you want without affecting anything on the master branch.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb116-1"><a href="branching-git-branch.html#cb116-1"></a><span class="fu">touch</span> cool_new_function.sh</span>
-<span id="cb116-2"><a href="branching-git-branch.html#cb116-2"></a><span class="fu">git</span> add cool_new_function.sh</span>
-<span id="cb116-3"><a href="branching-git-branch.html#cb116-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;added cool new function&quot;</span></span>
-<span id="cb116-4"><a href="branching-git-branch.html#cb116-4"></a><span class="fu">ls</span></span></code></pre></div>
-<pre><code>## [cool_new_function a6a2f65] added cool new function
+<div class="sourceCode" id="cb138"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb138-1"><a href="branching-git-branch.html#cb138-1"></a><span class="fu">touch</span> cool_new_function.sh</span>
+<span id="cb138-2"><a href="branching-git-branch.html#cb138-2"></a><span class="fu">git</span> add cool_new_function.sh</span>
+<span id="cb138-3"><a href="branching-git-branch.html#cb138-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;added cool new function&quot;</span></span>
+<span id="cb138-4"><a href="branching-git-branch.html#cb138-4"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## [cool_new_function d44142a] added cool new function
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 cool_new_function.sh
 ## cool_new_function.sh
@@ -319,15 +320,15 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">12.4</span> Merge branch</h2>
 <p>Ready to make the modification available to everyone? Let’s merge the change back to the master branch.</p>
 <p>First, we have to switch back to the master branch <code>git checkout master</code> and then merge the commit <code>git merge &lt;branch_name&gt;</code></p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb118-1"><a href="branching-git-branch.html#cb118-1"></a><span class="fu">git</span> checkout master</span>
-<span id="cb118-2"><a href="branching-git-branch.html#cb118-2"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb140-1"><a href="branching-git-branch.html#cb140-1"></a><span class="fu">git</span> checkout master</span>
+<span id="cb140-2"><a href="branching-git-branch.html#cb140-2"></a><span class="fu">ls</span></span></code></pre></div>
 <pre><code>## Switched to branch &#39;master&#39;
 ## foo.txt
 ## ignore_this.txt</code></pre>
 <p>Notice that there is no cool_new_function.sh file in the master branch.</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb120-1"><a href="branching-git-branch.html#cb120-1"></a><span class="fu">git</span> merge cool_new_function</span>
-<span id="cb120-2"><a href="branching-git-branch.html#cb120-2"></a><span class="fu">ls</span></span></code></pre></div>
-<pre><code>## Updating 18085ef..a6a2f65
+<div class="sourceCode" id="cb142"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb142-1"><a href="branching-git-branch.html#cb142-1"></a><span class="fu">git</span> merge cool_new_function</span>
+<span id="cb142-2"><a href="branching-git-branch.html#cb142-2"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## Updating c3769a9..d44142a
 ## Fast-forward
 ##  cool_new_function.sh | 0
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
@@ -342,10 +343,10 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">12.5</span> Delete a branch</h2>
 <p>Done using a branch or created one by accident?</p>
 <p>Delete the branch by entering:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb122-1"><a href="branching-git-branch.html#cb122-1"></a><span class="fu">git</span> branch -d <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
-<div class="sourceCode" id="cb123"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb123-1"><a href="branching-git-branch.html#cb123-1"></a><span class="fu">git</span> branch -d cool_new_function</span></code></pre></div>
-<pre><code>## Deleted branch cool_new_function (was a6a2f65).</code></pre>
-<div class="sourceCode" id="cb125"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb125-1"><a href="branching-git-branch.html#cb125-1"></a><span class="fu">git</span> branch</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb144-1"><a href="branching-git-branch.html#cb144-1"></a><span class="fu">git</span> branch -d <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb145-1"><a href="branching-git-branch.html#cb145-1"></a><span class="fu">git</span> branch -d cool_new_function</span></code></pre></div>
+<pre><code>## Deleted branch cool_new_function (was d44142a).</code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb147-1"><a href="branching-git-branch.html#cb147-1"></a><span class="fu">git</span> branch</span></code></pre></div>
 <pre><code>## * master</code></pre>
 </div>
 <div id="bonus-advanced-x-2-topic---detached-head" class="section level2 unnumbered">
@@ -353,7 +354,7 @@ It’s Not Only for Programmers</a>
 <p>Remember the previous chapter mentioned a concept about ‘detached HEAD’? Now you have tried branching, you could understand a bit more how detached HEAD can occur, and how branching can help preventing commit loss.</p>
 <div id="purposely-enter-a-detached-head-and-create-a-commit" class="section level3">
 <h3><span class="header-section-number">12.5.1</span> Purposely enter a detached HEAD and create a commit</h3>
-<div class="sourceCode" id="cb127"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb127-1"><a href="branching-git-branch.html#cb127-1"></a><span class="fu">git</span> checkout HEAD~2</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb149-1"><a href="branching-git-branch.html#cb149-1"></a><span class="fu">git</span> checkout HEAD~2</span></code></pre></div>
 <pre><code>## Note: checking out &#39;HEAD~2&#39;.
 ##
 ## You are in &#39;detached HEAD&#39; state. You can look around, make experimental
@@ -366,16 +367,16 @@ It’s Not Only for Programmers</a>
 ##   git checkout -b &lt;new-branch-name&gt;
 ##
 ## HEAD is now at [commit identifier] [commit message]</code></pre>
-<div class="sourceCode" id="cb129"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb129-1"><a href="branching-git-branch.html#cb129-1"></a><span class="fu">touch</span> loss.txt</span>
-<span id="cb129-2"><a href="branching-git-branch.html#cb129-2"></a><span class="fu">git</span> add loss.txt</span>
-<span id="cb129-3"><a href="branching-git-branch.html#cb129-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;Adding loss.txt while in detached HEAD&quot;</span></span></code></pre></div>
-<pre><code>## [master 23baa14] Adding loss.txt while in detached HEAD
+<div class="sourceCode" id="cb151"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb151-1"><a href="branching-git-branch.html#cb151-1"></a><span class="fu">touch</span> loss.txt</span>
+<span id="cb151-2"><a href="branching-git-branch.html#cb151-2"></a><span class="fu">git</span> add loss.txt</span>
+<span id="cb151-3"><a href="branching-git-branch.html#cb151-3"></a><span class="fu">git</span> commit -m <span class="st">&quot;Adding loss.txt while in detached HEAD&quot;</span></span></code></pre></div>
+<pre><code>## [master 824a7c7] Adding loss.txt while in detached HEAD
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 loss.txt</code></pre>
 </div>
 <div id="return-to-master-branch" class="section level3">
 <h3><span class="header-section-number">12.5.2</span> Return to master branch</h3>
-<div class="sourceCode" id="cb131"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb131-1"><a href="branching-git-branch.html#cb131-1"></a><span class="fu">git</span> checkout master</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb153-1"><a href="branching-git-branch.html#cb153-1"></a><span class="fu">git</span> checkout master</span></code></pre></div>
 <pre><code>## Warning: you are leaving 1 commit behind, not connected to
 ## any of your branches:
 ##
@@ -394,7 +395,7 @@ It’s Not Only for Programmers</a>
 <div id="you-are-now-back-in-the-master-branch-and-loss.txt-is-gone-check-with-ls" class="section level3">
 <h3><span class="header-section-number">12.5.3</span> You are now back in the ‘master’ branch, and <code>loss.txt</code> is gone (check with <code>ls</code>)</h3>
 <p>Luckily, the output message actually tells you how to recover those changes (for now, before Git eventually deletes it).</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb133-1"><a href="branching-git-branch.html#cb133-1"></a><span class="fu">git</span> branch recover_loss_branch <span class="op">&lt;</span>commit identifier<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb155-1"><a href="branching-git-branch.html#cb155-1"></a><span class="fu">git</span> branch recover_loss_branch <span class="op">&lt;</span>commit identifier<span class="op">&gt;</span></span></code></pre></div>
 <p>Now if you switch to that branch you just created (use <code>git checkout</code>), you will see <code>loss.txt</code>.</p>
 <hr />
 <p><strong>You have started using branches in Git!</strong></p>

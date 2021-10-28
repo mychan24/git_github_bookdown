@@ -22,7 +22,7 @@ It’s Not Only for Programmers" />
   
   
 
-<meta name="author" content="Micaela Chan &amp; Ekarin Pongpipat" />
+<meta name="author" content="Micaela Chan, Ekarin Pongpipat, and Luke Moraglia" />
 
 
 
@@ -212,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>11.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
 <li class="chapter" data-level="11.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>11.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
 <li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#bonus---detached-head"><i class="fa fa-check"></i>BONUS - Detached HEAD</a></li>
+<li class="chapter" data-level="11.3" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#reverting-back-to-a-past-commit-git-revert"><i class="fa fa-check"></i><b>11.3</b> Reverting back to a past commit (<code>git revert</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a><ul>
 <li class="chapter" data-level="12.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#check-what-branch-youre-on"><i class="fa fa-check"></i><b>12.1</b> Check what branch you’re on</a></li>
@@ -293,14 +294,14 @@ It’s Not Only for Programmers</a>
 <h3><span class="header-section-number">1.2.4</span> Check to ensure settings are correct</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="setting-up-git.html#cb5-1"></a><span class="fu">git</span> config --list</span></code></pre></div>
 <pre><code>## credential.helper=osxkeychain
-## filter.lfs.smudge=git-lfs smudge -- %f
-## filter.lfs.process=git-lfs filter-process
-## filter.lfs.required=true
 ## filter.lfs.clean=git-lfs clean -- %f
 ## filter.lfs.smudge=git-lfs smudge -- %f
 ## filter.lfs.process=git-lfs filter-process
 ## filter.lfs.required=true
+## filter.lfs.required=true
 ## filter.lfs.clean=git-lfs clean -- %f
+## filter.lfs.smudge=git-lfs smudge -- %f
+## filter.lfs.process=git-lfs filter-process
 ## advice.pushupdaterejected=false
 ## advice.pushnonffcurrent=false
 ## advice.pushnonffmatching=false
@@ -324,10 +325,10 @@ It’s Not Only for Programmers</a>
 ## core.logallrefupdates=true
 ## core.ignorecase=true
 ## core.precomposeunicode=true
-## remote.origin.url=https://github.com/mychan24/git_github_bookdown
+## remote.origin.url=https://github.com/LukeMoraglia/git_github_bookdown
 ## remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 ## gc.auto=0
-## http.https://github.com/.extraheader=AUTHORIZATION: basic eC1hY2Nlc3MtdG9rZW46Z2hzX0VCaHduU0tXZFM3UWxoWXF6TmdQTWJYSE9Oa2lONjMwTFk4aA==
+## http.https://github.com/.extraheader=AUTHORIZATION: basic eC1hY2Nlc3MtdG9rZW46Z2hzXzNCYmVXY3M4ZkxOc0NvT2N3VU43bWhSa2Zud2IydTQxbllFeA==
 ## branch.master.remote=origin
 ## branch.master.merge=refs/heads/master</code></pre>
 <div id="helpful-links-to-setting-up-git" class="section level4">

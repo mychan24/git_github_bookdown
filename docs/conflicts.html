@@ -22,7 +22,7 @@ It’s Not Only for Programmers" />
   
   
 
-<meta name="author" content="Micaela Chan &amp; Ekarin Pongpipat" />
+<meta name="author" content="Micaela Chan, Ekarin Pongpipat, and Luke Moraglia" />
 
 
 
@@ -212,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>11.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
 <li class="chapter" data-level="11.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>11.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
 <li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#bonus---detached-head"><i class="fa fa-check"></i>BONUS - Detached HEAD</a></li>
+<li class="chapter" data-level="11.3" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#reverting-back-to-a-past-commit-git-revert"><i class="fa fa-check"></i><b>11.3</b> Reverting back to a past commit (<code>git revert</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a><ul>
 <li class="chapter" data-level="12.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#check-what-branch-youre-on"><i class="fa fa-check"></i><b>12.1</b> Check what branch you’re on</a></li>
@@ -270,7 +271,7 @@ It’s Not Only for Programmers</a>
 <p>Add &amp; commit your change.</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="conflicts.html#cb69-1"></a><span class="fu">git</span> add foo.txt</span>
 <span id="cb69-2"><a href="conflicts.html#cb69-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add fake collab line to foo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master ec5cd1a] Add fake collab line to foo.txt
+<pre><code>## [master b54ad31] Add fake collab line to foo.txt
 ##  1 file changed, 2 insertions(+)</code></pre>
 <p>Push the change to the remote repository</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="conflicts.html#cb71-1"></a><span class="fu">git</span> push origin master</span></code></pre></div>
@@ -287,7 +288,7 @@ It’s Not Only for Programmers</a>
 <p>Add and commit the change</p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb74-1"><a href="conflicts.html#cb74-1"></a><span class="fu">git</span> add foo.txt</span>
 <span id="cb74-2"><a href="conflicts.html#cb74-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add real me line to foo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master 9f3e8f2] Add real me line to foo.txt
+<pre><code>## [master 1960f9a] Add real me line to foo.txt
 ##  1 file changed, 2 insertions(+)</code></pre>
 <p>Try to push it, and you should get an error</p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="conflicts.html#cb76-1"></a><span class="fu">git</span> push origin master</span></code></pre></div>
@@ -346,7 +347,7 @@ whales are good</code></pre>
 <p>Add and commit the edited file</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb84-1"><a href="conflicts.html#cb84-1"></a><span class="fu">git</span> add foo.txt</span>
 <span id="cb84-2"><a href="conflicts.html#cb84-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Merge changes from Github, whales are good&quot;</span></span></code></pre></div>
-<pre><code>## [master 80d18c0] Merge changes from Github, whales are good
+<pre><code>## [master d7f234d] Merge changes from Github, whales are good
 ##  1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
 <p>Push your changes to the remote repo</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb86-1"><a href="conflicts.html#cb86-1"></a><span class="fu">git</span> push</span></code></pre></div>

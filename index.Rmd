@@ -1,6 +1,6 @@
 ---
 title: "Git & GitHub Tutorial for Scientists:   \nIt's Not Only for Programmers"
-author: "Micaela Chan & Ekarin Pongpipat"
+author: "Micaela Chan, Ekarin Pongpipat, and Luke Moraglia"
 site: bookdown::bookdown_site
 documentclass: book
 

@@ -37,6 +37,7 @@ tips-to-prevent-conflicts
 revert-to-a-previous-commit-git-checkout
 going-back-to-a-specific-version-of-a-file-git-checkout
 going-back-to-an-entire-commit---detached-head-caution
+reverting-back-to-a-past-commit-git-revert
 branching-git-branch
 check-what-branch-youre-on
 create-new-branch
