@@ -64,6 +64,9 @@ You should see a warning message about being in a **'detached HEAD'**. (Refer to
 
 Use `git checkout HEAD` to return to most recent state. 
 
+```{bash}
+git checkout HEAD 
+```
 
 ## BONUS - Detached HEAD {-}
 
@@ -71,5 +74,67 @@ Use `git checkout HEAD` to return to most recent state.
 
 A [detached HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit) means you are not in a branch, and any changes you make will disappear when you switch back to a real branch (e.g., `git checkout master`). More about branching and how to prevent your works from disappearing in the next chapter!
 
+## Reverting back to a past commit (`git revert`)
+
+At some point, you might create a commit (or several commits) that you want to undo.
+Perhaps it's a new feature that turns out to be more of a bug, so you want to go back to a stable version of your code. 
+At the same time, you may want to keep the bad code in your commit history, so that you can refer back to it later to see what went wrong or how you can fix it.
+
+Let's create a bug in our files and commit it.
+
+```{bash}
+touch bug.txt
+echo "Brand new feature, surely nothing wrong here..." >> bug.txt
+git commit -m "added bug.txt"
+```
+
+`HEAD` now has a bug in it, so we are going to undo the last commit (going back to how things were in `HEAD~1`) using `git revert`. 
+
+```{bash}
+git revert --no-commit HEAD
+ls
+```
+
+`bug.txt` is no longer in our directory, so the revert worked. Now we can commit.
+
+```{bash}
+git commit -m "revert 'added bug.txt'"
+```
+
+Using the `--no-commit` argument for `git revert` allowed us to check what the result of the revert was before we committed it. If you don't include `--no-commit`, `revert` will go straight to committing the change.
+After `--no-commit` we specified which commit we want to undo; in this case it was `HEAD`.
+
+So, we undid a single commit, but what if we wanted to undo several commits?
+We can use `revert` with a range of commits. 
+Let's say we added in three commits that are not good.
+
+```{bash}
+touch badjoke.txt
+echo "In case of fire," >> badjoke.txt
+git add badjoke.txt
+git commit -m "badjoke 1"
+echo "git commit, git push," >> badjoke.txt
+git add badjoke.txt
+git commit -m "badjoke 2"
+echo "and git out of there!" >> badjoke.txt
+git add badjoke.txt
+git commit -m "badjoke 3"
+cat badjoke.txt
+```
+
+We want to remove our bad joke, so we use a `git revert` with a range `HEAD~3..`.
+
+```{bash}
+git revert --no-commit HEAD~3..
+```
+
+`HEAD~3..` specifies a range from `HEAD~3` to `HEAD` (the `..` is what indicates it is a range). We are trying to go back to how things were in `HEAD~3`, so when we specify `HEAD~#..` as our range, `HEAD~#` is the commit you would like to go back to.
+
+Don't forget to commit!
+```{bash}
+git commit -m "undo 3 commits to get rid of bad joke"
+```
+
+
 ***
-**You have now used `checkout` to look at the past version of a file!**
+**You have now used `checkout` to look at the past version of a file, and `revert` to undo commits!**
