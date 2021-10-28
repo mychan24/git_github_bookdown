@@ -212,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>11.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
 <li class="chapter" data-level="11.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>11.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
 <li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#bonus---detached-head"><i class="fa fa-check"></i>BONUS - Detached HEAD</a></li>
+<li class="chapter" data-level="11.3" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#reverting-back-to-a-past-commit-git-revert"><i class="fa fa-check"></i><b>11.3</b> Reverting back to a past commit (<code>git revert</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a><ul>
 <li class="chapter" data-level="12.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#check-what-branch-youre-on"><i class="fa fa-check"></i><b>12.1</b> Check what branch you’re on</a></li>
@@ -277,7 +278,7 @@ It’s Not Only for Programmers</a>
 <p><strong>Before going back to a previous state of a file, COMMIT what you have now!</strong></p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb95-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb95-1"></a><span class="fu">git</span> add foo.txt</span>
 <span id="cb95-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb95-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;Add &#39;A whole new world&#39; to foo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master ebd9cf2] Add &#39;A whole new world&#39; to foo.txt
+<pre><code>## [master ac9d1a2] Add &#39;A whole new world&#39; to foo.txt
 ##  1 file changed, 1 insertion(+)</code></pre>
 <p>Recover the <code>foo.txt</code> that doesn’t have “A whole new world” in it (use HEAD~1 or unique identifier)</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb97-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb97-1"></a><span class="fu">git</span> checkout HEAD~1 foo.txt</span></code></pre></div>
@@ -300,16 +301,79 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">11.2</span> Going back to an entire commit - Detached HEAD (CAUTION)</h2>
 <p>If you <code>git checkout</code> a previous commit without also specifying a file, you will revert the entire directory to a previous condition</p>
 <div class="sourceCode" id="cb103"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb103-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb103-1"></a><span class="fu">git</span> checkout HEAD~1 </span></code></pre></div>
-<pre><code>## HEAD is now at f7b394f Merge changes from Github, whales are good</code></pre>
+<pre><code>## HEAD is now at 3d07c52 Merge changes from Github, whales are good</code></pre>
 <p>You should see a warning message about being in a <strong>‘detached HEAD’</strong>. (Refer to the Glossary section in the Appendix for a brief overview on “HEAD” and “detached HEAD”.)</p>
-<p>Use <code>git checkout HEAD</code> to return to most recent state.</p>
+<p>Use <code>git checkout master</code> to return to most recent state.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb105-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb105-1"></a><span class="fu">git</span> checkout master </span></code></pre></div>
+<pre><code>## Previous HEAD position was 3d07c52 Merge changes from Github, whales are good
+## Switched to branch &#39;master&#39;</code></pre>
 </div>
 <div id="bonus---detached-head" class="section level2 unnumbered">
 <h2>BONUS - Detached HEAD</h2>
 <p><strong>CAUTION 1</strong>: If you make commits while you are in a detached HEAD, returning to “master” (or any other branch) means those changes are loss (again, we will talk about branches soon).</p>
 <p>A <a href="https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit">detached HEAD</a> means you are not in a branch, and any changes you make will disappear when you switch back to a real branch (e.g., <code>git checkout master</code>). More about branching and how to prevent your works from disappearing in the next chapter!</p>
+</div>
+<div id="reverting-back-to-a-past-commit-git-revert" class="section level2">
+<h2><span class="header-section-number">11.3</span> Reverting back to a past commit (<code>git revert</code>)</h2>
+<p>At some point, you might create a commit (or several commits) that you want to undo.
+Perhaps it’s a new feature that turns out to be more of a bug, so you want to go back to a stable version of your code.
+At the same time, you may want to keep the bad code in your commit history, so that you can refer back to it later to see what went wrong or how you can fix it.</p>
+<p>Let’s create a bug in our files and commit it.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb107-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb107-1"></a><span class="fu">touch</span> bug.txt</span>
+<span id="cb107-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb107-2"></a><span class="bu">echo</span> <span class="st">&quot;Brand new feature, surely nothing wrong here...&quot;</span> <span class="op">&gt;&gt;</span> bug.txt</span>
+<span id="cb107-3"><a href="revert-to-a-previous-commit-git-checkout.html#cb107-3"></a><span class="fu">git</span> add bug.txt</span>
+<span id="cb107-4"><a href="revert-to-a-previous-commit-git-checkout.html#cb107-4"></a><span class="fu">git</span> commit -m <span class="st">&quot;added bug.txt&quot;</span></span></code></pre></div>
+<pre><code>## [master 2268248] added bug.txt
+##  1 file changed, 1 insertion(+)
+##  create mode 100644 bug.txt</code></pre>
+<p><code>HEAD</code> now has a bug in it, so we are going to undo the last commit (going back to how things were in <code>HEAD~1</code>) using <code>git revert</code>.</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb109-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb109-1"></a><span class="fu">git</span> revert --no-commit HEAD</span>
+<span id="cb109-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb109-2"></a><span class="fu">ls</span></span></code></pre></div>
+<pre><code>## Removing bug.txt
+## foo.txt
+## ignore_this.txt</code></pre>
+<p><code>bug.txt</code> is no longer in our directory, so the revert worked. Now we can commit.</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb111-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb111-1"></a><span class="fu">git</span> commit -m <span class="st">&quot;revert &#39;added bug.txt&#39;&quot;</span></span></code></pre></div>
+<pre><code>## [master 20f5c2b] revert &#39;added bug.txt&#39;
+##  1 file changed, 1 deletion(-)
+##  delete mode 100644 bug.txt</code></pre>
+<p>Using the <code>--no-commit</code> argument for <code>git revert</code> allowed us to check what the result of the revert was before we committed it. If you don’t include <code>--no-commit</code>, <code>revert</code> will go straight to committing the change.
+After <code>--no-commit</code> we specified which commit we want to undo; in this case it was <code>HEAD</code>.</p>
+<p>So, we undid a single commit, but what if we wanted to undo several commits?
+We can use <code>revert</code> with a range of commits.
+Let’s say we added in three commits that are not good.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb113-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-1"></a><span class="fu">touch</span> badjoke.txt</span>
+<span id="cb113-2"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-2"></a><span class="bu">echo</span> <span class="st">&quot;In case of fire,&quot;</span> <span class="op">&gt;&gt;</span> badjoke.txt</span>
+<span id="cb113-3"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-3"></a><span class="fu">git</span> add badjoke.txt</span>
+<span id="cb113-4"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-4"></a><span class="fu">git</span> commit -m <span class="st">&quot;badjoke 1&quot;</span></span>
+<span id="cb113-5"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-5"></a><span class="bu">echo</span> <span class="st">&quot;git commit, git push,&quot;</span> <span class="op">&gt;&gt;</span> badjoke.txt</span>
+<span id="cb113-6"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-6"></a><span class="fu">git</span> add badjoke.txt</span>
+<span id="cb113-7"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-7"></a><span class="fu">git</span> commit -m <span class="st">&quot;badjoke 2&quot;</span></span>
+<span id="cb113-8"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-8"></a><span class="bu">echo</span> <span class="st">&quot;and git out of there!&quot;</span> <span class="op">&gt;&gt;</span> badjoke.txt</span>
+<span id="cb113-9"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-9"></a><span class="fu">git</span> add badjoke.txt</span>
+<span id="cb113-10"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-10"></a><span class="fu">git</span> commit -m <span class="st">&quot;badjoke 3&quot;</span></span>
+<span id="cb113-11"><a href="revert-to-a-previous-commit-git-checkout.html#cb113-11"></a><span class="fu">cat</span> badjoke.txt</span></code></pre></div>
+<pre><code>## [master beb811c] badjoke 1
+##  1 file changed, 1 insertion(+)
+##  create mode 100644 badjoke.txt
+## [master 6d76c4d] badjoke 2
+##  1 file changed, 1 insertion(+)
+## [master 2a5664b] badjoke 3
+##  1 file changed, 1 insertion(+)
+## In case of fire,
+## git commit, git push,
+## and git out of there!</code></pre>
+<p>We want to remove our bad joke, so we use a <code>git revert</code> with a range <code>HEAD~3..</code>.</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb115-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb115-1"></a><span class="fu">git</span> revert --no-commit HEAD~3..</span></code></pre></div>
+<pre><code>## Removing badjoke.txt</code></pre>
+<p><code>HEAD~3..</code> specifies a range from <code>HEAD~3</code> to <code>HEAD</code> (the <code>..</code> is what indicates it is a range). We are trying to go back to how things were in <code>HEAD~3</code>, so when we specify <code>HEAD~#..</code> as our range, <code>HEAD~#</code> is the commit you would like to go back to.</p>
+<p>Don’t forget to commit!</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb117-1"><a href="revert-to-a-previous-commit-git-checkout.html#cb117-1"></a><span class="fu">git</span> commit -m <span class="st">&quot;undo 3 commits to get rid of bad joke&quot;</span></span></code></pre></div>
+<pre><code>## [master 4fdff7c] undo 3 commits to get rid of bad joke
+##  1 file changed, 3 deletions(-)
+##  delete mode 100644 badjoke.txt</code></pre>
 <hr />
-<p><strong>You have now used <code>checkout</code> to look at the past version of a file!</strong></p>
+<p><strong>You have now used <code>checkout</code> to look at the past version of a file, and <code>revert</code> to undo commits!</strong></p>
 
 </div>
 </div>

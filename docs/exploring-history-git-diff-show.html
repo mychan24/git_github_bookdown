@@ -212,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-a-specific-version-of-a-file-git-checkout"><i class="fa fa-check"></i><b>11.1</b> Going back to a specific version of a file (<code>git checkout</code>)</a></li>
 <li class="chapter" data-level="11.2" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#going-back-to-an-entire-commit---detached-head-caution"><i class="fa fa-check"></i><b>11.2</b> Going back to an entire commit - Detached HEAD (CAUTION)</a></li>
 <li class="chapter" data-level="" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#bonus---detached-head"><i class="fa fa-check"></i>BONUS - Detached HEAD</a></li>
+<li class="chapter" data-level="11.3" data-path="revert-to-a-previous-commit-git-checkout.html"><a href="revert-to-a-previous-commit-git-checkout.html#reverting-back-to-a-past-commit-git-revert"><i class="fa fa-check"></i><b>11.3</b> Reverting back to a past commit (<code>git revert</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="branching-git-branch.html"><a href="branching-git-branch.html"><i class="fa fa-check"></i><b>12</b> Branching (<code>git branch</code>)</a><ul>
 <li class="chapter" data-level="12.1" data-path="branching-git-branch.html"><a href="branching-git-branch.html#check-what-branch-youre-on"><i class="fa fa-check"></i><b>12.1</b> Check what branch you’re on</a></li>
@@ -290,9 +291,9 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">4.2</span> What was done in ____ commit? (<code>git show</code>)</h2>
 <p>Sometimes we want to check what was done during a certain commit (instead of comparing differences)</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="exploring-history-git-diff-show.html#cb34-1"></a><span class="fu">git</span> show HEAD~1 foo.txt</span></code></pre></div>
-<pre><code>## commit ba50fdae72ae7f496d3cbd4d29970e9b0b5c8025
+<pre><code>## commit a645d3a712615b707cd5fc9bc92020fac0d6ddb0
 ## Author: Shady Whale &lt;shadywhale@allthewhales.com&gt;
-## Date:   Thu Oct 14 14:57:44 2021 +0000
+## Date:   Thu Oct 28 03:18:27 2021 +0000
 ## 
 ##     Add foo.txt to repo
 ## 
