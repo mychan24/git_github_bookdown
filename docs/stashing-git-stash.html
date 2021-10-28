@@ -22,7 +22,7 @@ It’s Not Only for Programmers" />
   
   
 
-<meta name="author" content="Micaela Chan &amp; Ekarin Pongpipat" />
+<meta name="author" content="Micaela Chan, Ekarin Pongpipat, and Luke Moraglia" />
 
 
 
@@ -267,10 +267,10 @@ It’s Not Only for Programmers</a>
 <li>Need to immediately switch to another branch and do not want to commit the change</li>
 <li>Partial commit</li>
 </ul>
-<div class="sourceCode" id="cb148"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb148-1"><a href="stashing-git-stash.html#cb148-1"></a><span class="fu">git</span> branch</span>
-<span id="cb148-2"><a href="stashing-git-stash.html#cb148-2"></a><span class="fu">touch</span> temp_script.sh</span>
-<span id="cb148-3"><a href="stashing-git-stash.html#cb148-3"></a><span class="fu">git</span> add temp_script.sh</span>
-<span id="cb148-4"><a href="stashing-git-stash.html#cb148-4"></a><span class="fu">git</span> status</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb156-1"><a href="stashing-git-stash.html#cb156-1"></a><span class="fu">git</span> branch</span>
+<span id="cb156-2"><a href="stashing-git-stash.html#cb156-2"></a><span class="fu">touch</span> temp_script.sh</span>
+<span id="cb156-3"><a href="stashing-git-stash.html#cb156-3"></a><span class="fu">git</span> add temp_script.sh</span>
+<span id="cb156-4"><a href="stashing-git-stash.html#cb156-4"></a><span class="fu">git</span> status</span></code></pre></div>
 <pre><code>## * master
 ## On branch master
 ## Changes to be committed:
@@ -281,16 +281,16 @@ It’s Not Only for Programmers</a>
 <p><br></p>
 <div id="stash" class="section level2">
 <h2><span class="header-section-number">13.1</span> Stash</h2>
-<div class="sourceCode" id="cb150"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb150-1"><a href="stashing-git-stash.html#cb150-1"></a><span class="fu">git</span> stash</span>
-<span id="cb150-2"><a href="stashing-git-stash.html#cb150-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
-<pre><code>## Saved working directory and index state WIP on master: aec6996 Adding loss.txt while in detached HEAD
-## stash@{0}: WIP on master: aec6996 Adding loss.txt while in detached HEAD</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb158-1"><a href="stashing-git-stash.html#cb158-1"></a><span class="fu">git</span> stash</span>
+<span id="cb158-2"><a href="stashing-git-stash.html#cb158-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
+<pre><code>## Saved working directory and index state WIP on master: 824a7c7 Adding loss.txt while in detached HEAD
+## stash@{0}: WIP on master: 824a7c7 Adding loss.txt while in detached HEAD</code></pre>
 <p><br></p>
 </div>
 <div id="unstash" class="section level2">
 <h2><span class="header-section-number">13.2</span> Unstash</h2>
-<div class="sourceCode" id="cb152"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb152-1"><a href="stashing-git-stash.html#cb152-1"></a><span class="fu">git</span> stash apply</span>
-<span id="cb152-2"><a href="stashing-git-stash.html#cb152-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb160-1"><a href="stashing-git-stash.html#cb160-1"></a><span class="fu">git</span> stash apply</span>
+<span id="cb160-2"><a href="stashing-git-stash.html#cb160-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
 <pre><code>## On branch master
 ## Changes to be committed:
 ##  new file:   temp_script.sh
@@ -298,16 +298,16 @@ It’s Not Only for Programmers</a>
 ## Untracked files:
 ##  .gitignore
 ## 
-## stash@{0}: WIP on master: aec6996 Adding loss.txt while in detached HEAD</code></pre>
-<div class="sourceCode" id="cb154"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb154-1"><a href="stashing-git-stash.html#cb154-1"></a><span class="fu">git</span> stash apply --index</span>
-<span id="cb154-2"><a href="stashing-git-stash.html#cb154-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
+## stash@{0}: WIP on master: 824a7c7 Adding loss.txt while in detached HEAD</code></pre>
+<div class="sourceCode" id="cb162"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb162-1"><a href="stashing-git-stash.html#cb162-1"></a><span class="fu">git</span> stash apply --index</span>
+<span id="cb162-2"><a href="stashing-git-stash.html#cb162-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="delete-stash" class="section level2">
 <h2><span class="header-section-number">13.3</span> Delete Stash</h2>
-<div class="sourceCode" id="cb155"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb155-1"><a href="stashing-git-stash.html#cb155-1"></a><span class="fu">git</span> stash drop</span>
-<span id="cb155-2"><a href="stashing-git-stash.html#cb155-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
-<pre><code>## Dropped refs/stash@{0} (8af69909397a2217f31fc518c6f0416673c03dc5)</code></pre>
+<div class="sourceCode" id="cb163"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb163-1"><a href="stashing-git-stash.html#cb163-1"></a><span class="fu">git</span> stash drop</span>
+<span id="cb163-2"><a href="stashing-git-stash.html#cb163-2"></a><span class="fu">git</span> stash list</span></code></pre></div>
+<pre><code>## Dropped refs/stash@{0} (69861d34b2d993134ddd06e333e68d7e9675ded5)</code></pre>
 <p><br></p>
 <p>Note: You can perform both <code>git stash apply</code> and <code>git stash drop</code> at the same time by entering <code>git stash pop</code>.</p>
 <p><br></p>
@@ -315,7 +315,7 @@ It’s Not Only for Programmers</a>
 <div id="branch-a-stash" class="section level2">
 <h2><span class="header-section-number">13.4</span> Branch a Stash</h2>
 <p>Probably the best use of stash: <code>git stash branch &lt;branch_name&gt;</code></p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb157-1"><a href="stashing-git-stash.html#cb157-1"></a><span class="fu">git</span> stash branch <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb165-1"><a href="stashing-git-stash.html#cb165-1"></a><span class="fu">git</span> stash branch <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 
 </div>
 </div>
