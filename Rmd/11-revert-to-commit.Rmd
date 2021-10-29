@@ -2,7 +2,9 @@
 
 **Key terms/commands:**
 
-* **git checkout**: revert (i.e., checkout) a file to a previous state. You can also checkout your entire folder, but it is potentially a dangerous move (puts you in a detached HEAD; read the end of this chapter).
+* **git checkout**: checkout a file means to see how was in a previous commit. You can also checkout your entire folder, but it is potentially a dangerous move (puts you in a detached HEAD; read the end of this chapter). Git checkout is also used for switching branches, but that will be covered in the next chapter.
+
+* **git revert**: revert changes and commit the reverted actions as a record.
 
 ## Going back to a specific version of a file (`git checkout`)
 
