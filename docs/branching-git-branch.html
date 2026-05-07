@@ -330,7 +330,7 @@ It’s Not Only for Programmers</a>
 <span id="cb136-2"><a href="branching-git-branch.html#cb136-2" tabindex="-1"></a><span class="fu">git</span> add cool_new_function.sh</span>
 <span id="cb136-3"><a href="branching-git-branch.html#cb136-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;added cool new function&quot;</span></span>
 <span id="cb136-4"><a href="branching-git-branch.html#cb136-4" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
-<pre><code>## [cool_new_function 6fc24cb] added cool new function
+<pre><code>## [cool_new_function 101bc90] added cool new function
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 cool_new_function.sh
 ## cool_new_function.sh
@@ -350,7 +350,7 @@ It’s Not Only for Programmers</a>
 <p>Notice that there is no cool_new_function.sh file in the master branch.</p>
 <div class="sourceCode" id="cb140"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb140-1"><a href="branching-git-branch.html#cb140-1" tabindex="-1"></a><span class="fu">git</span> merge cool_new_function</span>
 <span id="cb140-2"><a href="branching-git-branch.html#cb140-2" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
-<pre><code>## Updating 469014c..6fc24cb
+<pre><code>## Updating cb5ba4b..101bc90
 ## Fast-forward
 ##  cool_new_function.sh | 0
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
@@ -367,7 +367,7 @@ It’s Not Only for Programmers</a>
 <p>Delete the branch by entering:</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb142-1"><a href="branching-git-branch.html#cb142-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div>
 <div class="sourceCode" id="cb143"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb143-1"><a href="branching-git-branch.html#cb143-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> cool_new_function</span></code></pre></div>
-<pre><code>## Deleted branch cool_new_function (was 6fc24cb).</code></pre>
+<pre><code>## Deleted branch cool_new_function (was 101bc90).</code></pre>
 <div class="sourceCode" id="cb145"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb145-1"><a href="branching-git-branch.html#cb145-1" tabindex="-1"></a><span class="fu">git</span> branch</span></code></pre></div>
 <pre><code>## * master</code></pre>
 </div>
@@ -392,7 +392,7 @@ It’s Not Only for Programmers</a>
 <div class="sourceCode" id="cb149"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb149-1"><a href="branching-git-branch.html#cb149-1" tabindex="-1"></a><span class="fu">touch</span> loss.txt</span>
 <span id="cb149-2"><a href="branching-git-branch.html#cb149-2" tabindex="-1"></a><span class="fu">git</span> add loss.txt</span>
 <span id="cb149-3"><a href="branching-git-branch.html#cb149-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Adding loss.txt while in detached HEAD&quot;</span></span></code></pre></div>
-<pre><code>## [master eb30531] Adding loss.txt while in detached HEAD
+<pre><code>## [master 406adb4] Adding loss.txt while in detached HEAD
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 loss.txt</code></pre>
 </div>
