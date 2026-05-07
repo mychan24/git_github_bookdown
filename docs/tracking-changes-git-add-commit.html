@@ -328,7 +328,7 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">3.2</span> Saving these changes to the repository (<code>git commit</code>)<a href="tracking-changes-git-add-commit.html#saving-these-changes-to-the-repository-git-commit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Commit the file and note the identifier for this commit (e.g., <code>f22b25e</code>):</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="tracking-changes-git-add-commit.html#cb21-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Add foo.txt to repo&quot;</span></span></code></pre></div>
-<pre><code>## [master (root-commit) 9b9657c] Add foo.txt to repo
+<pre><code>## [master (root-commit) f9de852] Add foo.txt to repo
 ##  1 file changed, 0 insertions(+), 0 deletions(-)
 ##  create mode 100644 foo.txt</code></pre>
 <blockquote>
@@ -337,9 +337,9 @@ It’s Not Only for Programmers</a>
 </blockquote>
 <p>What have we done so far? Let’s check the log, which list all the commits made so far.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="tracking-changes-git-add-commit.html#cb23-1" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre></div>
-<pre><code>## commit 9b9657c677cd25fabe041f4083c8900c883d33ab
+<pre><code>## commit f9de852319db5037c81b8cef922a45cae4f2ac47
 ## Author: Shady Whale &lt;shadywhale@allthewhales.com&gt;
-## Date:   Thu May 7 19:16:03 2026 +0000
+## Date:   Thu May 7 19:39:27 2026 +0000
 ## 
 ##     Add foo.txt to repo</code></pre>
 <blockquote>
@@ -355,7 +355,7 @@ Lastly, the commit message will appear under the identifier and author.</p>
 <p>Add &amp; commit your changes to <code>foo.txt</code></p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="tracking-changes-git-add-commit.html#cb26-1" tabindex="-1"></a><span class="fu">git</span> add foo.txt</span>
 <span id="cb26-2"><a href="tracking-changes-git-add-commit.html#cb26-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Add hello in foo.txt&quot;</span></span></code></pre></div>
-<pre><code>## [master f8a94c8] Add hello in foo.txt
+<pre><code>## [master c9cde7e] Add hello in foo.txt
 ##  1 file changed, 1 insertion(+)</code></pre>
 <blockquote>
 <p>The output tells you that you have added 1 file and there is 1 insertion(+)</p>
