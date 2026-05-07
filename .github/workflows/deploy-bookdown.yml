@@ -2,6 +2,8 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - "docs/**"
   workflow_dispatch:
 
 name: render book
@@ -16,19 +18,28 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - uses: r-lib/actions/setup-r@v2
+
       - uses: r-lib/actions/setup-pandoc@v2
-      - name: Install dependencies
-        run: |
-          install.packages(c("bookdown", "rmarkdown"), repos = "https://cloud.r-project.org")
-        shell: Rscript {0}
+
+      - name: Install R package dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: |
+            any::bookdown
+            any::rmarkdown
+            any::knitr
+
       - name: Render book to docs
         run: |
           bookdown::render_book("index.Rmd", "bookdown::gitbook", output_dir = "docs")
         shell: Rscript {0}
+
       - name: Add custom domain
         run: |
           echo "gitbookdown.eigenfairy.com" > docs/CNAME
+
       - name: Commit rendered book
         run: |
           git config user.name "github-actions[bot]"
