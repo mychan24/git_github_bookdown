@@ -1,42 +1,38 @@
-name: Deploy bookdown site to GitHub Pages
-
 on:
   push:
     branches:
       - master
   workflow_dispatch:
 
+name: render book
+
 permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  render:
+    name: render book
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up R
-        uses: r-lib/actions/setup-r@v2
-
-      - name: Install R packages
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+      - uses: r-lib/actions/setup-pandoc@v2
+      - name: Install dependencies
         run: |
           install.packages(c("bookdown", "rmarkdown"), repos = "https://cloud.r-project.org")
         shell: Rscript {0}
-
-      - name: Render book
+      - name: Render book to docs
         run: |
-          bookdown::render_book("index.Rmd", "bookdown::gitbook")
+          bookdown::render_book("index.Rmd", "bookdown::gitbook", output_dir = "docs")
         shell: Rscript {0}
-
       - name: Add custom domain
         run: |
-          echo "gitbookdown.eigenfairy.com" > _book/CNAME
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./_book
+          echo "gitbookdown.eigenfairy.com" > docs/CNAME
+      - name: Commit rendered book
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f docs/
+          git diff --cached --quiet || git commit -m "Render book"
+          git push
