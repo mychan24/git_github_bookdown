@@ -307,8 +307,8 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">13.1</span> Stash<a href="stashing-git-stash.html#stash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb156"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb156-1"><a href="stashing-git-stash.html#cb156-1" tabindex="-1"></a><span class="fu">git</span> stash</span>
 <span id="cb156-2"><a href="stashing-git-stash.html#cb156-2" tabindex="-1"></a><span class="fu">git</span> stash list</span></code></pre></div>
-<pre><code>## Saved working directory and index state WIP on master: 406adb4 Adding loss.txt while in detached HEAD
-## stash@{0}: WIP on master: 406adb4 Adding loss.txt while in detached HEAD</code></pre>
+<pre><code>## Saved working directory and index state WIP on master: b1b2f13 Adding loss.txt while in detached HEAD
+## stash@{0}: WIP on master: b1b2f13 Adding loss.txt while in detached HEAD</code></pre>
 <p><br></p>
 </div>
 <div id="unstash" class="section level2 hasAnchor" number="13.2">
@@ -324,7 +324,7 @@ It’s Not Only for Programmers</a>
 ##   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
 ##  .gitignore
 ## 
-## stash@{0}: WIP on master: 406adb4 Adding loss.txt while in detached HEAD</code></pre>
+## stash@{0}: WIP on master: b1b2f13 Adding loss.txt while in detached HEAD</code></pre>
 <div class="sourceCode" id="cb160"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb160-1"><a href="stashing-git-stash.html#cb160-1" tabindex="-1"></a><span class="fu">git</span> stash apply <span class="at">--index</span></span>
 <span id="cb160-2"><a href="stashing-git-stash.html#cb160-2" tabindex="-1"></a><span class="fu">git</span> stash list</span></code></pre></div>
 <p><br></p>
@@ -333,7 +333,7 @@ It’s Not Only for Programmers</a>
 <h2><span class="header-section-number">13.3</span> Delete Stash<a href="stashing-git-stash.html#delete-stash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb161"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb161-1"><a href="stashing-git-stash.html#cb161-1" tabindex="-1"></a><span class="fu">git</span> stash drop</span>
 <span id="cb161-2"><a href="stashing-git-stash.html#cb161-2" tabindex="-1"></a><span class="fu">git</span> stash list</span></code></pre></div>
-<pre><code>## Dropped refs/stash@{0} (81d6c38739d191174c89035fce4ae6917d85e944)</code></pre>
+<pre><code>## Dropped refs/stash@{0} (73664f10ae5c8865be74a31b954f2b4e1ffbc1e5)</code></pre>
 <p><br></p>
 <p>Note: You can perform both <code>git stash apply</code> and <code>git stash drop</code> at the same time by entering <code>git stash pop</code>.</p>
 <p><br></p>
