@@ -1,6 +1,6 @@
 # Git & GitHub Tutorial eBook
 
-[![Build Status](https://travis-ci.org/mychan24/git_github_bookdown.svg?branch=master)](https://travis-ci.org/mychan24/git_github_bookdown) [![DOI](https://zenodo.org/badge/207429979.svg)](https://zenodo.org/badge/latestdoi/207429979)
+[![DOI](https://zenodo.org/badge/207429979.svg)](https://doi.org/10.5281/zenodo.5171431)
 
 
 This is a tutorial on Git & GitHub for scientists without formal programming background: https://gitbookdown.eigenfairy.com
